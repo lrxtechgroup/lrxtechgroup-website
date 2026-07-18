@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LRX Tech Group — Innovate. Integrate. Elevate.</title>
+  <meta name="description" content="LRX Tech Group is a South African technology company building intelligent enterprise software. Home of LRX One." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #D4AF37;
+      --gold-dark:   #B8922E;
+      --gold-dim:    rgba(212,175,55,0.12);
+      --gold-line:   rgba(212,175,55,0.3);
+      --black:       #0E0E0E;
+      --dark:        #1A1A1A;
+      --mid:         #2A2A2A;
+      --grey:        #555555;
+      --light-grey:  #888888;
+      --white:       #FFFFFF;
+      --font:        'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo-text .lrx {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    .nav-logo-text .tech {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--light-grey);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--black) !important;
+      background: var(--gold);
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-dark) !important; color: var(--black) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,175,55,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 30% at 50% 100%, rgba(212,175,55,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Grid lines background */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 80%);
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-headline {
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-headline .lrx-gold { color: var(--gold); }
+
+    .hero-tagline {
+      font-size: clamp(11px, 1.5vw, 13px);
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-tagline span { color: var(--gold); margin: 0 8px; }
+
+    .hero-desc {
+      max-width: 540px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--light-grey);
+      margin-bottom: 52px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .btn-primary {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      padding: 16px 36px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--gold-line);
+      padding: 16px 36px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.4s forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--grey);
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────────────────────────────── */
+    .gold-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    /* ── STATS ────────────────────────────────────────────────────────────── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-line);
+      border-top: 1px solid var(--gold-line);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .stat {
+      background: var(--dark);
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+    }
+
+    /* ── SECTION BASE ─────────────────────────────────────────────────────── */
+    section { padding: 100px 5%; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .section-headline {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--light-grey);
+      max-width: 560px;
+    }
+
+    /* ── ABOUT ────────────────────────────────────────────────────────────── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px;
+      background: var(--dark);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+
+    .pillar:hover { border-color: var(--gold); }
+
+    .pillar-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .pillar-content h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .pillar-content p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--light-grey);
+    }
+
+    /* ── PRODUCTS ─────────────────────────────────────────────────────────── */
+    .products-section { background: var(--dark); }
+
+    .products-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--black);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold));
+    }
+
+    .product-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .product-badge.coming-soon {
+      background: var(--mid);
+      color: var(--light-grey);
+    }
+
+    .product-name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .product-name .gold { color: var(--gold); }
+
+    .product-tagline {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--light-grey);
+      margin-bottom: 32px;
+    }
+
+    .product-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .product-features li {
+      font-size: 13px;
+      color: var(--light-grey);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .product-features li::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .product-link {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s;
+    }
+
+    .product-link:hover { gap: 14px; }
+
+    /* ── FOUNDER ──────────────────────────────────────────────────────────── */
+    .founder-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .founder-visual {
+      aspect-ratio: 1;
+      background: var(--dark);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold));
+    }
+
+    .founder-initials {
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .founder-name-plate {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+    }
+
+    .founder-content blockquote {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .founder-content blockquote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+      border-radius: 2px;
+    }
+
+    .founder-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .founder-meta strong {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .founder-meta span {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+    }
+
+    /* ── CONTACT ──────────────────────────────────────────────────────────── */
+    .contact-section {
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 56px auto 0;
+    }
+
+    .contact-item {
+      background: var(--black);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      padding: 32px 24px;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .contact-item:hover { border-color: var(--gold); }
+
+    .contact-icon {
+      font-size: 24px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .contact-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────────── */
+    footer {
+      padding: 40px 5%;
+      border-top: 1px solid var(--gold-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ───────────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about { grid-template-columns: 1fr; gap: 40px; }
+      .stats { grid-template-columns: 1fr; }
+      .founder-section { grid-template-columns: 1fr; }
+      .founder-visual { max-width: 200px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <polygon points="6,6 18,2 30,6 30,30 18,34 6,30" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <text x="18" y="23" text-anchor="middle" font-family="Montserrat" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="lrx">LRX TECH</span>
+        <span class="tech">Group</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#founder">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://lrxone.com" class="nav-cta">LRX One →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">South African Enterprise Technology</p>
+    <h1 class="hero-headline">
+      <span class="lrx-gold">LRX</span> TECH<br/>GROUP
+    </h1>
+    <p class="hero-tagline">
+      Innovate<span>·</span>Integrate<span>·</span>Elevate
+    </p>
+    <p class="hero-desc">
+      Building intelligent enterprise software for the businesses of tomorrow.
+      Based in South Africa. Built for the world.
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">Our Products</a>
+      <a href="#about" class="btn-secondary">About Us</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">1</div>
+      <div class="stat-label">Flagship Product</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">ZA</div>
+      <div class="stat-label">Built in South Africa</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Possibilities</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about">
+      <div class="about-left">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-headline">Technology that moves business forward</h2>
+        <p class="section-body">
+          LRX Tech Group is a South African technology company building intelligent enterprise software.
+          We design platforms that connect, automate, and scale every aspect of modern business — starting
+          with LRX One, our flagship enterprise operating system.
+        </p>
+      </div>
+      <div class="about-right">
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div class="pillar-content">
+            <h4>Innovate</h4>
+            <p>We build software that solves real problems — not demos that look good in presentations.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔗</div>
+          <div class="pillar-content">
+            <h4>Integrate</h4>
+            <p>Our platforms connect with the tools your business already uses, not the ones we want you to buy.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🚀</div>
+          <div class="pillar-content">
+            <h4>Elevate</h4>
+            <p>We measure success by what our customers achieve, not by the features we ship.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products-section">
+    <div class="products-header">
+      <p class="section-eyebrow">Our Portfolio</p>
+      <h2 class="section-headline">Built for enterprise. Designed for humans.</h2>
+    </div>
+    <div class="products-grid">
+      <!-- LRX One -->
+      <div class="product-card">
+        <span class="product-badge">Available Now</span>
+        <div class="product-name"><span class="gold">LRX</span> | ONE</div>
+        <div class="product-tagline">One Platform. Endless Possibilities.</div>
+        <p class="product-desc">
+          The intelligent enterprise operating system that connects, automates, analyzes, and scales
+          every aspect of your business from a single platform.
+        </p>
+        <ul class="product-features">
+          <li>Workflow automation engine</li>
+          <li>AI-powered business assistant</li>
+          <li>Multi-tenant, enterprise-grade security</li>
+          <li>Built-in analytics and reporting</li>
+          <li>300+ integration connectors</li>
+        </ul>
+        <a href="https://lrxone.com" class="product-link">Explore LRX One →</a>
+      </div>
+
+      <!-- Future product placeholder -->
+      <div class="product-card">
+        <span class="product-badge coming-soon">Coming Soon</span>
+        <div class="product-name" style="color:var(--grey)">LRX | ___</div>
+        <div class="product-tagline" style="color:var(--grey)">Next Product · 2025</div>
+        <p class="product-desc" style="color:var(--grey)">
+          We're always building. Our next product is in development. Register your interest to be notified at launch.
+        </p>
+        <ul class="product-features" style="opacity:0.4">
+          <li>Details to follow</li>
+          <li>Built on the LRX platform</li>
+          <li>South Africa first</li>
+        </ul>
+        <a href="mailto:info@lrxtechgroup.com" class="product-link" style="opacity:0.5">Register Interest →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- FOUNDER / LEADERSHIP -->
+  <section id="founder">
+    <div class="founder-section">
+      <div class="founder-visual">
+        <div class="founder-initials">BLR</div>
+        <div class="founder-name-plate">Founder & CEO</div>
+      </div>
+      <div class="founder-content">
+        <p class="section-eyebrow">Leadership</p>
+        <blockquote>
+          "We're building the software that South African businesses deserve — enterprise-grade,
+          locally built, and designed for the way business actually works here."
+        </blockquote>
+        <div class="founder-meta">
+          <strong>Brandon Le Roux</strong>
+          <span>Founder &amp; CEO · LRX Tech Group</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <p class="section-eyebrow">Get in Touch</p>
+    <h2 class="section-headline">Let's talk</h2>
+    <div class="contact-grid">
+      <a href="mailto:info@lrxtechgroup.com" class="contact-item">
+        <span class="contact-icon">✉</span>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">info@lrxtechgroup.com</span>
+      </a>
+      <a href="https://lrxone.com" class="contact-item">
+        <span class="contact-icon">⚡</span>
+        <span class="contact-label">Product</span>
+        <span class="contact-value">lrxone.com</span>
+      </a>
+      <a href="https://www.lrxtechgroup.com" class="contact-item">
+        <span class="contact-icon">🌍</span>
+        <span class="contact-label">Website</span>
+        <span class="contact-value">lrxtechgroup.com</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">LRX TECH GROUP</span>
+    <span class="footer-copy">© 2025 LRX Tech Group (Pty) Ltd · South Africa</span>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="mailto:info@lrxtechgroup.com">Contact</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
