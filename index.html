@@ -465,12 +465,18 @@
 
     /* ── FOUNDER ──────────────────────────────────────────────────────────── */
     .founder-section {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
       max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .founder-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
     }
 
     .founder-visual {
@@ -587,7 +593,7 @@
       .nav-links { display: none; }
       .about { grid-template-columns: 1fr; gap: 40px; }
       .stats { grid-template-columns: 1fr; }
-      .founder-section { grid-template-columns: 1fr; }
+      .founder-card { grid-template-columns: 1fr; }
       .founder-visual { max-width: 200px; }
     }
 
@@ -738,21 +744,44 @@
 
   <section id="founder">
     <div class="founder-section">
-      <div class="founder-visual">
-        <div class="founder-initials">BLR</div>
-        <div class="founder-name-plate">Founder & CEO</div>
-      </div>
-      <div class="founder-content">
-        <p class="section-eyebrow">Leadership</p>
-        <blockquote>
-          "We're building the software that South African businesses deserve — enterprise-grade,
-          locally built, and designed for the way business actually works here."
-        </blockquote>
-        <div class="founder-meta">
-          <strong>Brandon Le Roux</strong>
-          <span>Founder &amp; CEO · LRX Tech Group</span>
+
+      <!-- Brandon Le Roux -->
+      <div class="founder-card">
+        <div class="founder-visual">
+          <div class="founder-initials">BLR</div>
+          <div class="founder-name-plate">Founder & CEO</div>
+        </div>
+        <div class="founder-content">
+          <p class="section-eyebrow">Leadership</p>
+          <blockquote>
+            "We're building the software that South African businesses deserve — enterprise-grade,
+            locally built, and designed for the way business actually works here."
+          </blockquote>
+          <div class="founder-meta">
+            <strong>Brandon Le Roux</strong>
+            <span>Founder &amp; CEO · LRX Tech Group</span>
+          </div>
         </div>
       </div>
+
+      <!-- Jessica Le Roux -->
+      <div class="founder-card">
+        <div class="founder-visual">
+          <div class="founder-initials">JLR</div>
+          <div class="founder-name-plate">Founder & COO</div>
+        </div>
+        <div class="founder-content">
+          <blockquote>
+            "Building a great product is only half the work — the other half is making sure
+            the right people can access it, trust it, and grow with it. That's what operations is about."
+          </blockquote>
+          <div class="founder-meta">
+            <strong>Jessica Le Roux</strong>
+            <span>Founder &amp; COO · LRX Tech Group</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
