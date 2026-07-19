@@ -22,10 +22,14 @@
       --grey:        #555555;
       --light-grey:  #888888;
       --white:       #FFFFFF;
-      --font:        'Montserrat', sans-serif;
+      --font:        'Montserrat', 'Helvetica Neue', Arial, sans-serif;
     }
 
-    html { scroll-behavior: smooth; background: #0E0E0E; }
+    /* Always black background — no flash */
+    html {
+      background: #0E0E0E;
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font);
@@ -44,7 +48,7 @@
       justify-content: space-between;
       padding: 0 5%;
       height: 72px;
-      background: rgba(14,14,14,0.92);
+      background: rgba(14,14,14,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--gold-line);
     }
@@ -56,16 +60,9 @@
       text-decoration: none;
     }
 
-    .nav-logo-icon {
-      width: 36px;
-      height: 36px;
-    }
+    .nav-logo-icon { width: 36px; height: 36px; }
 
-    .nav-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
 
     .nav-logo-text .lrx {
       font-size: 16px;
@@ -102,10 +99,8 @@
     .nav-links a:hover { color: var(--gold); }
 
     .nav-cta {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      font-size: 11px !important;
+      font-weight: 700 !important;
       color: var(--black) !important;
       background: var(--gold);
       padding: 10px 22px;
@@ -113,9 +108,9 @@
       transition: background 0.2s !important;
     }
 
-    .nav-cta:hover { background: var(--gold-dark) !important; color: var(--black) !important; }
+    .nav-cta:hover { background: var(--gold-dark) !important; }
 
-    /* ── HERO ─────────────────────────────────────────────────────────────── */
+    /* ── HERO — always visible ────────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -132,13 +127,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,175,55,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 30% at 50% 100%, rgba(212,175,55,0.04) 0%, transparent 60%);
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,175,55,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
-    /* Grid lines background */
     .hero::after {
       content: '';
       position: absolute;
@@ -151,6 +143,7 @@
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 80%);
     }
 
+    /* Hero elements are VISIBLE by default — animation is progressive enhancement */
     .hero-eyebrow {
       font-size: 10px;
       font-weight: 700;
@@ -158,8 +151,7 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
+      animation: fadeUp 0.8s 0.2s both;
     }
 
     .hero-headline {
@@ -168,8 +160,7 @@
       line-height: 1;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
+      animation: fadeUp 0.8s 0.4s both;
     }
 
     .hero-headline .lrx-gold { color: var(--gold); }
@@ -181,8 +172,7 @@
       text-transform: uppercase;
       color: var(--light-grey);
       margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
+      animation: fadeUp 0.8s 0.6s both;
     }
 
     .hero-tagline span { color: var(--gold); margin: 0 8px; }
@@ -194,8 +184,7 @@
       line-height: 1.8;
       color: var(--light-grey);
       margin-bottom: 52px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.8s forwards;
+      animation: fadeUp 0.8s 0.8s both;
     }
 
     .hero-buttons {
@@ -203,8 +192,7 @@
       gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
-      opacity: 0;
-      animation: fadeUp 0.8s 1s forwards;
+      animation: fadeUp 0.8s 1s both;
     }
 
     .btn-primary {
@@ -247,8 +235,7 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.4s forwards;
+      animation: fadeUp 0.8s 1.4s both;
     }
 
     .hero-scroll span {
@@ -340,11 +327,7 @@
       align-items: center;
     }
 
-    .about-right {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+    .about-right { display: flex; flex-direction: column; gap: 32px; }
 
     .pillar {
       display: flex;
@@ -414,10 +397,7 @@
       transition: border-color 0.3s, transform 0.3s;
     }
 
-    .product-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-    }
+    .product-card:hover { border-color: var(--gold); transform: translateY(-4px); }
 
     .product-card::before {
       content: '';
@@ -440,18 +420,9 @@
       margin-bottom: 24px;
     }
 
-    .product-badge.coming-soon {
-      background: var(--mid);
-      color: var(--light-grey);
-    }
+    .product-badge.coming-soon { background: var(--mid); color: var(--light-grey); }
 
-    .product-name {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
-
+    .product-name { font-size: 32px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 6px; }
     .product-name .gold { color: var(--gold); }
 
     .product-tagline {
@@ -463,20 +434,9 @@
       margin-bottom: 20px;
     }
 
-    .product-desc {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--light-grey);
-      margin-bottom: 32px;
-    }
+    .product-desc { font-size: 15px; line-height: 1.7; color: var(--light-grey); margin-bottom: 32px; }
 
-    .product-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 36px;
-    }
+    .product-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
 
     .product-features li {
       font-size: 13px;
@@ -486,13 +446,7 @@
       gap: 10px;
     }
 
-    .product-features li::before {
-      content: '';
-      width: 16px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
+    .product-features li::before { content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
     .product-link {
       font-size: 12px;
@@ -541,12 +495,7 @@
       background: linear-gradient(to right, var(--gold-dark), var(--gold));
     }
 
-    .founder-initials {
-      font-size: 64px;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-    }
+    .founder-initials { font-size: 64px; font-weight: 900; color: var(--gold); line-height: 1; }
 
     .founder-name-plate {
       font-size: 10px;
@@ -569,39 +518,18 @@
     .founder-content blockquote::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 4px;
-      bottom: 4px;
+      left: 0; top: 4px; bottom: 4px;
       width: 3px;
       background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
       border-radius: 2px;
     }
 
-    .founder-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .founder-meta strong {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    .founder-meta span {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--light-grey);
-    }
+    .founder-meta { display: flex; flex-direction: column; gap: 4px; }
+    .founder-meta strong { font-size: 15px; font-weight: 700; color: var(--gold); }
+    .founder-meta span { font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-grey); }
 
     /* ── CONTACT ──────────────────────────────────────────────────────────── */
-    .contact-section {
-      background: var(--dark);
-      text-align: center;
-    }
+    .contact-section { background: var(--dark); text-align: center; }
 
     .contact-grid {
       display: grid;
@@ -622,28 +550,9 @@
     }
 
     .contact-item:hover { border-color: var(--gold); }
-
-    .contact-icon {
-      font-size: 24px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .contact-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .contact-value {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--gold);
-    }
+    .contact-icon { font-size: 24px; margin-bottom: 16px; display: block; }
+    .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; display: block; }
+    .contact-value { font-size: 14px; font-weight: 600; color: var(--gold); }
 
     /* ── FOOTER ───────────────────────────────────────────────────────────── */
     footer {
@@ -656,37 +565,13 @@
       gap: 16px;
     }
 
-    .footer-logo {
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-    }
-
-    .footer-copy {
-      font-size: 12px;
-      color: var(--grey);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer-logo { font-size: 16px; font-weight: 900; letter-spacing: 0.1em; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--grey); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
 
-    /* ── ANIMATIONS ───────────────────────────────────────────────────────── */
+    /* ── ANIMATIONS — 'both' fill-mode ensures visible before and after ──── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -707,25 +592,23 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="/">
       <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
         <polygon points="6,6 18,2 30,6 30,30 18,34 6,30" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
-        <text x="18" y="23" text-anchor="middle" font-family="Montserrat" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
+        <text x="18" y="23" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
       </svg>
       <div class="nav-logo-text">
         <span class="lrx">LRX TECH</span>
         <span class="tech">Group</span>
       </div>
     </a>
-
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#products">Products</a></li>
@@ -735,7 +618,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <p class="hero-eyebrow">South African Enterprise Technology</p>
     <h1 class="hero-headline">
@@ -758,7 +640,6 @@
     </div>
   </section>
 
-  <!-- STATS -->
   <div class="stats">
     <div class="stat">
       <div class="stat-number">1</div>
@@ -774,7 +655,6 @@
     </div>
   </div>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about">
       <div class="about-left">
@@ -814,14 +694,12 @@
 
   <div class="gold-divider"></div>
 
-  <!-- PRODUCTS -->
   <section id="products" class="products-section">
     <div class="products-header">
       <p class="section-eyebrow">Our Portfolio</p>
       <h2 class="section-headline">Built for enterprise. Designed for humans.</h2>
     </div>
     <div class="products-grid">
-      <!-- LRX One -->
       <div class="product-card">
         <span class="product-badge">Available Now</span>
         <div class="product-name"><span class="gold">LRX</span> | ONE</div>
@@ -839,8 +717,6 @@
         </ul>
         <a href="https://lrxone.com" class="product-link">Explore LRX One →</a>
       </div>
-
-      <!-- Future product placeholder -->
       <div class="product-card">
         <span class="product-badge coming-soon">Coming Soon</span>
         <div class="product-name" style="color:var(--grey)">LRX | ___</div>
@@ -860,7 +736,6 @@
 
   <div class="gold-divider"></div>
 
-  <!-- FOUNDER / LEADERSHIP -->
   <section id="founder">
     <div class="founder-section">
       <div class="founder-visual">
@@ -883,7 +758,6 @@
 
   <div class="gold-divider"></div>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <p class="section-eyebrow">Get in Touch</p>
     <h2 class="section-headline">Let's talk</h2>
@@ -906,7 +780,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span class="footer-logo">LRX TECH GROUP</span>
     <span class="footer-copy">© 2025 LRX Tech Group (Pty) Ltd · South Africa</span>
