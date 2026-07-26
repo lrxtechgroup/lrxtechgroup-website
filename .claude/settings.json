@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit *)",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; [ -f \"$root/CLAUDE.md\" ] || exit 0; changed=$(git show --name-only --pretty=format: HEAD 2>/dev/null); echo \"$changed\" | grep -qx 'MEMORY.md' && exit 0; substantive=$(echo \"$changed\" | grep -vE '^(MEMORY\\.md|TODO\\.md|README\\.md|CLAUDE\\.md)$' | grep -v '^$'); [ -n \"$substantive\" ] && echo \"WARNING: this commit changed substantive files but did not touch MEMORY.md. Per this repo's CLAUDE.md: add a dated MEMORY.md entry (not just a TODO.md checkmark) before moving on.\" >&2; exit 0",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
