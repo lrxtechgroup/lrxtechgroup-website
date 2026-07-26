@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-25/26 — Minor findings fixed, merged to main
+
+Small findings from a code-review pass across `lrxtechgroup` org repos,
+fixed on `claude/lrx-one-work-cgvqnx` and merged to `main` (this repo's
+established direct-to-main convention):
+
+- Footer `/privacy` link pointed at a page that doesn't exist — pointed
+  it at `mailto:info@lrxtechgroup.com?subject=Privacy%20Policy%20Request`
+  instead of fabricating legal content. Real Privacy Policy content still
+  needs to be written by the site owner and linked once it exists.
+- Added an inline-SVG favicon (none existed), `robots.txt`, and
+  `sitemap.xml`.
+- Footer copyright year was a hardcoded "© 2025" — made it dynamic via a
+  small inline script.
+
+---
+
 ## 2026-07-25 — Repo orientation, memory file set up
 
 No code changes made this session. Session started with "continue the work on lrx
