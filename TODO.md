@@ -11,15 +11,15 @@ done — don't just accumulate; keep this reflecting real, current state.
       `lrxtechgroup/lrxone` repo instead. If this comes up again here,
       re-clarify rather than assuming.
 
-## Found 2026-07-25 — code review pass, minor gaps only
+## Fixed 2026-07-25
 
-- [ ] Footer links to `/privacy` — this page doesn't exist anywhere in the
-      repo, and there's no routing/redirect layer (single static
-      `index.html`). Either add the page or point the link elsewhere.
-- [ ] No favicon, `robots.txt`, or `sitemap.xml`.
-- [ ] Copyright year in the footer is hardcoded "© 2025" — will read as
-      stale once well into 2026; consider making it dynamic or just
-      remembering to bump it periodically.
+- [x] Footer `/privacy` link pointed at a page that doesn't exist. Not
+      writing fabricated legal content — pointed it at a `mailto:`
+      instead. Real Privacy Policy content still needs to be written (by
+      the site owner) and linked once it exists.
+- [x] Added favicon, `robots.txt`, and `sitemap.xml`.
+- [x] Footer copyright year was hardcoded "© 2025" — made it dynamic via
+      a small inline script.
 
 ## Not investigated yet
 
