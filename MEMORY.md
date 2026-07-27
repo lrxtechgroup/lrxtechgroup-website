@@ -6,6 +6,34 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 — Added the real LRX Billing product page, resolved the "Coming Soon" placeholder
+
+Part of working through `lrxtechgroup/lrxone`'s `CLAUDE_TODO.md` (item
+18), which had a full spec for an "LRX Billing" marketing page. This
+directly resolved an item already flagged in this file's own backlog
+(2026-07-25's "the 'Coming Soon' second product card has no real content
+— check with the user whether/when to fill it in") — LRX Billing is that
+second product, decided elsewhere (`lrxone`'s billing-service work), so
+the placeholder card is now real.
+
+- New `billing.html`: hero, "why not just use Stripe" problem section,
+  solution grid (Stitch/PayFast/ZAR invoicing/POPIA residency/webhooks/
+  dashboard), a code example, and a 4-tier pricing table — matching this
+  site's existing gold-on-black brand exactly (reused the same CSS
+  variables/nav/footer structure as `index.html`, not reinvented).
+- `index.html`: replaced the "Coming Soon — LRX | ___" product card with
+  a real LRX Billing card linking to `/billing.html`. Updated the hero
+  stats band from "1 Flagship Product" to "2 Products" (was literally
+  false with two real products now). Added nav and footer links to the
+  new page.
+- Verified both HTML files parse cleanly (`html.parser`).
+
+Confirmed item 19 (hero blank-screen fix, Jessica Le Roux in leadership,
+font fallbacks) was already fully done in this repo from earlier
+session work — checked directly, no changes needed.
+
+---
+
 ## 2026-07-25/26 — Minor findings fixed, merged to main
 
 Small findings from a code-review pass across `lrxtechgroup` org repos,

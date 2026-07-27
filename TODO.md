@@ -21,10 +21,14 @@ done — don't just accumulate; keep this reflecting real, current state.
 - [x] Footer copyright year was hardcoded "© 2025" — made it dynamic via
       a small inline script.
 
+## Fixed 2026-07-27
+
+- [x] The "Coming Soon" second product card (`LRX | ___`) now has real
+      content — replaced with LRX Billing, linking to the new
+      `billing.html`. See MEMORY.md.
+
 ## Not investigated yet
 
-- [ ] No test/build/lint tooling exists for this repo (it's a single static
-      HTML file) — confirm that's intentional before adding any tooling
-      unprompted.
-- [ ] The "Coming Soon" second product card (`LRX | ___`) has no real content
-      — check with the user whether/when to fill it in.
+- [ ] No test/build/lint tooling exists for this repo (it's now two static
+      HTML files, `index.html` + `billing.html`) — confirm that's
+      intentional before adding any tooling unprompted.

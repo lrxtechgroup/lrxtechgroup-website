@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LRX Billing — South Africa's Native Subscription Billing Infrastructure</title>
+  <meta name="description" content="LRX Billing is ZAR-native, POPIA-compliant subscription billing infrastructure for South African SaaS companies, marketplaces, and subscription businesses. Stitch EFT, PayFast, and Stripe support." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpolygon points='6,6 18,2 30,6 30,30 18,34 6,30' fill='%230E0E0E' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ctext x='18' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-size='10' font-weight='900' fill='%23D4AF37'%3ELRX%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #D4AF37;
+      --gold-dark:   #B8922E;
+      --gold-dim:    rgba(212,175,55,0.12);
+      --gold-line:   rgba(212,175,55,0.3);
+      --black:       #0E0E0E;
+      --dark:        #1A1A1A;
+      --mid:         #2A2A2A;
+      --grey:        #555555;
+      --light-grey:  #888888;
+      --white:       #FFFFFF;
+      --font:        'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --mono:        'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+
+    html { background: #0E0E0E; scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--black); color: var(--white); overflow-x: hidden; }
+
+    /* ── NAVIGATION ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(14,14,14,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text .lrx { font-size: 16px; font-weight: 800; letter-spacing: 0.12em; color: var(--gold); }
+    .nav-logo-text .tech { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; color: var(--light-grey); text-transform: uppercase; }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta { font-size: 11px !important; font-weight: 700 !important; color: var(--black) !important; background: var(--gold); padding: 10px 22px; border-radius: 2px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--gold-dark) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(212,175,55,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 24px;
+      animation: fadeUp 0.8s 0.2s both;
+    }
+
+    .hero-headline {
+      font-size: clamp(36px, 6vw, 64px); font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 20px; max-width: 900px;
+      animation: fadeUp 0.8s 0.4s both;
+    }
+
+    .hero-headline .gold { color: var(--gold); }
+
+    .hero-desc {
+      max-width: 620px; font-size: 17px; font-weight: 400; line-height: 1.8;
+      color: var(--light-grey); margin-bottom: 44px;
+      animation: fadeUp 0.8s 0.6s both;
+    }
+
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.8s both; }
+
+    .btn-primary {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--black); background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      padding: 16px 36px; border-radius: 2px; text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); background: transparent; border: 1px solid var(--gold-line);
+      padding: 16px 36px; border-radius: 2px; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+    /* ── SECTION BASE ─────────────────────────────────────────────────────── */
+    section { padding: 90px 5%; }
+    .section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; text-align: center; }
+    .section-headline { font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .section-sub { font-size: 16px; line-height: 1.8; color: var(--light-grey); max-width: 620px; margin: 0 auto 56px; text-align: center; }
+
+    .gold-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: 0.4; }
+
+    /* ── PROBLEM ──────────────────────────────────────────────────────────── */
+    .problem-section { background: var(--dark); }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .problem-card {
+      background: var(--black); border: 1px solid var(--gold-line); border-radius: 4px;
+      padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .problem-card .icon { font-size: 22px; }
+    .problem-card h3 { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; }
+    .problem-card p { font-size: 14px; line-height: 1.7; color: var(--light-grey); }
+
+    /* ── SOLUTION ─────────────────────────────────────────────────────────── */
+    .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1100px; margin: 0 auto; }
+    .solution-item { background: var(--black); padding: 36px 32px; transition: background 0.2s; }
+    .solution-item:hover { background: #1a1a1a; }
+    .solution-icon {
+      width: 44px; height: 44px; background: var(--gold-dim); border: 1px solid var(--gold-line);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; margin-bottom: 18px;
+    }
+    .solution-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .solution-item p { font-size: 13px; line-height: 1.7; color: var(--light-grey); }
+
+    /* ── CODE EXAMPLE ─────────────────────────────────────────────────────── */
+    .code-section { background: var(--dark); }
+    .code-block {
+      max-width: 720px; margin: 0 auto; background: var(--black); border: 1px solid var(--gold-line);
+      border-radius: 6px; overflow: hidden;
+    }
+    .code-titlebar {
+      background: var(--mid); padding: 12px 18px; display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .code-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--grey); }
+    .code-filename { margin-left: 10px; font-family: var(--mono); font-size: 12px; color: var(--light-grey); }
+    .code-block pre {
+      padding: 24px 28px; overflow-x: auto; font-family: var(--mono); font-size: 13px; line-height: 1.7;
+    }
+    .code-block code { color: #e8e8e8; }
+    .code-block .kw { color: var(--gold); }
+    .code-block .str { color: #9ecb9e; }
+    .code-block .cm { color: var(--grey); font-style: italic; }
+
+    /* ── PRICING ──────────────────────────────────────────────────────────── */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
+    .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
+    .pricing-card.featured { background: var(--dark); }
+    .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); }
+    .pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .pricing-price { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+    .pricing-price .period { font-size: 12px; font-weight: 400; color: var(--light-grey); }
+    .pricing-txn { font-size: 12px; color: var(--light-grey); margin-bottom: 20px; }
+    .pricing-desc { font-size: 13px; color: var(--light-grey); line-height: 1.6; margin-bottom: 24px; min-height: 40px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .pricing-features li { font-size: 13px; color: var(--light-grey); display: flex; gap: 8px; align-items: flex-start; }
+    .pricing-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .pricing-cta { display: block; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 13px; border-radius: 2px; text-decoration: none; transition: opacity 0.2s; }
+    .pricing-cta.primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--black); }
+    .pricing-cta.secondary { border: 1px solid var(--gold-line); color: var(--gold); }
+    .pricing-cta:hover { opacity: 0.85; }
+
+    /* ── CTA BANNER ───────────────────────────────────────────────────────── */
+    .cta-banner { text-align: center; padding: 100px 5%; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,175,55,0.07) 0%, transparent 70%); pointer-events: none; }
+    .cta-banner h2 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 18px; }
+    .cta-banner p { font-size: 16px; color: var(--light-grey); line-height: 1.7; max-width: 480px; margin: 0 auto 40px; }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────────── */
+    footer {
+      padding: 40px 5%; border-top: 1px solid var(--gold-line);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-size: 16px; font-weight: 900; letter-spacing: 0.1em; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--grey); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ───────────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <polygon points="6,6 18,2 30,6 30,30 18,34 6,30" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <text x="18" y="23" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="lrx">LRX TECH</span>
+        <span class="tech">Group</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#products">Products</a></li>
+      <li><a href="#pricing">Billing Pricing</a></li>
+      <li><a href="/#founder">Leadership</a></li>
+      <li><a href="mailto:info@lrxtechgroup.com">Contact</a></li>
+      <li><a href="https://lrxone.com" class="nav-cta">LRX One →</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Introducing LRX Billing</p>
+    <h1 class="hero-headline">
+      South Africa's <span class="gold">Native</span><br/>Subscription Billing Infrastructure
+    </h1>
+    <p class="hero-desc">
+      Built for SaaS companies, marketplaces, and subscription businesses.
+      ZAR-native, POPIA-compliant, developer-first.
+    </p>
+    <div class="hero-buttons">
+      <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Get%20Started" class="btn-primary">Get Started</a>
+      <a href="#pricing" class="btn-secondary">See Pricing</a>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <section class="problem-section">
+    <p class="section-eyebrow">The Problem</p>
+    <h2 class="section-headline">Why not just use Stripe?</h2>
+    <p class="section-sub">
+      Stripe is built for the world — not specifically for South African businesses
+      billing South African customers.
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="icon">💱</span>
+        <h3>USD Pricing</h3>
+        <p>Exchange rate risk on every transaction when your revenue and costs are both in Rand.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🏦</span>
+        <h3>No Local EFT</h3>
+        <p>No native South African bank debit — customers expect to pay the way they already do.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🇿🇦</span>
+        <h3>No Data Residency</h3>
+        <p>No POPIA-aligned data residency guarantee for customer billing information.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">⚙️</span>
+        <h3>Complex Setup</h3>
+        <p>Recurring billing, dunning, and invoicing all need to be built and maintained separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <section id="solution">
+    <p class="section-eyebrow">The Solution</p>
+    <h2 class="section-headline">What LRX Billing provides</h2>
+    <p class="section-sub">
+      One billing platform, built South Africa-first, that still speaks the languages
+      your international customers expect.
+    </p>
+    <div class="solution-grid">
+      <div class="solution-item">
+        <div class="solution-icon">🏧</div>
+        <h3>Stitch EFT + Card Tokenisation</h3>
+        <p>Native South African bank debit and card payments, tokenised for recurring billing.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">💳</div>
+        <h3>PayFast as Backup</h3>
+        <p>A second local payment rail, so a single provider outage never stops your revenue.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">🧾</div>
+        <h3>ZAR-Native Invoicing</h3>
+        <p>Branded invoices with VAT calculated correctly, out of the box.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">🔒</div>
+        <h3>POPIA Data Residency</h3>
+        <p>Hosted in AWS af-south-1 (Cape Town) — your customers' billing data stays in South Africa.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">🔔</div>
+        <h3>Webhooks For Everything</h3>
+        <p>Every billing event — payment, failure, cancellation — delivered to your systems in real time.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">📊</div>
+        <h3>Subscriber Dashboard</h3>
+        <p>Manage plans, subscribers, and MRR from one place, without building it yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <section class="code-section">
+    <p class="section-eyebrow">Developer First</p>
+    <h2 class="section-headline">Create a subscription in 5 lines</h2>
+    <div class="code-block">
+      <div class="code-titlebar">
+        <div class="code-dot"></div><div class="code-dot"></div><div class="code-dot"></div>
+        <span class="code-filename">create-subscription.sh</span>
+      </div>
+      <pre><code><span class="cm"># Create a subscriber and start their subscription</span>
+curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
+  -H <span class="str">"Authorization: Bearer $LRX_BILLING_API_KEY"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
+    "subscriberEmail": "customer@example.com",
+    "planId": "plan_growth_monthly",
+    "paymentMethod": "stitch"
+  }'</span></code></pre>
+    </div>
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <section id="pricing" class="pricing-section">
+    <p class="section-eyebrow">Simple Pricing</p>
+    <h2 class="section-headline">Pay for what you use. Scale as you grow.</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">R999<span class="period">/mo</span></div>
+        <div class="pricing-txn">+ 0.8% per transaction</div>
+        <p class="pricing-desc">For businesses just getting started with recurring billing.</p>
+        <ul class="pricing-features">
+          <li>Up to 100 active subscriptions</li>
+          <li>Stitch + PayFast + Stripe</li>
+          <li>Branded PDF invoicing</li>
+          <li>Email support</li>
+        </ul>
+        <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Starter" class="pricing-cta secondary">Talk to Us</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Growth</div>
+        <div class="pricing-price">R2,999<span class="period">/mo</span></div>
+        <div class="pricing-txn">+ 0.5% per transaction</div>
+        <p class="pricing-desc">For growing subscription businesses that need more headroom.</p>
+        <ul class="pricing-features">
+          <li>Up to 500 active subscriptions</li>
+          <li>Automated dunning &amp; retries</li>
+          <li>Webhooks for every event</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Growth" class="pricing-cta primary">Talk to Us</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Business</div>
+        <div class="pricing-price">R6,999<span class="period">/mo</span></div>
+        <div class="pricing-txn">+ 0.3% per transaction</div>
+        <p class="pricing-desc">For established subscription businesses at scale.</p>
+        <ul class="pricing-features">
+          <li>Up to 2,000 active subscriptions</li>
+          <li>Subscriber management dashboard</li>
+          <li>Dedicated account manager</li>
+          <li>SLA-backed support</li>
+        </ul>
+        <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Business" class="pricing-cta secondary">Talk to Us</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-txn">+ 0.15% per transaction</div>
+        <p class="pricing-desc">For large-scale platforms and marketplaces with custom needs.</p>
+        <ul class="pricing-features">
+          <li>Unlimited active subscriptions</li>
+          <li>Custom integrations</li>
+          <li>Dedicated infrastructure</li>
+          <li>White-glove onboarding</li>
+        </ul>
+        <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Enterprise" class="pricing-cta secondary">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Bill your customers <span style="color:var(--gold)">the South African way</span>.</h2>
+    <p>Talk to us about moving your subscription billing onto infrastructure built for this market.</p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="mailto:info@lrxtechgroup.com?subject=LRX%20Billing%20-%20Talk%20to%20Us" class="btn-primary">Talk to Us →</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">LRX TECH GROUP</span>
+    <span class="footer-copy">© <span id="footer-year">2026</span> LRX Tech Group (Pty) Ltd · South Africa</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="https://lrxone.com">LRX One</a></li>
+      <li><a href="mailto:info@lrxtechgroup.com">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
