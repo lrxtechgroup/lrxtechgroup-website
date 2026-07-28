@@ -3,6 +3,30 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (pricing CTA consolidation) — One register-interest control per page
+
+- [x] User asked why one pricing card looked different — explained
+      (not a bug): `.pricing-card.featured` is the intentional
+      "recommended tier" highlight (Business on `one.html`, Growth on
+      `billing.html`), lighter background + gold top border.
+- [x] Removed every pricing card's own CTA link ("Register Interest" /
+      "Talk to Us" / "Contact Sales") on both `one.html` and
+      `billing.html` — 8 links total. Replaced with one consolidated
+      control in each page's `cta-banner` section: a tier `<select>` +
+      a single CTA button whose `mailto:` href is rebuilt via a small
+      vanilla-JS listener whenever the selection changes, e.g.
+      `mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Business%20-%20Register%20Interest`.
+      No backend involved — still a pure static site, same `mailto:`
+      pattern every other CTA on the site already uses, just aggregated
+      into one place instead of one link per card.
+- [x] Removed the now-fully-unused `.pricing-cta` / `.pricing-cta.primary`
+      / `.pricing-cta.secondary` CSS rules from both pages (dead code
+      once every usage was removed).
+- [x] Verified interactively with Playwright (not just visually) —
+      selected each tier in the dropdown on both pages and confirmed the
+      mailto href updates correctly each time, plus re-ran the mobile
+      overflow sweep (375/768/1440px) to confirm nothing broke.
+
 ## Fixed 2026-07-28 (follow-up) — Same redundancy was also in index.html's footer
 
 - [x] The previous fix only removed "LRX One Billing" from the header

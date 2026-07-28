@@ -6,6 +6,60 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (pricing CTA consolidation) — One register-interest control per page
+
+Two asks in one turn. First: why does one pricing card look different?
+Answer, not a bug — `.pricing-card.featured` (Business on `one.html`,
+Growth on `billing.html`) intentionally gets a lighter `var(--dark)`
+background plus a gold top-border gradient via `::before`, the standard
+"this is our recommended tier" highlight pattern. Explained rather than
+changed.
+
+Second: consolidate every pricing card's own CTA into a single
+registration control, for both products. Previously each of the 4 cards
+on `one.html` and 4 cards on `billing.html` had its own `mailto:` link
+("Register Interest" / "Talk to Us" / "Contact Sales" depending on
+tier) — 8 separate links doing the same thing with slightly different
+subject lines. Removed all 8, added one consolidated control per page in
+the existing `cta-banner` section: a `<select class="tier-select">`
+listing the tiers (with price shown inline, e.g. "Business —
+R2,299/mo"; `billing.html`'s Enterprise option reads "Custom pricing"
+since that tier has no fixed price) next to a single CTA button.
+
+The button's `href` is a `mailto:sales@lrxtechgroup.com` link whose
+`subject` is rebuilt by a small vanilla-JS snippet every time the
+`<select>` fires a `change` event (and once on page load, so the link is
+correct before any interaction):
+```js
+function updateLink() {
+  var tier = select.value;
+  link.href = 'mailto:sales@lrxtechgroup.com?subject=' +
+    encodeURIComponent('LRX One Core - ' + tier + ' - Register Interest');
+}
+```
+(`billing.html`'s version says "LRX One Billing" instead.) No backend,
+no form submission — still a fully static site, same `mailto:` pattern
+every other CTA on the site already uses, just aggregated into one
+control instead of duplicated per card. First draft put the full option
+text (including the price) into the subject line via `select.options[
+select.selectedIndex].text`; switched to `select.value` (just the tier
+name) for a cleaner subject after testing both — matches the plain
+"LRX One Core - Business" style the original per-card links used.
+
+Removed the now fully-dead `.pricing-cta` / `.pricing-cta.primary` /
+`.pricing-cta.secondary` CSS rules from both pages once every element
+using them was gone (confirmed via grep before deleting).
+
+**Verification**: didn't just eyeball it — used Playwright to actually
+select each tier option on both pages and read back the resulting
+`href`, confirming the encoded subject line was correct for every tier
+including the Enterprise/Custom-pricing edge case on `billing.html`.
+Also re-ran the mobile overflow sweep (375/768/1440px, both pages) since
+markup changed, to make sure the new `.interest-form` control didn't
+introduce a new overflow — clean.
+
+---
+
 ## 2026-07-28 (follow-up) — Removed the same redundant nav item from the footer
 
 Direct follow-up to the previous fix, which only removed "LRX One

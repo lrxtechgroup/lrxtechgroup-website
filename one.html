@@ -209,16 +209,20 @@
     .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
     .pricing-features li { font-size: 13px; color: var(--light-grey); display: flex; gap: 8px; align-items: flex-start; }
     .pricing-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
-    .pricing-cta { display: block; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 13px; border-radius: 2px; text-decoration: none; transition: opacity 0.2s; }
-    .pricing-cta.primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--black); }
-    .pricing-cta.secondary { border: 1px solid var(--gold-line); color: var(--gold); }
-    .pricing-cta:hover { opacity: 0.85; }
 
     /* ── CTA BANNER ───────────────────────────────────────────────────────── */
     .cta-banner { text-align: center; padding: 100px 5%; position: relative; overflow: hidden; }
     .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,175,55,0.07) 0%, transparent 70%); pointer-events: none; }
     .cta-banner h2 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 18px; }
     .cta-banner p { font-size: 16px; color: var(--light-grey); line-height: 1.7; max-width: 480px; margin: 0 auto 40px; }
+
+    .interest-form { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .tier-select {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--white); background: var(--dark); border: 1px solid var(--gold-line);
+      padding: 16px 20px; border-radius: 2px; cursor: pointer;
+    }
+    .tier-select:focus { outline: none; border-color: var(--gold); }
 
     /* ── FOOTER ───────────────────────────────────────────────────────────── */
     footer {
@@ -428,7 +432,6 @@
           <li>2GB storage</li>
           <li>Email support</li>
         </ul>
-        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Starter" class="pricing-cta secondary">Register Interest</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Growth</div>
@@ -442,7 +445,6 @@
           <li>All integrations</li>
           <li>25GB storage</li>
         </ul>
-        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Growth" class="pricing-cta secondary">Register Interest</a>
       </div>
       <div class="pricing-card featured">
         <div class="pricing-tier">Business</div>
@@ -456,7 +458,6 @@
           <li>All integrations</li>
           <li>150GB storage</li>
         </ul>
-        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Business" class="pricing-cta primary">Register Interest</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Enterprise</div>
@@ -470,7 +471,6 @@
           <li>1TB storage</li>
           <li>Priority support included</li>
         </ul>
-        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Enterprise" class="pricing-cta secondary">Contact Sales</a>
       </div>
     </div>
     <p class="pricing-note">Need more headroom? Every tier can top up users, workflows, AI messages, documents, and storage individually through resource marketplace add-ons.</p>
@@ -478,12 +478,33 @@
 
   <section class="cta-banner">
     <h2>Ready to <span style="color:var(--gold)">elevate your business</span>?</h2>
-    <p>Register your interest and we'll let you know the moment LRX One Core is ready to onboard your business.</p>
-    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-      <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Register%20Interest" class="btn-primary">Register Interest →</a>
+    <p>Select the plan you're interested in and we'll let you know the moment LRX One Core is ready to onboard your business.</p>
+    <div class="interest-form">
+      <select id="core-tier-select" class="tier-select" aria-label="Select a plan">
+        <option value="Starter">Starter — R199/mo</option>
+        <option value="Growth">Growth — R899/mo</option>
+        <option value="Business" selected>Business — R2,299/mo</option>
+        <option value="Enterprise">Enterprise — R6,499/mo</option>
+      </select>
+      <a id="core-register-link" href="#" class="btn-primary">Register Interest →</a>
+    </div>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:14px;">
       <a href="https://app.lrxone.com/login" class="btn-secondary">Sign In</a>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var select = document.getElementById('core-tier-select');
+      var link = document.getElementById('core-register-link');
+      function updateLink() {
+        var tier = select.value;
+        link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Core - ' + tier + ' - Register Interest');
+      }
+      select.addEventListener('change', updateLink);
+      updateLink();
+    })();
+  </script>
 
   <footer>
     <span class="footer-logo">LRX TECH GROUP</span>
