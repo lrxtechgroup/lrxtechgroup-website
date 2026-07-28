@@ -6,6 +6,32 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 (yet even later same day) — Fixed the off-center hero scroll indicator
+
+User spotted it via a real device screenshot (mobile, `07:26`, live
+site) — the "SCROLL" cue at the bottom of the hero was visibly shifted
+right of the two buttons above it, which are correctly centered.
+
+Root cause: `.hero-scroll` centers itself with
+`left: 50%; transform: translateX(-50%)`, but also has
+`animation: fadeUp ... both`. A CSS animation's `transform` REPLACES the
+element's static `transform` value entirely rather than composing with
+it — `fadeUp`'s keyframes only set `translateY(...)`, so once the
+animation reaches its `to` state, `translateX(-50%)` is gone and
+`both` fill-mode keeps that broken state applied permanently (not just
+during the animation). The element ends up sitting at literal `left:
+50%` with no horizontal centering, shifted right by half its own width.
+
+Fixed with a dedicated `@keyframes scrollFadeUp` that carries
+`translateX(-50%)` through both the `from` and `to` states, so the
+centering survives the animation completing. Checked whether this same
+`translateX(-50%)`-for-centering + shared-`fadeUp`-animation pattern
+existed anywhere else across this file, `billing.html`, or
+`lrxone-website/index.html` — `.hero-scroll` is the only element using
+it, so this was a contained, one-off bug, not a systemic pattern.
+
+Verified `index.html` still parses cleanly.
+
 ## 2026-07-27 (yet later same day) — Renamed LRX Billing to LRX One Billing (trademark consolidation)
 
 User request: nest all products under the "LRX One" trademark rather

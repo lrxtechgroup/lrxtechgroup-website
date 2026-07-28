@@ -231,12 +231,17 @@
       position: absolute;
       bottom: 36px;
       left: 50%;
-      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      animation: fadeUp 0.8s 1.4s both;
+      /* Needs its own keyframes (not the shared fadeUp) because a CSS
+         animation's transform replaces the element's static transform
+         entirely rather than adding to it - reusing fadeUp here would
+         clobber the translateX(-50%) centering once the animation
+         reaches its 'to' state, and 'both' fill-mode keeps that broken
+         value applied forever after. */
+      animation: scrollFadeUp 0.8s 1.4s both;
     }
 
     .hero-scroll span {
@@ -582,6 +587,11 @@
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollFadeUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
 
     @keyframes scrollPulse {
