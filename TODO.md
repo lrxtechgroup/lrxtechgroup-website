@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (even later) — Enterprise pricing card updated to R6,499/mo
+
+- [x] Matches `lrxone`'s billing-service price fix (R3,999 → R6,499,
+      raised to bring AI cost back to a healthy ~43% of revenue). See
+      MEMORY.md and `lrxone`'s own MEMORY.md for the full reasoning.
+
 ## Fixed 2026-07-28 (the actual last one today) — Full pricing table revised on one.html
 
 - [x] All four tiers' pricing cards updated to match the real,

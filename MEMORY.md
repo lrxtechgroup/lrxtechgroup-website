@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (even later) — Enterprise pricing card updated (R3,999 → R6,499/mo)
+
+Follow-up to the pricing table revision below, which deliberately left
+Enterprise's price alone. `lrxone`'s billing-service was found to be
+losing ~70% of Enterprise's monthly revenue to AI API cost alone at the
+10,000 msg/mo allowance. Asked the user which lever to fix it with (cut
+the AI allowance, raise the price, or a hybrid); they chose raising the
+price. See `lrxone`'s own MEMORY.md for the full numbers and cost model.
+
+- `one.html`'s Enterprise pricing card: "R3,999/mo" → "R6,499/mo". No
+  other copy on the card changed — the AI Assistant allowance stated
+  there (10,000 msgs/mo) was already correct and stays unchanged.
+- Verified the file still parses cleanly.
+
+---
+
 ## 2026-07-28 (the actual last one today) — Full LRX One Core pricing table revised on one.html
 
 User asked to relook at the whole tier structure — competitive, and
