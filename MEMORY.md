@@ -6,6 +6,36 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 (later same day) — Both product cards set to "Coming Soon"
+
+User request, direct: neither LRX One nor LRX Billing is actually ready
+for a live "sign up now" push yet (LRX One's real infra isn't deployed to
+AWS yet, LRX Billing barely has any real implementation beyond the
+pricing page) — reflect that honestly on the site rather than advertise
+availability that isn't real.
+
+- Both product cards' badges changed from "Available Now"/"New" to
+  "Coming Soon" (reusing the existing `.product-badge.coming-soon` CSS
+  class, already defined for the old placeholder card). Kept the real
+  descriptions/feature lists at full visual weight — unlike the old
+  generic "LRX | ___" placeholder, these describe real, specific
+  products, just not ones open for signup yet.
+- Both cards' CTAs changed from direct links into the live apps
+  (`lrxone.com`, `/billing.html`) to `mailto:` "Register Interest" links
+  — a lower-commitment ask that doesn't send visitors into a signup flow
+  sitting on infrastructure that isn't actually live in production.
+- Also caught and fixed a resulting inconsistency on the same page: the
+  nav bar still had a prominent gold "LRX One →" button linking straight
+  to the live app — directly contradicting "Coming Soon" two sections
+  down. Changed it to a neutral "Contact" CTA (same button styling,
+  points to `#contact` instead).
+- Left the hero buttons (`Our Products`/`About Us`) and the contact
+  section's `lrxone.com` link alone — neither implies live signup, both
+  are already informational/neutral.
+- Verified `index.html` still parses cleanly.
+
+---
+
 ## 2026-07-27 — Added the real LRX Billing product page, resolved the "Coming Soon" placeholder
 
 Part of working through `lrxtechgroup/lrxone`'s `CLAUDE_TODO.md` (item
