@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (later still) — Growth and Business pricing cards updated (price-per-user ladder)
+
+Follow-up to the Enterprise margin fix below. The user wanted
+subscription price ÷ user cap to decrease as tier increases; Starter and
+Enterprise already did (R99.50/user → R64.99/user) but Growth and
+Business both undershot Enterprise's ratio, breaking the curve. Fixed by
+raising list price only (user caps untouched) — see `lrxone`'s own
+MEMORY.md for the full reasoning and the geometric interpolation used to
+land on the numbers.
+
+- `one.html`: Growth card "R499/mo" → "R899/mo", Business card
+  "R1,299/mo" → "R2,299/mo". No other copy on either card changed.
+- Verified the file still parses cleanly.
+
+---
+
 ## 2026-07-28 (even later) — Enterprise pricing card updated (R3,999 → R6,499/mo)
 
 Follow-up to the pricing table revision below, which deliberately left

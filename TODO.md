@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (later still) — Growth/Business pricing cards updated (price-per-user ladder)
+
+- [x] Matches `lrxone`'s billing-service price change (Growth R499→R899,
+      Business R1,299→R2,299 — user caps unchanged). See MEMORY.md and
+      `lrxone`'s own MEMORY.md for the full reasoning.
+
 ## Fixed 2026-07-28 (even later) — Enterprise pricing card updated to R6,499/mo
 
 - [x] Matches `lrxone`'s billing-service price fix (R3,999 → R6,499,
