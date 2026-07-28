@@ -3,6 +3,18 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (LRX One umbrella) — Products section now names LRX One as the suite
+
+- [x] `index.html`'s `#products` section showed LRX One Core and LRX One
+      Billing as two independent cards with no unifying brand mention —
+      confirmed via grep that "LRX One" (standalone) appeared nowhere on
+      this page before this fix. Added an eyebrow ("LRX One — Our
+      Product Suite") and a one-line intro above the two cards
+      explaining both products are part of LRX One. User explicitly
+      chose the light-touch option (add a header, don't merge the
+      cards) over a bigger restructure. See MEMORY.md and
+      `lrxone-website`'s own MEMORY.md for the full context.
+
 ## Fixed 2026-07-28 (footer follow-up) — Footer link ordering/completeness
 
 - [x] `index.html`'s footer had Privacy out of order (after Contact

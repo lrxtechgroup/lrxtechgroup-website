@@ -6,6 +6,40 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (LRX One umbrella) — Named LRX One as the product suite on the homepage
+
+Follow-up to work done this session on `lrxone-website`: that site's
+legal pages and sign-in page were corrected twice — first to acknowledge
+`app.lrxone.com` serves both LRX One Core and LRX One Billing, then
+again to frame "LRX One" correctly as LRX Tech Group's actual umbrella
+product/suite rather than merely "the shared login." While fixing that
+second point, checked whether this site (the actual corporate homepage)
+reflected the same relationship anywhere — it didn't. `index.html`'s
+`#products` section showed LRX One Core and LRX One Billing as two
+fully independent, equal product cards with zero "LRX One" umbrella
+mentions (confirmed via grep, not assumed).
+
+Asked the user how far to take the fix: leave it, add a light umbrella
+header above the existing cards, or restructure into one merged "LRX
+One" section with Core/Billing as modules. **User chose the light-touch
+option.**
+
+- `#products`' header now reads: eyebrow "LRX One — Our Product Suite",
+  then the existing headline, then a new one-line intro: "One account,
+  two products — LRX One Core and LRX One Billing are both part of LRX
+  One, LRX Tech Group's product suite."
+- Added `.products-header .section-body { margin: 0 auto; }` since
+  `.section-body` (used once before, in a left-aligned context) needed
+  explicit centering to sit correctly inside this already-centered
+  header block.
+- The two product cards themselves are untouched — same content,
+  same layout, same CTAs.
+- Verified with a Playwright screenshot of just the `#products` section
+  (not the whole page) rather than relying on HTML validity alone, since
+  this was a visual/layout change.
+
+---
+
 ## 2026-07-28 (footer follow-up) — Fixed footer link ordering/completeness across legal pages
 
 User asked to check `billing.html`'s footer against `lrxone-website` —
