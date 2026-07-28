@@ -3,6 +3,26 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (mobile audit) — Footer links overflowing at phone widths
+
+- [x] User asked whether today's changes had been checked on mobile —
+      they hadn't, only at a 1440px desktop viewport. Ran an automated
+      overflow check (Playwright, comparing `scrollWidth` vs
+      `clientWidth`) across all 7 pages on this site at 375px and
+      768px. Found real horizontal overflow on `index.html`, `one.html`,
+      and `billing.html` at 375px only (+291px / +244px / +164px) —
+      `terms.html`/`privacy.html`/`refund-policy.html`/
+      `cancellation-policy.html` were all clean.
+- [x] Root cause: `.footer-links { display: flex; gap: 24px; }` was
+      missing `flex-wrap: wrap` on these three pages (the four legal
+      pages built from scratch this session had it correctly). Not
+      a problem with the original ~5-link footer, but became one once
+      today's work grew each footer to 8+ links (Terms, Privacy, Refund
+      Policy, Cancellation Policy all added across earlier commits
+      today) without checking mobile wrap behavior at the time. Added
+      `flex-wrap: wrap` to all three. Re-verified: zero overflow at
+      both widths on all 7 pages.
+
 ## Fixed 2026-07-28 (LRX One umbrella, part 3) — Pricing sections on both product pages
 
 - [x] User asked to check `billing.html`'s pricing section specifically.

@@ -6,6 +6,41 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (mobile audit) — Found and fixed real footer overflow on three pages
+
+User asked whether the day's work had been verified on mobile — every
+prior check this session used a single 1440px desktop Playwright
+viewport. Ran a proper sweep: automated overflow detection
+(`document.documentElement.scrollWidth` vs `clientWidth`) across all 7
+pages on this site at 375px and 768px, using the same Playwright +
+pre-installed Chromium setup as earlier in the session (Node, since no
+Python `playwright` package is installed here).
+
+**Real bug found**: `index.html`, `one.html`, and `billing.html` all
+overflowed horizontally by 164-291px at 375px (768px was clean on all
+three). Traced it with a script that walks every element and reports
+any whose bounding box extends past the viewport — the culprit was
+`.footer-links`, whose CSS (`display: flex; gap: 24px; list-style:
+none;`) never had `flex-wrap: wrap`. That wasn't a problem when each
+footer had ~5 links, but today's earlier commits grew all three footers
+to 8+ links (Terms, Privacy, Refund Policy, Cancellation Policy, added
+piecemeal across several commits) without anyone checking mobile wrap
+behavior at the time — the four legal pages built from scratch this
+session got `flex-wrap: wrap` correctly from the start, these three
+pre-existing pages didn't. Added the missing property to all three;
+re-ran the overflow check and confirmed 0px overflow across all 7 pages
+at both widths.
+
+Also visually confirmed (screenshots, not just the automated check) that
+the products-section intro line and both pricing-section sub-lines added
+earlier today reflow correctly at 375px — no issues found there.
+
+See `lrxone-website`'s own MEMORY.md for a second, related bug this same
+audit found on that site's nav (not a footer issue, but the same root
+cause of "grew the page today without checking mobile").
+
+---
+
 ## 2026-07-28 (LRX One umbrella, part 3) — Pricing sections now mention the suite
 
 Third pass in this thread. User specifically asked to check
