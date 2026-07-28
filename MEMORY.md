@@ -6,6 +6,62 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (user-reported) — Fixed orphaned pricing-grid cell + redundant nav item
+
+Two real bugs the user spotted from actual device screenshots, on top of
+everything the earlier automated mobile audit already caught.
+
+**Bug 1 — the gold box.** User sent a screenshot of `billing.html`'s
+pricing section on a real device showing an unexplained olive/gold box
+occupying two grid cells next to the Enterprise card. Traced it to
+`.pricing-grid`'s CSS: `grid-template-columns: repeat(auto-fit,
+minmax(240px, 1fr))` combined with `background: var(--gold-line); gap:
+1px;` — a common trick where the container's own background shows
+through 1px gaps to draw thin gold gridlines between cards. That trick
+depends on every grid cell being filled. With exactly 4 pricing cards,
+`auto-fit` computes however many 240px+ columns fit the container width;
+at any width where that resolves to 3 columns, the 4th card (Enterprise)
+sits alone in row 2, leaving 2 grid cells empty — and the gold
+background fills those empty cells instead of being invisible. The
+screenshot's device was at a CSS viewport width (~923-1080px logical)
+that landed exactly in that "3 fits, 4 doesn't" zone.
+
+Fixed on both `billing.html` and `one.html` (identical CSS, identical
+4-card grid) by replacing `auto-fit` with explicit breakpoints —
+1 column by default, 2 at 620px+, 4 at 1020px+ — which only ever
+produces column counts that divide 4 evenly (1, 2, or 4), making the
+3-column orphan state impossible rather than just less likely.
+
+While fixing it, checked every other `auto-fit` grid on both pages for
+the same pattern (background-fill trick + item count) and found
+`.solution-grid` (6 items) had it too — and unlike the pricing grid,
+this one was visibly broken even at a normal desktop width (1300px
+showed 4 columns with 6 items, 2 empty cells). Fixed identically:
+explicit 1 → 2 → 3 column breakpoints (6 divides evenly by 1, 2, 3, 6 —
+never 4 or 5). `.problem-grid` and `.contact-grid` don't have the
+background-fill trick (individual items carry their own background, not
+the grid container), so an uneven split there wouldn't produce a visible
+color-mismatch — left alone as lower-priority.
+
+Verified with an automated check across 8 widths (375–1440px) × 2 pages
+× 2 grids, measuring whether each grid's last item actually reaches the
+container's right edge (the geometric signature of a filled vs. orphaned
+last row) — zero orphans found anywhere after the fix. Also visually
+reproduced the exact original bug at the screenshot's own viewport width
+before fixing, then confirmed the same viewport renders as a clean 2×2
+after.
+
+**Bug 2 — redundant nav item.** Second screenshot, same session:
+`index.html`'s header nav read "About / Products / LRX One Billing /
+Leadership / Contact" — Billing had its own standalone nav entry while
+Core never did, and "Products" already anchors to the section containing
+both product cards. Removed the standalone "LRX One Billing" `<li>` from
+the header nav. Left the identical link in the footer alone — footers
+routinely deep-link to specific pages beyond the main nav, and that
+wasn't what was flagged.
+
+---
+
 ## 2026-07-28 (mobile audit) — Found and fixed real footer overflow on three pages
 
 User asked whether the day's work had been verified on mobile — every

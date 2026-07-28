@@ -3,6 +3,37 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (user-reported) — Orphaned gold box in pricing grids + nav redundancy
+
+- [x] User sent a real-device screenshot of `billing.html`'s pricing
+      section showing an unexplained olive/gold box next to the
+      Enterprise card. Root cause: `.pricing-grid` used
+      `grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))`
+      with a `background: var(--gold-line)` + `gap: 1px` trick to draw
+      thin gridlines — but with exactly 4 cards, any viewport width
+      that computes 3 columns leaves 1 orphaned card and 2 empty grid
+      cells in the last row, and the container's own gold background
+      shows through those empty cells. Fixed on both `billing.html` and
+      `one.html` (identical CSS, identical 4-card layout) by replacing
+      `auto-fit` with explicit breakpoints (1 → 2 → 4 columns) that only
+      ever produce column counts dividing 4 evenly, making the orphan
+      state mathematically impossible.
+- [x] Found the same bug pattern on `.solution-grid` (6 items, same
+      gold-background-fill trick) on both pages while checking — this
+      one was visible even on wide desktop (1300px), not just a mobile
+      edge case. Fixed the same way: explicit 1 → 2 → 3 column
+      breakpoints (6 divides evenly by 1, 2, 3, or 6, never 4 or 5).
+      Verified with an automated sweep (8 widths × 2 pages × 2 grids,
+      checking each grid's last item reaches the container's edge) —
+      zero orphans anywhere now.
+- [x] Second user report, same session: `index.html`'s header nav had
+      "LRX One Billing" as its own standalone item alongside "Products"
+      — redundant and asymmetric (Core was never in the nav on its own).
+      Removed the standalone nav entry; "Products" already anchors to
+      the section containing both product cards. Left the footer's
+      "LRX One Billing" link alone — that's a normal footer deep-link,
+      not what was flagged.
+
 ## Fixed 2026-07-28 (mobile audit) — Footer links overflowing at phone widths
 
 - [x] User asked whether today's changes had been checked on mobile —

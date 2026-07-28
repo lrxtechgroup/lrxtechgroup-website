@@ -145,7 +145,9 @@
     .problem-card p { font-size: 14px; line-height: 1.7; color: var(--light-grey); }
 
     /* ── SOLUTION ─────────────────────────────────────────────────────────── */
-    .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1100px; margin: 0 auto; }
+    .solution-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1100px; margin: 0 auto; }
+    @media (min-width: 560px) { .solution-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 840px) { .solution-grid { grid-template-columns: repeat(3, 1fr); } }
     .solution-item { background: var(--black); padding: 36px 32px; transition: background 0.2s; }
     .solution-item:hover { background: #1a1a1a; }
     .solution-icon {
@@ -177,7 +179,9 @@
     .code-block .cm { color: var(--grey); font-style: italic; }
 
     /* ── PRICING ──────────────────────────────────────────────────────────── */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
+    @media (min-width: 620px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1020px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
     .pricing-card.featured { background: var(--dark); }
     .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); }
