@@ -29,6 +29,9 @@ done — don't just accumulate; keep this reflecting real, current state.
 - [x] Both product cards (LRX One, LRX Billing) set to "Coming Soon" —
       neither is actually live/deployed yet. Nav CTA softened to match.
       See MEMORY.md.
+- [x] `billing.html` given the same treatment (pricing CTAs were
+      already fine, checked - but its own nav "LRX One →" button and
+      missing "Coming Soon" badge weren't). See MEMORY.md.
 
 ## Note for later
 

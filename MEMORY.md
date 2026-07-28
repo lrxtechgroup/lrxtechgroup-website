@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 (even later same day) — Same "Coming Soon" treatment on billing.html
+
+User asked to double-check `billing.html`'s pricing CTAs specifically.
+They were already fine — every pricing card CTA was already `mailto:`
+("Talk to Us"/"Contact Sales"), never a live signup/checkout flow, so
+nothing there implied availability that isn't real.
+
+Checking turned up two things that *did* need the same fix already
+applied to `index.html`:
+- The nav still had the same gold "LRX One →" button linking straight
+  to `lrxone.com` — same class of inconsistency fixed on `index.html`
+  earlier today, missed here since `billing.html` was written before
+  that fix. Changed to a "Contact" CTA (`mailto:`), same button styling.
+- No "Coming Soon" signal existed on this page at all, unlike the other
+  two. Added the same `.hero-badge.coming-soon`-style pill above the
+  hero eyebrow (new CSS, matching the pattern from `lrxone-website`).
+- Softened the hero's "Get Started" button (already `mailto:`, just the
+  label) to "Register Interest", matching the other pages' wording.
+- Verified `billing.html` still parses cleanly.
+
 ## 2026-07-27 (later same day) — Both product cards set to "Coming Soon"
 
 User request, direct: neither LRX One nor LRX Billing is actually ready
