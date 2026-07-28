@@ -3,6 +3,37 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (even later still) — Terms, Refund, and Cancellation pages added
+
+- [x] Built `terms.html`, `refund-policy.html`, `cancellation-policy.html`
+      at the site root — this was a real PayFast account-verification
+      requirement (see MEMORY.md), and none of the three existed on this
+      site before (only `lrxone-website`, a separate repo, had them).
+      Content adapted from `lrxone-website`'s versions but generalised to
+      cover both products hosted here (LRX One Core and LRX One Billing)
+      instead of being LRX One Core-specific.
+- [x] Confirmed no "free tier" language exists anywhere on the site
+      (already clean from the earlier STARTER-pricing pass) and added
+      explicit "we don't offer a free tier" call-outs to the Refund and
+      Cancellation pages so a reader can't assume otherwise.
+- [x] Billing/finance-related contact points (refund requests,
+      cancellation requests, the Refund/Cancellation pages' general
+      contact sections) now route to `billing@lrxtechgroup.com` instead
+      of `sales@lrxtechgroup.com`. Pre-sales inquiries (pricing-page
+      CTAs like "Register Interest" / "Talk to Us" / "Contact Sales" on
+      `index.html`/`one.html`/`billing.html`) were deliberately left on
+      `sales@` — those are prospective-customer inquiries, not billing
+      correspondence.
+- [x] Linked all three new pages from the footers of `index.html`,
+      `one.html`, and `billing.html`.
+- [ ] **Not done, flagged**: the new pages reference "our privacy
+      practices" via a `mailto:...Privacy%20Policy%20Request` link
+      rather than a real `/privacy.html` page — this site still has no
+      actual Privacy Policy page (tracked separately below, from
+      2026-07-25). If PayFast (or anyone else) pushes back on that being
+      insufficient, a real privacy.html is the fix, not more mailto
+      links.
+
 ## Fixed 2026-07-28 (later still) — Growth/Business pricing cards updated (price-per-user ladder)
 
 - [x] Matches `lrxone`'s billing-service price change (Growth R499→R899,
@@ -93,6 +124,7 @@ done — don't just accumulate; keep this reflecting real, current state.
 
 ## Not investigated yet
 
-- [ ] No test/build/lint tooling exists for this repo (it's now three
-      static HTML files, `index.html` + `billing.html` + `one.html`) —
+- [ ] No test/build/lint tooling exists for this repo (it's now six
+      static HTML files: `index.html` + `billing.html` + `one.html` +
+      `terms.html` + `refund-policy.html` + `cancellation-policy.html`) —
       confirm that's intentional before adding any tooling unprompted.

@@ -6,6 +6,63 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (even later still) — Added Terms of Service, Refund Policy, and Cancellation Policy
+
+User instruction: this site (lrxtechgroup.com, the corporate parent site
+hosting both LRX One Core and LRX One Billing) needed all three legal
+pages — same underlying PayFast account-verification requirement that
+prompted building them on `lrxone-website` a few commits back, but this
+site had none of the three of its own. Also flagged two things to fix
+while building them: there's no free tier anymore (confirmed already
+true everywhere on this site), and finance/billing-related email should
+go to `billing@lrxtechgroup.com` instead of `sales@lrxtechgroup.com`.
+
+Built `terms.html`, `refund-policy.html`, `cancellation-policy.html` at
+the site root, styled to match this site's actual nav/footer components
+(the `LRX TECH` logo mark and footer used across `index.html`/`one.html`/
+`billing.html`) rather than copy-pasting `lrxone-website`'s "LRX | ONE"
+nav verbatim. Content itself is adapted from `lrxone-website`'s versions
+(same section structure, same South African legal framing — PayFast,
+ZAR, POPIA-adjacent data handling, South African governing law) but
+**generalised to cover both products hosted here** instead of being LRX
+One Core-specific: "our products", not "LRX One Core", with links out to
+each product's own pricing page (`/one.html`, `/billing.html`).
+
+**Email routing** — finance/billing-specific contact points now go to
+`billing@lrxtechgroup.com`: refund requests, cancellation requests, and
+the Refund/Cancellation pages' own "Contact us" sections. Terms of
+Service's contact section splits the two explicitly (general questions →
+`sales@`, billing/payment/refund/cancellation questions → `billing@`).
+Deliberately did **not** touch the pre-sales mailto links elsewhere on
+the site (pricing-page CTAs like "Register Interest" / "Talk to Us" /
+"Contact Sales" on `index.html`/`one.html`/`billing.html`) — those are
+prospective-customer inquiries about buying the product, not billing
+correspondence about an existing account, so they stay on `sales@`.
+
+**No free tier** — already true everywhere on this site (confirmed via a
+repo-wide `\bfree\b` search — zero matches before this change; the
+STARTER tier was priced at R199/mo back on 2026-07-28 and nothing since
+has reintroduced free-tier language). Added it as an explicit statement
+on the Refund and Cancellation pages anyway ("we don't offer a free
+tier") so a reader can't assume otherwise from the "downgrade to Starter"
+framing that `lrxone-website`'s original cancellation-policy.html used
+(that page pre-dates the STARTER pricing change and still said "the free
+Starter tier" — not fixed here, since that's a different repo).
+
+**Known gap, not fixed here**: the new pages' data-handling sections
+point to a `mailto:...Privacy%20Policy%20Request` link rather than a
+real Privacy Policy page — this site still doesn't have one (see
+2026-07-25 below). Same stopgap as the existing footer `Privacy` link,
+not a new problem, but worth a real `/privacy.html` at some point rather
+than perpetuating the mailto pattern.
+
+- Linked all three new pages from the footers of `index.html`,
+  `one.html`, and `billing.html`.
+- Verified all six HTML files (three new + three existing, since the
+  footer edits touched them) still parse cleanly.
+
+---
+
 ## 2026-07-28 (later still) — Growth and Business pricing cards updated (price-per-user ladder)
 
 Follow-up to the Enterprise margin fix below. The user wanted

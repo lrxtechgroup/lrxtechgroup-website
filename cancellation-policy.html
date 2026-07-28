@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancellation Policy — LRX Tech Group</title>
+  <meta name="description" content="LRX Tech Group Cancellation Policy — how to cancel your LRX One Core or LRX One Billing subscription and what happens afterward." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpolygon points='6,6 18,2 30,6 30,30 18,34 6,30' fill='%230E0E0E' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ctext x='18' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-size='10' font-weight='900' fill='%23D4AF37'%3ELRX%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #D4AF37;
+      --gold-dark:   #B8922E;
+      --gold-dim:    rgba(212,175,55,0.12);
+      --gold-line:   rgba(212,175,55,0.3);
+      --black:       #0E0E0E;
+      --dark:        #1A1A1A;
+      --grey:        #555555;
+      --light-grey:  #888888;
+      --white:       #FFFFFF;
+      --font:        'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { background: #0E0E0E; scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--black); color: var(--white); overflow-x: hidden; }
+
+    /* ── NAVIGATION ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(14,14,14,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text .lrx { font-size: 16px; font-weight: 800; letter-spacing: 0.12em; color: var(--gold); }
+    .nav-logo-text .tech { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; color: var(--light-grey); text-transform: uppercase; }
+
+    .nav-back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 150px 5% 100px; }
+
+    .doc-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .doc-title { font-size: clamp(32px, 5vw, 48px); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .doc-updated { font-size: 13px; color: var(--light-grey); margin-bottom: 56px; }
+
+    .doc-intro { font-size: 16px; line-height: 1.8; color: var(--light-grey); margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--gold-line); }
+
+    section.doc-section { margin-bottom: 48px; }
+    section.doc-section h2 {
+      font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: var(--white);
+      margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+    section.doc-section h2 .num { color: var(--gold); margin-right: 10px; }
+    section.doc-section p { font-size: 15px; line-height: 1.8; color: var(--light-grey); margin-bottom: 14px; }
+    section.doc-section a { color: var(--gold); text-decoration: none; }
+    section.doc-section a:hover { text-decoration: underline; }
+    section.doc-section strong { color: var(--white); font-weight: 600; }
+
+    .callout {
+      background: var(--dark);
+      border: 1px solid var(--gold-line);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin: 14px 0;
+    }
+    .callout p { margin-bottom: 0; }
+
+    footer {
+      padding: 40px 5%; border-top: 1px solid var(--gold-line);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-size: 16px; font-weight: 900; letter-spacing: 0.1em; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--grey); }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      main { padding-top: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <polygon points="6,6 18,2 30,6 30,30 18,34 6,30" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <text x="18" y="23" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="lrx">LRX TECH</span>
+        <span class="tech">Group</span>
+      </div>
+    </a>
+    <a class="nav-back" href="/">← Back to lrxtechgroup.com</a>
+  </nav>
+
+  <main>
+    <p class="doc-eyebrow">Legal</p>
+    <h1 class="doc-title">Cancellation Policy</h1>
+    <p class="doc-updated">Last updated: 28 July 2026</p>
+
+    <p class="doc-intro">
+      This Cancellation Policy explains how to cancel a subscription to an
+      LRX Tech Group product — including <a href="/one.html">LRX One
+      Core</a> and <a href="/billing.html">LRX One Billing</a> — and what
+      happens afterward. It forms part of, and should be read alongside,
+      our <a href="/terms.html">Terms of Service</a> and
+      <a href="/refund-policy.html">Refund Policy</a>.
+    </p>
+
+    <section class="doc-section">
+      <h2><span class="num">1.</span>How to cancel</h2>
+      <p>
+        You may cancel your subscription at any time, for any reason,
+        from your account's billing settings, or by contacting
+        <a href="mailto:billing@lrxtechgroup.com?subject=Cancel%20Subscription">billing@lrxtechgroup.com</a>.
+        No reason is required, and there's no minimum term or
+        early-cancellation fee.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">2.</span>When it takes effect</h2>
+      <div class="callout">
+        <p>
+          Cancellation takes effect at the <strong>end of your current
+          billing period</strong>. You keep full access, at your current
+          plan, through the end of that period — cancelling does not cut
+          off access immediately.
+        </p>
+      </div>
+      <p>
+        Provided your cancellation is processed before your next billing
+        date, you will not be charged for the following period. See our
+        <a href="/refund-policy.html">Refund Policy</a> for what happens
+        if a charge is made in error after your cancellation has taken
+        effect.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">3.</span>Downgrading vs. cancelling</h2>
+      <p>
+        Switching to a lower-tier paid plan is a plan change rather than a
+        cancellation, and takes effect according to the terms shown at
+        the time you make the change in your account's billing settings.
+        It doesn't end your account's access the way a full cancellation
+        does. All of our plans are paid subscriptions — we don't offer a
+        free tier to downgrade to.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">4.</span>Your data after cancellation</h2>
+      <p>
+        Cancelling does not immediately delete your organisation's data.
+        Customer Data is retained for a period after cancellation, giving
+        you the opportunity to export it or reactivate your subscription,
+        and is then deleted in line with our privacy practices — a
+        summary is available on request from
+        <a href="mailto:sales@lrxtechgroup.com?subject=Privacy%20Policy%20Request">sales@lrxtechgroup.com</a>.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">5.</span>Contact us</h2>
+      <p>
+        Questions about cancelling, or any billing or finance-related
+        matter, can be directed to
+        <a href="mailto:billing@lrxtechgroup.com">billing@lrxtechgroup.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-logo">LRX TECH GROUP</span>
+    <span class="footer-copy">© <span id="footer-year"></span> LRX Tech Group (Pty) Ltd · South Africa</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/terms.html">Terms of Service</a></li>
+      <li><a href="/refund-policy.html">Refund Policy</a></li>
+      <li><a href="mailto:billing@lrxtechgroup.com">Billing</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

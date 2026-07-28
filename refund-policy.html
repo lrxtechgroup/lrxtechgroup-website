@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy — LRX Tech Group</title>
+  <meta name="description" content="LRX Tech Group Refund Policy — when subscription fees for LRX One Core, LRX One Billing, and our other products are and aren't refunded." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpolygon points='6,6 18,2 30,6 30,30 18,34 6,30' fill='%230E0E0E' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ctext x='18' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-size='10' font-weight='900' fill='%23D4AF37'%3ELRX%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #D4AF37;
+      --gold-dark:   #B8922E;
+      --gold-dim:    rgba(212,175,55,0.12);
+      --gold-line:   rgba(212,175,55,0.3);
+      --black:       #0E0E0E;
+      --dark:        #1A1A1A;
+      --grey:        #555555;
+      --light-grey:  #888888;
+      --white:       #FFFFFF;
+      --font:        'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { background: #0E0E0E; scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--black); color: var(--white); overflow-x: hidden; }
+
+    /* ── NAVIGATION ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(14,14,14,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-text .lrx { font-size: 16px; font-weight: 800; letter-spacing: 0.12em; color: var(--gold); }
+    .nav-logo-text .tech { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; color: var(--light-grey); text-transform: uppercase; }
+
+    .nav-back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 150px 5% 100px; }
+
+    .doc-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .doc-title { font-size: clamp(32px, 5vw, 48px); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .doc-updated { font-size: 13px; color: var(--light-grey); margin-bottom: 56px; }
+
+    .doc-intro { font-size: 16px; line-height: 1.8; color: var(--light-grey); margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--gold-line); }
+
+    section.doc-section { margin-bottom: 48px; }
+    section.doc-section h2 {
+      font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: var(--white);
+      margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+    section.doc-section h2 .num { color: var(--gold); margin-right: 10px; }
+    section.doc-section p { font-size: 15px; line-height: 1.8; color: var(--light-grey); margin-bottom: 14px; }
+    section.doc-section a { color: var(--gold); text-decoration: none; }
+    section.doc-section a:hover { text-decoration: underline; }
+    section.doc-section strong { color: var(--white); font-weight: 600; }
+
+    .callout {
+      background: var(--dark);
+      border: 1px solid var(--gold-line);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin: 14px 0;
+    }
+    .callout p { margin-bottom: 0; }
+
+    footer {
+      padding: 40px 5%; border-top: 1px solid var(--gold-line);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-size: 16px; font-weight: 900; letter-spacing: 0.1em; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--grey); }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      main { padding-top: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <polygon points="6,6 18,2 30,6 30,30 18,34 6,30" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <text x="18" y="23" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="900" fill="#D4AF37">LRX</text>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="lrx">LRX TECH</span>
+        <span class="tech">Group</span>
+      </div>
+    </a>
+    <a class="nav-back" href="/">← Back to lrxtechgroup.com</a>
+  </nav>
+
+  <main>
+    <p class="doc-eyebrow">Legal</p>
+    <h1 class="doc-title">Refund Policy</h1>
+    <p class="doc-updated">Last updated: 28 July 2026</p>
+
+    <p class="doc-intro">
+      This Refund Policy explains when fees paid for LRX Tech Group
+      products — including <a href="/one.html">LRX One Core</a> and
+      <a href="/billing.html">LRX One Billing</a> — are, and aren't,
+      refunded. It forms part of, and should be read alongside, our
+      <a href="/terms.html">Terms of Service</a> and
+      <a href="/cancellation-policy.html">Cancellation Policy</a>. All of
+      our paid plans are subscription plans — we don't offer a free tier.
+    </p>
+
+    <section class="doc-section">
+      <h2><span class="num">1.</span>General policy</h2>
+      <p>
+        Fees already paid are <strong>non-refundable</strong>, except as
+        set out in Section 2 below or where required by applicable law.
+        This applies equally to monthly and annual subscription charges
+        and renewal charges — cancelling partway through a billing
+        period, or choosing not to use the service after paying for it,
+        does not entitle you to a refund for that period. See our
+        <a href="/cancellation-policy.html">Cancellation Policy</a> for
+        when a cancellation takes effect.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">2.</span>Charged after cancelling</h2>
+      <p>
+        If you cancelled your subscription in accordance with our
+        <a href="/cancellation-policy.html">Cancellation Policy</a> and
+        were still charged for a billing period starting after that
+        cancellation took effect, that charge was made in error.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>You're entitled to a full refund</strong> of any charge
+          billed after your cancellation has taken effect. This is the one
+          circumstance under which we proactively refund fees already
+          paid.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">3.</span>How to request a refund</h2>
+      <p>
+        To request a refund under Section 2, contact
+        <a href="mailto:billing@lrxtechgroup.com?subject=Refund%20Request">billing@lrxtechgroup.com</a>
+        with your account/organisation name and the date of the charge in
+        question. We review every request and respond within 5 business
+        days.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">4.</span>How refunds are processed</h2>
+      <p>
+        Approved refunds are issued to the original payment method used
+        for the charge, via PayFast or the applicable payment processor
+        for your account. Please allow up to 10 business days for the
+        refund to reflect, depending on your bank or card issuer — that
+        final step is outside our control.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="num">5.</span>Contact us</h2>
+      <p>
+        Questions about this policy, or any billing or finance-related
+        matter, can be directed to
+        <a href="mailto:billing@lrxtechgroup.com">billing@lrxtechgroup.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-logo">LRX TECH GROUP</span>
+    <span class="footer-copy">© <span id="footer-year"></span> LRX Tech Group (Pty) Ltd · South Africa</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/terms.html">Terms of Service</a></li>
+      <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
+      <li><a href="mailto:billing@lrxtechgroup.com">Billing</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
