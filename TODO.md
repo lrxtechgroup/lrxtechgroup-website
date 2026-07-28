@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (very last one today) — STARTER pricing updated (no longer free)
+
+- [x] `one.html`'s pricing card and section headline updated to match the
+      real R199/mo Starter price. See MEMORY.md.
+
 ## Open questions (need user input, not yet actionable)
 
 - [ ] Scope of any future "LRX One" work on this specific site was never

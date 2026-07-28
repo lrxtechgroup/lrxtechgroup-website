@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (last one today) — STARTER tier priced at R199/mo instead of free
+
+User decision ("we not going to offer a free one, rather at a fairly low
+fee") — asked for the exact number rather than picking one, since this is
+a real billing-config change reflected here as marketing copy, not just a
+wording tweak. Confirmed R199/mo. See `lrxone`'s own MEMORY.md for the
+actual `billing-service` config change this page now matches.
+
+- `one.html`'s Starter pricing card: "Free" → "R199/mo".
+- Pricing section headline "Start free. Scale when you're ready." → "Start
+  small. Scale when you're ready." — the old headline was a direct claim
+  about a Starter price that no longer exists.
+- Verified `one.html` still parses cleanly.
+
+---
+
 ## 2026-07-28 (yet later same day) — Renamed the flagship product to "LRX One Core"
 
 User request, following a short naming discussion: for trademark
