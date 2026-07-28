@@ -6,6 +6,43 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (final one today) — Built a real privacy.html
+
+Direct follow-up to the Terms/Refund/Cancellation work immediately
+below, which had left privacy handling as a `mailto:...Privacy%20Policy
+%20Request` placeholder — a known, explicitly-flagged gap. User asked
+for the real page.
+
+Adapted `lrxone-website`'s `privacy.html` the same way the other three
+legal pages were adapted: matched this site's actual nav/footer
+components instead of copying the "LRX | ONE" branding, and generalised
+the body copy to cover both products hosted here ("our products", with
+links to `/one.html` and `/billing.html`) instead of being LRX One
+Core-specific. The processor table (AWS af-south-1, Anthropic, Stitch,
+PayFast, Stripe, Microsoft, self-hosted Keycloak) carried over unchanged
+— all of those are genuinely shared across both products, not specific
+to one. The Information Officer details (Brandon Le Roux /
+brandon@lrxtechgroup.com, Jessica Le Roux / jessica@lrxtechgroup.com,
+the registered address) are real and carried over unchanged from the
+source page.
+
+- Replaced every `mailto:...Privacy%20Policy%20Request` placeholder
+  site-wide: `index.html`'s footer, and the "your data" sections of
+  `terms.html` and `cancellation-policy.html` (both now link
+  `/privacy.html` directly instead of routing through an email request).
+- Added a Privacy Policy footer link to every page that didn't already
+  have one — `one.html`, `billing.html`, `terms.html`,
+  `refund-policy.html`, `cancellation-policy.html` — so it's reachable
+  from anywhere on the site, not just the homepage.
+- Verified all seven HTML files on the site still parse cleanly.
+
+This closes out the legal-pages gap PayFast's verification flagged
+(Terms, Refund, Cancellation, and now Privacy) — everything the
+"further information" request named is now real content on the site
+rather than a placeholder.
+
+---
+
 ## 2026-07-28 (even later still) — Added Terms of Service, Refund Policy, and Cancellation Policy
 
 User instruction: this site (lrxtechgroup.com, the corporate parent site

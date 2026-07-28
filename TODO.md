@@ -3,6 +3,22 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (final one today) — Real privacy.html built
+
+- [x] Built a real `privacy.html`, closing the gap flagged immediately
+      below and the older one from 2026-07-25. Adapted from
+      `lrxone-website`'s version, generalised to cover both products the
+      same way the other three legal pages were, with the real
+      Information Officer details (Brandon Le Roux / Jessica Le Roux)
+      carried over unchanged since they were already accurate. See
+      MEMORY.md.
+- [x] Replaced every `mailto:...Privacy%20Policy%20Request` placeholder
+      site-wide (`index.html`'s footer, and the "your data" sections of
+      `terms.html` and `cancellation-policy.html`) with real
+      `/privacy.html` links. Added a Privacy Policy link to every
+      footer that didn't already have one (`one.html`, `billing.html`,
+      `terms.html`, `refund-policy.html`, `cancellation-policy.html`).
+
 ## Fixed 2026-07-28 (even later still) — Terms, Refund, and Cancellation pages added
 
 - [x] Built `terms.html`, `refund-policy.html`, `cancellation-policy.html`
@@ -26,13 +42,8 @@ done — don't just accumulate; keep this reflecting real, current state.
       correspondence.
 - [x] Linked all three new pages from the footers of `index.html`,
       `one.html`, and `billing.html`.
-- [ ] **Not done, flagged**: the new pages reference "our privacy
-      practices" via a `mailto:...Privacy%20Policy%20Request` link
-      rather than a real `/privacy.html` page — this site still has no
-      actual Privacy Policy page (tracked separately below, from
-      2026-07-25). If PayFast (or anyone else) pushes back on that being
-      insufficient, a real privacy.html is the fix, not more mailto
-      links.
+- [x] The mailto-placeholder gap flagged here is now fixed — see the
+      entry above (real `privacy.html` built).
 
 ## Fixed 2026-07-28 (later still) — Growth/Business pricing cards updated (price-per-user ladder)
 
@@ -70,9 +81,9 @@ done — don't just accumulate; keep this reflecting real, current state.
 ## Fixed 2026-07-25
 
 - [x] Footer `/privacy` link pointed at a page that doesn't exist. Not
-      writing fabricated legal content — pointed it at a `mailto:`
-      instead. Real Privacy Policy content still needs to be written (by
-      the site owner) and linked once it exists.
+      writing fabricated legal content at the time — pointed it at a
+      `mailto:` instead. (Real Privacy Policy content was written and
+      linked on 2026-07-28 — see above.)
 - [x] Added favicon, `robots.txt`, and `sitemap.xml`.
 - [x] Footer copyright year was hardcoded "© 2025" — made it dynamic via
       a small inline script.
@@ -124,7 +135,8 @@ done — don't just accumulate; keep this reflecting real, current state.
 
 ## Not investigated yet
 
-- [ ] No test/build/lint tooling exists for this repo (it's now six
+- [ ] No test/build/lint tooling exists for this repo (it's now seven
       static HTML files: `index.html` + `billing.html` + `one.html` +
-      `terms.html` + `refund-policy.html` + `cancellation-policy.html`) —
-      confirm that's intentional before adding any tooling unprompted.
+      `terms.html` + `privacy.html` + `refund-policy.html` +
+      `cancellation-policy.html`) — confirm that's intentional before
+      adding any tooling unprompted.
