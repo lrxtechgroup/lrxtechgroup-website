@@ -3,6 +3,18 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (follow-up) — Same redundancy was also in index.html's footer
+
+- [x] The previous fix only removed "LRX One Billing" from the header
+      nav; it was also sitting directly next to "Products" in the
+      footer's link list. Removed it there too. Checked `one.html`'s
+      footer (has "LRX One Billing" next to "Sign In", no "Products"
+      link in that footer at all — not redundant, left alone) and
+      `billing.html`'s footer (links to "LRX One", the login, not
+      itself — not redundant either). Confirmed via grep that no other
+      "Products"/"LRX One Billing" adjacency remains anywhere on the
+      site.
+
 ## Fixed 2026-07-28 (user-reported) — Orphaned gold box in pricing grids + nav redundancy
 
 - [x] User sent a real-device screenshot of `billing.html`'s pricing

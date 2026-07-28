@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (follow-up) — Removed the same redundant nav item from the footer
+
+Direct follow-up to the previous fix, which only removed "LRX One
+Billing" from `index.html`'s header nav (it sat next to "Products",
+redundant since Products already covers both product cards). The same
+exact redundancy existed in that page's footer link list too — "LRX One
+Billing" right after "Products" again. Removed it there.
+
+Checked the other two pages for the same pattern before calling it done:
+`one.html`'s footer has "LRX One Billing" next to "Sign In" — that
+footer has no "Products" link at all, so it's not redundant, left alone.
+`billing.html`'s footer links to "LRX One" (the shared login), not to
+itself — also not redundant. Confirmed via grep that no
+"Products"/"LRX One Billing" adjacency remains anywhere on the site.
+
+---
+
 ## 2026-07-28 (user-reported) — Fixed orphaned pricing-grid cell + redundant nav item
 
 Two real bugs the user spotted from actual device screenshots, on top of
