@@ -51,12 +51,20 @@ done — don't just accumulate; keep this reflecting real, current state.
       `lrxone/services/billing-service`'s `application.yml` +
       `V2__pricing_marketplace.sql`. See MEMORY.md.
 
+## Fixed 2026-07-28 (later same day)
+
+- [x] Renamed the flagship product "LRX One" → "LRX One Core" (trademark
+      consolidation, parallel to the earlier LRX Billing → LRX One
+      Billing rename) — `index.html` product card wordmark/copy/mailto
+      subjects and `one.html` title/meta/hero/copy/every pricing CTA
+      subject line. See MEMORY.md.
+
 ## Note for later
 
-- [ ] When LRX One and/or LRX Billing actually go live (real production
-      infra deployed, real payment credentials configured), flip the
-      relevant card's badge back and restore the direct signup CTA/link
-      — don't forget this is currently deliberately understated.
+- [ ] When LRX One Core and/or LRX One Billing actually go live (real
+      production infra deployed, real payment credentials configured),
+      flip the relevant card's badge back and restore the direct signup
+      CTA/link — don't forget this is currently deliberately understated.
 
 ## Not investigated yet
 

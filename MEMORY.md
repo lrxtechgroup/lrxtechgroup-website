@@ -6,6 +6,41 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (yet later same day) — Renamed the flagship product to "LRX One Core"
+
+User request, following a short naming discussion: for trademark
+efficiency, "LRX One" should be a pure house mark that every product
+nests under (already the pattern for "LRX One Billing"), not
+double-duty as both the house mark AND the specific name of the
+flagship product. Landed on **Core** as the flagship's suffix — matches
+existing copy ("Enterprise Operating System"), cheapest to roll out,
+and signals "the foundational product other things nest under" without
+overclaiming.
+
+- `index.html`: product card wordmark `LRX | ONE` → `LRX ONE | CORE`
+  (same gold-mark + pipe + plain-suffix convention already used for the
+  Billing card), meta description, About section body copy, and the
+  Register Interest mailto subject line.
+- `one.html`: `<title>`, meta description, hero eyebrow (now literally
+  names the product — "LRX One Core — Enterprise Operating System" —
+  matching how `billing.html`'s eyebrow names its own product), hero
+  desc paragraph, features section intro, CTA banner copy, and every
+  mailto subject line across the hero, all four pricing tiers, and the
+  CTA banner (five occurrences total, `sed`-verified none missed).
+- Also renamed in `lrxone-website` (nav-brand and footer wordmarks,
+  title/meta, hero desc, learn-more strip, footer mailto subject, and
+  every "LRX One" reference in `privacy.html`/`terms.html`'s legal text
+  — the defined product name in those documents needed to match too) —
+  see that repo's own MEMORY.md.
+- Also renamed the small set of literal "LRX One" strings exposed in
+  the app frontend itself (`lrxone/frontend`): the sidebar logo, the
+  login page welcome heading, the app-loading spinner text, the accept-
+  invitation copy, and one workflow-template notification subject —
+  five files, all just literal UI strings, no logic changes.
+- Verified `index.html` and `one.html` still parse cleanly.
+
+---
+
 ## 2026-07-28 (later same day) — Updated one.html's pricing to the real 4-tier structure
 
 User asked to update LRX One's pricing "according to the adjusted
