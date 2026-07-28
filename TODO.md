@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (the actual last one today) — Full pricing table revised on one.html
+
+- [x] All four tiers' pricing cards updated to match the real,
+      margin-checked billing-service config — same prices, higher
+      allowances, Starter now shows AI Assistant + Integrations as
+      included. See `lrxone`'s own MEMORY.md for the full numbers and
+      the cost model behind them.
+
 ## Fixed 2026-07-28 (very last one today) — STARTER pricing updated (no longer free)
 
 - [x] `one.html`'s pricing card and section headline updated to match the

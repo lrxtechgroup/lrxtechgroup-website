@@ -6,6 +6,29 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (the actual last one today) — Full LRX One Core pricing table revised on one.html
+
+User asked to relook at the whole tier structure — competitive, and
+generous enough that businesses don't feel pushed into marketplace
+add-ons. Real market research first (Zapier/Monday.com/ClickUp/Make.com
+converted to ZAR) showed prices were already competitive; the fix was
+allowances. A first draft that roughly doubled/tripled every allowance
+including AI messages got caught by the user's own follow-up question —
+"would the fee cover full usage?" — which surfaced that several tiers
+would have lost money on AI cost alone. See `lrxone`'s own MEMORY.md for
+the full cost model (grounded in the real `ai-service` implementation,
+not guessed) and the corrected numbers.
+
+`one.html`'s pricing table updated to match exactly: all four prices
+unchanged, users/workflows/documents/storage roughly doubled per tier,
+Starter's card now lists AI Assistant and Integrations as included
+(previously excluded entirely), Growth/Business/Enterprise's AI message
+lines updated to the margin-corrected numbers (600/2,000/10,000 — not
+the initially-drafted 1,500/5,000/20,000). Verified the file still
+parses cleanly.
+
+---
+
 ## 2026-07-28 (last one today) — STARTER tier priced at R199/mo instead of free
 
 User decision ("we not going to offer a free one, rather at a fairly low
