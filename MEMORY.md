@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 (yet later same day) — Renamed LRX Billing to LRX One Billing (trademark consolidation)
+
+User request: nest all products under the "LRX One" trademark rather
+than each having its own separate product name — easier to trademark
+one mark with sub-brands than several independent ones. "LRX Billing" →
+"LRX One Billing" everywhere on this site: `<title>`, meta description,
+hero eyebrow, section headline, mailto subject lines, nav/footer link
+text (`index.html` and `billing.html`).
+
+Also restyled the product-card wordmark to match: `index.html`'s
+billing card now reads `LRX ONE | BILLING` (gold "LRX ONE", plain
+"BILLING" after the pipe) instead of `LRX | BILLING` — same pattern the
+flagship product's own `LRX | ONE` wordmark already uses, now visually
+signalling it's a sub-product rather than a standalone brand. Left
+`billing.html`'s own nav using the corporate "LRX TECH Group" mark
+unchanged — it's a page hosted under lrxtechgroup.com, not a separately
+branded product site, so the corporate identity there is correct as-is.
+
+---
+
 ## 2026-07-27 (yet later same day) — Contact email changed info → sales
 
 User request. All `mailto:` links across `index.html` and `billing.html`
