@@ -6,6 +6,14 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-27 (yet later same day) — Contact email changed info → sales
+
+User request. All `mailto:` links across `index.html` and `billing.html`
+(Register Interest, Talk to Us, Contact Sales, general Contact links,
+the visible email in the contact-grid) now go to
+`sales@lrxtechgroup.com` instead of `info@lrxtechgroup.com`. Verified
+both files still parse cleanly after the swap.
+
 ## 2026-07-27 (even later same day) — Same "Coming Soon" treatment on billing.html
 
 User asked to double-check `billing.html`'s pricing CTAs specifically.
