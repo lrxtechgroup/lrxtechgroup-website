@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (LRX One umbrella, part 3) — Pricing sections on both product pages
+
+- [x] User asked to check `billing.html`'s pricing section specifically.
+      Neither `billing.html` nor `one.html` had any suite mention in
+      their `#pricing` sections — added a `.section-sub` line under each
+      headline clarifying pricing is separate per product within the
+      LRX One suite (fixed both for consistency, not just the one
+      asked about). Verified with Playwright screenshots of both
+      `#pricing` sections.
+
 ## Fixed 2026-07-28 (LRX One umbrella, part 2) — one.html and billing.html now mention the suite too
 
 - [x] User asked to check `one.html`/`billing.html` for the same LRX One

@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (LRX One umbrella, part 3) — Pricing sections now mention the suite
+
+Third pass in this thread. User specifically asked to check
+`billing.html`'s pricing section — its `#pricing` header (eyebrow
+"Simple Pricing" + headline "Pay for what you use. Scale as you grow.")
+had no suite mention. Checked `one.html`'s equivalent section too, for
+the same reason every other single-page check in this thread turned up
+a matching gap on the sibling page — found the identical omission there.
+
+Added one `.section-sub` line under each pricing headline (the class
+was already defined and used for centered intro copy elsewhere on both
+pages, so no new CSS needed):
+- `billing.html`: "LRX One Billing pricing is separate from LRX One
+  Core's — each product in the LRX One suite is billed on its own plan."
+- `one.html`: "LRX One Core pricing is separate from LRX One Billing's
+  — each product in the LRX One suite is billed on its own plan."
+
+Framed as a genuinely useful clarification, not just brand messaging —
+someone landing on either pricing table might otherwise wonder whether
+the price shown includes or relates to the other product's cost, given
+both are now positioned as part of one suite. Verified with Playwright
+screenshots of both `#pricing` sections specifically.
+
+---
+
+---
+
 ## 2026-07-28 (LRX One umbrella, part 2) — one.html and billing.html now mention the suite
 
 Direct follow-up to the products-section fix below. User asked to check
