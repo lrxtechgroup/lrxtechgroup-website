@@ -3,6 +3,17 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (LRX One umbrella, part 2) — one.html and billing.html now mention the suite too
+
+- [x] User asked to check `one.html`/`billing.html` for the same LRX One
+      umbrella framing added to `index.html`'s products section —
+      neither mentioned it (confirmed via grep: no "LRX One" standalone
+      mention on either page beyond a single unrelated footer link).
+      Added one sentence to each page's hero-desc: `one.html` now says
+      LRX One Core "is part of LRX One, LRX Tech Group's product suite,
+      alongside LRX One Billing"; `billing.html` says the mirror image.
+      Verified with Playwright screenshots of both heroes.
+
 ## Fixed 2026-07-28 (LRX One umbrella) — Products section now names LRX One as the suite
 
 - [x] `index.html`'s `#products` section showed LRX One Core and LRX One

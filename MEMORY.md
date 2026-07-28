@@ -6,6 +6,36 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (LRX One umbrella, part 2) — one.html and billing.html now mention the suite
+
+Direct follow-up to the products-section fix below. User asked to check
+whether the same "LRX One is the umbrella product suite" framing was
+reflected on the two dedicated product pages — it wasn't. Grepped both
+files for "LRX One" (excluding the "LRX One Core"/"LRX One Billing"
+product names themselves) and found nothing but a single unrelated
+footer link on `billing.html` ("LRX One" → lrxone.com, really just a
+sign-in link, not a suite mention).
+
+Added one sentence to each hero-desc, matching the framing used
+everywhere else this session (`lrxone-website`'s pages, this site's own
+`#products` section):
+- `one.html`: "...Built in South Africa for businesses everywhere. It's
+  part of LRX One, LRX Tech Group's product suite, alongside LRX One
+  Billing."
+- `billing.html`: "...ZAR-native, POPIA-compliant, developer-first. It's
+  part of LRX One, LRX Tech Group's product suite, alongside LRX One
+  Core."
+
+Kept it to one sentence appended to the existing hero copy on both pages
+— consistent with the "light touch" choice made for `index.html`'s
+products section, not a hero redesign. Verified with Playwright
+screenshots of both heroes (not just HTML validity) since this is
+visible, above-the-fold copy.
+
+---
+
+---
+
 ## 2026-07-28 (LRX One umbrella) — Named LRX One as the product suite on the homepage
 
 Follow-up to work done this session on `lrxone-website`: that site's
