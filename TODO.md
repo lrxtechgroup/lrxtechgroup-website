@@ -3,6 +3,17 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-28 (footer follow-up) — Footer link ordering/completeness
+
+- [x] `index.html`'s footer had Privacy out of order (after Contact
+      instead of after Terms, unlike `one.html`/`billing.html`) — fixed.
+- [x] `privacy.html`'s footer was missing Refund Policy and Cancellation
+      Policy links that the other three legal pages all cross-link to
+      each other with — added both. See MEMORY.md.
+- [x] Confirmed `lrxone-website` has no `billing.html` to compare (it's
+      a single-product sign-in site) and that its legal pages' shared
+      minimal footer is internally consistent — nothing to fix there.
+
 ## Fixed 2026-07-28 (final one today) — Real privacy.html built
 
 - [x] Built a real `privacy.html`, closing the gap flagged immediately

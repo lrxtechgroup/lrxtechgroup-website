@@ -6,6 +6,29 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (footer follow-up) — Fixed footer link ordering/completeness across legal pages
+
+User asked to check `billing.html`'s footer against `lrxone-website` —
+that site has no `billing.html` (it's a lean single-product sign-in
+site), so nothing to compare there. Checked `billing.html`'s footer
+against this site's own other pages instead, which surfaced two real
+inconsistencies:
+
+1. `index.html`'s footer had all five legal links but Privacy was tacked
+   on at the very end, after Contact — `one.html` and `billing.html`
+   both insert it right after Terms. Reordered to match.
+2. `privacy.html`'s footer only linked to Home, Terms, and Contact —
+   `terms.html`, `refund-policy.html`, and `cancellation-policy.html`
+   all cross-link to *every* sibling legal page, but `privacy.html` was
+   missing Refund Policy and Cancellation Policy. Added both.
+
+Also checked `lrxone-website`'s four legal pages' footers for the same
+kind of drift — they all use one shared minimal footer (copyright + a
+link back to lrxtechgroup.com, no link list), consistent with each
+other by design. Nothing to fix there.
+
+---
+
 ## 2026-07-28 (final one today) — Built a real privacy.html
 
 Direct follow-up to the Terms/Refund/Cancellation work immediately
