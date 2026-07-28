@@ -193,7 +193,8 @@
     .solution-item p { font-size: 13px; line-height: 1.7; color: var(--light-grey); }
 
     /* ── PRICING ──────────────────────────────────────────────────────────── */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1000px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--grey); max-width: 620px; margin: 32px auto 0; line-height: 1.7; }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
     .pricing-card.featured { background: var(--dark); }
     .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); }
@@ -411,46 +412,60 @@
       <div class="pricing-card">
         <div class="pricing-tier">Starter</div>
         <div class="pricing-price">Free</div>
-        <p class="pricing-desc">For small teams getting started with business automation.</p>
+        <p class="pricing-desc">For individuals and small teams getting started with business automation.</p>
         <ul class="pricing-features">
-          <li>Up to 5 team members</li>
-          <li>Up to 10 workflows</li>
-          <li>100 document slots</li>
-          <li>Basic analytics</li>
+          <li>1 user</li>
+          <li>5 workflows</li>
+          <li>50 document slots</li>
+          <li>1GB storage</li>
           <li>Email support</li>
         </ul>
         <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20-%20Starter" class="pricing-cta secondary">Register Interest</a>
       </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Growth</div>
+        <div class="pricing-price">R499<span class="period">/mo</span></div>
+        <p class="pricing-desc">For small teams ready to automate and get AI-powered insights.</p>
+        <ul class="pricing-features">
+          <li>Up to 5 team members</li>
+          <li>Up to 25 workflows</li>
+          <li>500 document slots</li>
+          <li>AI Assistant (500 msgs/mo)</li>
+          <li>All integrations</li>
+          <li>10GB storage</li>
+        </ul>
+        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20-%20Growth" class="pricing-cta secondary">Register Interest</a>
+      </div>
       <div class="pricing-card featured">
         <div class="pricing-tier">Business</div>
-        <div class="pricing-price">R999<span class="period">/mo</span></div>
-        <p class="pricing-desc">For growing businesses that need automation at scale.</p>
+        <div class="pricing-price">R1,299<span class="period">/mo</span></div>
+        <p class="pricing-desc">For growing businesses that need automation and AI at scale.</p>
         <ul class="pricing-features">
-          <li>Up to 25 team members</li>
+          <li>Up to 15 team members</li>
           <li>Up to 100 workflows</li>
-          <li>1,000 document slots</li>
-          <li>AI Assistant (1,000 msgs/mo)</li>
+          <li>5,000 document slots</li>
+          <li>AI Assistant (2,000 msgs/mo)</li>
           <li>All integrations</li>
-          <li>Priority support</li>
+          <li>50GB storage</li>
         </ul>
         <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20-%20Business" class="pricing-cta primary">Register Interest</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price">R4,999<span class="period">/mo</span></div>
-        <p class="pricing-desc">For large organisations with advanced security and compliance needs.</p>
+        <div class="pricing-price">R3,999<span class="period">/mo</span></div>
+        <p class="pricing-desc">For large organisations with advanced scale, security, and support needs.</p>
         <ul class="pricing-features">
-          <li>Up to 200 team members</li>
+          <li>Up to 50 team members</li>
           <li>Unlimited workflows</li>
-          <li>50,000 document slots</li>
+          <li>Unlimited document slots</li>
           <li>AI Assistant (10,000 msgs/mo)</li>
-          <li>SSO / SAML</li>
-          <li>POPIA compliance tools</li>
-          <li>Dedicated onboarding</li>
+          <li>500GB storage</li>
+          <li>Priority support included</li>
         </ul>
         <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20-%20Enterprise" class="pricing-cta secondary">Contact Sales</a>
       </div>
     </div>
+    <p class="pricing-note">Need more headroom? Every tier can top up users, workflows, AI messages, documents, and storage individually through resource marketplace add-ons.</p>
   </section>
 
   <section class="cta-banner">

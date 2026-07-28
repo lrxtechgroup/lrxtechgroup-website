@@ -6,6 +6,51 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 (later same day) — Updated one.html's pricing to the real 4-tier structure
+
+User asked to update LRX One's pricing "according to the adjusted
+structures" — the 3-tier pricing I'd put on `one.html` when building it
+earlier today was placeholder copy carried over from `lrxone-website`'s
+old content, not the actual current pricing. Went to the source of
+truth instead of guessing: `lrxone/services/billing-service`'s
+`application.yml` (`lrx.billing.tiers`) and its `V2__pricing_marketplace.sql`
+migration, which record a real, already-implemented 4-tier model:
+
+- **Starter** — Free. 1 user, 5 workflows, 50 documents, 1GB storage, no AI/integrations.
+- **Growth** — R499/mo. 5 users, 25 workflows, 500 documents, AI (500 msgs/mo), integrations, 10GB.
+- **Business** — R1,299/mo (now the featured card). 15 users, 100 workflows, 5,000 documents, AI (2,000 msgs/mo), 50GB.
+- **Enterprise** — R3,999/mo. 50 users, unlimited workflows/documents, AI (10,000 msgs/mo), 500GB, priority support included.
+
+This replaces the old 3-tier set (Starter/Business/Enterprise at
+Free/R999/R4,999) that never actually existed in the backend — those
+numbers were invented when the original `lrxone-website` pricing
+section was written, before the billing-service had a real tiers
+config at all. The backend's own migration also retired an old
+`UNLIMITED` tier and renamed things (old `BUSINESS` limits became the
+new `GROWTH`, etc.), so tier *names* shifted too, not just prices —
+matched those exactly rather than just updating numbers under the old
+names.
+
+Widened `.pricing-grid` to `max-width: 1200px` to fit four cards
+cleanly (was sized for three), matching the layout `billing.html`
+already uses for its own 4-tier grid. Added a one-line note below the
+pricing grid mentioning resource marketplace add-ons (extra users/
+workflows/AI messages/documents/storage, also real and defined in
+`billing-service`'s `AddonType` enum) exist for topping up beyond a
+tier's base allowance, without building out a full add-on pricing table
+here — that level of detail belongs in-app, not on the marketing page.
+
+Deliberately did NOT touch `billing.html`'s own pricing (Starter R999/
+Growth R2,999/Business R6,999/Enterprise Custom + txn%) — that's a
+different product (the LRX One Billing merchant platform) with its own
+separate, unrelated pricing model; the migration that prompted this
+update only touched the tenant-subscription tiers for using LRX One
+itself.
+
+Verified `one.html` still parses cleanly.
+
+---
+
 ## 2026-07-28 — Built the dedicated LRX One product page, fixed both product-card links
 
 User caught a real gap from the previous day's site-role restructure:

@@ -45,6 +45,11 @@ done — don't just accumulate; keep this reflecting real, current state.
       pages (`/one.html`, `/billing.html`) via a "See Full Details" link,
       in addition to the existing "Register Interest" mailto — neither
       card linked anywhere but `mailto:` before this.
+- [x] `one.html`'s pricing table was stale placeholder copy (3 tiers,
+      guessed prices) — replaced with the real 4-tier structure
+      (Starter/Growth/Business/Enterprise) and prices straight from
+      `lrxone/services/billing-service`'s `application.yml` +
+      `V2__pricing_marketplace.sql`. See MEMORY.md.
 
 ## Note for later
 
