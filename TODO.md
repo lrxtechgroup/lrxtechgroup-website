@@ -33,6 +33,19 @@ done — don't just accumulate; keep this reflecting real, current state.
       already fine, checked - but its own nav "LRX One →" button and
       missing "Coming Soon" badge weren't). See MEMORY.md.
 
+## Fixed 2026-07-28
+
+- [x] Built `one.html` — a dedicated LRX One product page (features grid,
+      pricing, dashboard mockup), mirroring `billing.html`'s pattern.
+      Fixes a real gap: when `lrxone-website` was cut down to a lean
+      sign-in page, its full content was removed but never actually
+      relocated here — only linked back to the summary card. See
+      MEMORY.md.
+- [x] Both product cards on `index.html` now link to their dedicated
+      pages (`/one.html`, `/billing.html`) via a "See Full Details" link,
+      in addition to the existing "Register Interest" mailto — neither
+      card linked anywhere but `mailto:` before this.
+
 ## Note for later
 
 - [ ] When LRX One and/or LRX Billing actually go live (real production
@@ -42,6 +55,6 @@ done — don't just accumulate; keep this reflecting real, current state.
 
 ## Not investigated yet
 
-- [ ] No test/build/lint tooling exists for this repo (it's now two static
-      HTML files, `index.html` + `billing.html`) — confirm that's
-      intentional before adding any tooling unprompted.
+- [ ] No test/build/lint tooling exists for this repo (it's now three
+      static HTML files, `index.html` + `billing.html` + `one.html`) —
+      confirm that's intentional before adding any tooling unprompted.

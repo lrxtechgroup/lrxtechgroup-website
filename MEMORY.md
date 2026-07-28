@@ -6,6 +6,53 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-28 — Built the dedicated LRX One product page, fixed both product-card links
+
+User caught a real gap from the previous day's site-role restructure:
+when `lrxone-website` (lrxone.com) was cut down to a lean sign-in page,
+its full features grid, pricing tiers, and dashboard mockup were
+*removed* but never actually *relocated* here — the restructure only
+added a link back to this site's existing `#products` summary card,
+not a real dedicated page. The user's original intent (stated when the
+restructure was requested) was for that content to become a proper
+LRX One product page here, parallel to how `billing.html` already
+serves LRX One Billing.
+
+- New `one.html`: hero (two-column, with the dashboard mockup carried
+  over verbatim from `lrxone-website`), the five-item pillars band
+  (Connect/Automate/Analyze/Scale/Secure), a features section built
+  from the original six-feature grid copy (Workflow Automation, AI
+  Business Assistant, Real-time Analytics, Document Management,
+  Integration Hub, Team & Permissions — reusing `billing.html`'s
+  `.solution-grid` CSS pattern rather than inventing a new one), and a
+  pricing section with the original three tiers (Starter Free, Business
+  R999/mo, Enterprise R4,999/mo). Same CSS variables, nav pattern
+  (corporate `LRX TECH Group` mark, not a product-specific one — same
+  choice already made for `billing.html`), and footer as the rest of
+  this site. "Coming Soon" badge kept; Sign In button is a real link
+  (`app.lrxone.com/login`) since it'll just start working once the app
+  is actually deployed, same reasoning already applied on
+  `lrxone-website` itself.
+- Pricing CTAs are `mailto:` "Register Interest"/"Contact Sales" links,
+  not live checkout — consistent with the site-wide "Coming Soon"
+  policy (matches how `billing.html`'s pricing CTAs already work).
+- While fixing this, found a second, related gap: **neither** product
+  card on `index.html` linked to its own dedicated page at all — both
+  CTAs were `mailto:` only, so `billing.html` itself was never actually
+  reachable from its own product card either. Added a "See Full
+  Details →" link (new `.product-actions` wrapper, `.product-link`
+  style reused) to both cards, alongside the existing "Register
+  Interest" link — `/one.html` on the LRX One card, `/billing.html` on
+  the LRX One Billing card.
+- Updated `lrxone-website/index.html`'s two outbound links (the hero
+  note and the "Features & Pricing" footer link) from
+  `lrxtechgroup.com/#products` to `lrxtechgroup.com/one.html` — they
+  now point at the actual dedicated page instead of the summary card.
+- Verified `index.html`, `one.html`, and `billing.html` all still parse
+  cleanly.
+
+---
+
 ## 2026-07-27 (yet even later same day) — Fixed the off-center hero scroll indicator
 
 User spotted it via a real device screenshot (mobile, `07:26`, live
