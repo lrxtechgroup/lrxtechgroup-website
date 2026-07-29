@@ -6,6 +6,41 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (genuinely the last one today) — Brandon's real photo replaces BLR initials, both founder cards now match
+
+User supplied a full-length wedding-style photo (him + his son, both in
+tuxedos); the brief was specifically "shoulder-up crop" for the leadership
+card, and to send the crop for approval before wiring it in - a real
+gate, not a formality, given the source photo included a second person
+who obviously shouldn't end up on a company leadership card. Cropped with
+Pillow to an approval-first workflow: computed a candidate square region
+around his face/shoulders, rendered it to the session scratchpad, sent it
+to the user via `SendUserFile` as a preview (not committed, not even
+written into `images/` yet), and only wrote the real asset + wired it into
+`index.html` after explicit approval ("use that for Brandon card").
+
+Saved as `images/brandon-le-roux.jpg` (700×700, JPEG quality 85, 61KB) -
+same optimization treatment as Jessica's photo. Swapped his founder-card
+markup to the same `.founder-visual--photo` pattern built for her (no new
+CSS needed, confirming that pattern was worth building generically rather
+than one-off): `<img class="founder-photo" ...>` replacing the `BLR`
+initials div, `.founder-name-plate` automatically becomes the bottom
+overlay caption via the modifier class already in place.
+
+Both leadership cards are now real photos, consistently styled - the
+initials-placeholder state (`.founder-initials`, still defined in CSS)
+has no remaining callers on this page but wasn't deleted, since it's a
+generic building block a future third leadership card could still want
+before having a photo ready.
+
+**Verified**: screenshotted both cards together at desktop (1280px) -
+same gold top border, same caption-overlay treatment, same crop tightness
+- and confirmed zero horizontal overflow on mobile (375px).
+
+---
+
+---
+
 ## 2026-07-29 (actually the final one today) — Real photo replaces Jessica's "JLR" initials placeholder
 
 User supplied a headshot; saved to `images/jessica-le-roux.jpg` (resized
