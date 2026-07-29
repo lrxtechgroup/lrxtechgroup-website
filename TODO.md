@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (custom dropdown extended to pricing tier pickers) — one.html and billing.html
+
+- [x] Replaced the native tier-select `<select>` on both `one.html` and
+      `billing.html`'s pricing CTA banners with a custom dropdown
+      matching the earlier Contact email fix - toggle shows the current
+      tier, menu highlights it, selecting a new tier updates the
+      Register Interest/Talk to Us link's mailto subject. See MEMORY.md.
+
 ## Fixed 2026-07-29 (Billing footer link removed) — refund-policy.html only
 
 - [x] Removed the "Billing" mailto footer link from `refund-policy.html`.

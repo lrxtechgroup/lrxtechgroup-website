@@ -6,6 +6,44 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (custom dropdown extended to pricing tier pickers) — one.html and billing.html
+
+User sent a screenshot of the same native-select problem on `one.html`'s
+"Ready to elevate your business?" tier picker (the same grey Android
+system popup as the earlier Contact email dropdown), asking for the
+custom dropdown treatment there too.
+
+This picker's behaviour is different from the email one: it's a
+*persisted* selection, not a one-shot action - selecting a tier doesn't
+navigate anywhere itself, it updates a separate "Register Interest"
+(`one.html`) / "Talk to Us" (`billing.html`) button's `mailto:` href to
+include the chosen tier in the subject line, and stays showing that
+tier until changed again. Built a second custom dropdown component
+(`.tier-dropdown`) reusing the same visual language (dark background,
+gold border/chevron, `--gold-dim` hover) as the email dropdown, but with:
+- A toggle button showing the *currently selected* tier's label (not a
+  placeholder), matching the site's existing button sizing
+  (`.btn-primary` proportions) so it sits naturally next to the CTA
+  button in the flex row.
+- Menu options are `<button>`s (not links) that set `aria-current="true"`
+  on the chosen one (styled gold) and update the toggle label + the CTA
+  link's `href` via the existing `updateLink(tier)` logic, then close.
+
+Applied to both `one.html` (Starter/Growth/Business/Enterprise -> Core
+CTA, default "Business") and `billing.html` (Starter/Growth/Business/
+Enterprise -> Billing CTA, default "Growth") - both pages had the
+identical native-`<select>` pattern before this fix. Removed the old
+`.tier-select` CSS rule from both (fully replaced, no longer used).
+
+**Verified**: local `http.server` + Playwright on both pages - closed
+state matches the button sizing next to the CTA, open state shows the
+dark/gold menu with the current tier highlighted, selecting a new tier
+(tested "Enterprise" on `one.html`) correctly updates the register
+link's `href` (`mailto:...?subject=LRX%20One%20Core%20-%20Enterprise`),
+zero horizontal overflow on mobile, no native OS popup on either page.
+
+---
+
 ## 2026-07-29 (Billing footer link removed) — refund-policy.html only
 
 User asked to remove the "Billing" mailto footer link specifically from

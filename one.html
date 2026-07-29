@@ -217,12 +217,37 @@
     .cta-banner p { font-size: 16px; color: var(--light-grey); line-height: 1.7; max-width: 480px; margin: 0 auto 40px; }
 
     .interest-form { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
-    .tier-select {
+
+    .tier-dropdown { position: relative; }
+    .tier-dropdown-toggle {
+      font-family: inherit;
       font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--white); background: var(--dark); border: 1px solid var(--gold-line);
       padding: 16px 20px; border-radius: 2px; cursor: pointer;
+      display: flex; align-items: center; gap: 10px;
+      transition: border-color 0.2s, background-color 0.2s;
     }
-    .tier-select:focus { outline: none; border-color: var(--gold); }
+    .tier-dropdown-toggle:hover,
+    .tier-dropdown-toggle:focus,
+    .tier-dropdown-toggle[aria-expanded="true"] { outline: none; border-color: var(--gold); background-color: var(--gold-dim); }
+    .tier-dropdown-toggle .chevron { width: 10px; height: 6px; flex-shrink: 0; transition: transform 0.2s; }
+    .tier-dropdown-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+    .tier-dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; right: 0; min-width: 220px;
+      background: var(--dark); border: 1px solid var(--gold-line); border-radius: 4px;
+      list-style: none; padding: 6px; margin: 0; z-index: 20;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .tier-dropdown-menu[hidden] { display: none; }
+    .tier-dropdown-option {
+      display: block; width: 100%; text-align: left; background: none; border: none;
+      font-family: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--white); padding: 10px 12px; border-radius: 3px; cursor: pointer;
+      transition: background-color 0.15s, color 0.15s;
+    }
+    .tier-dropdown-option:hover, .tier-dropdown-option:focus { outline: none; background: var(--gold-dim); color: var(--gold); }
+    .tier-dropdown-option[aria-current="true"] { color: var(--gold); }
 
     /* ── FOOTER ───────────────────────────────────────────────────────────── */
     footer {
@@ -480,12 +505,18 @@
     <h2>Ready to <span style="color:var(--gold)">elevate your business</span>?</h2>
     <p>Select the plan you're interested in and we'll let you know the moment <span style="color:var(--gold)">LRX One</span> <span style="color:var(--white)">Core</span> is ready to onboard your business.</p>
     <div class="interest-form">
-      <select id="core-tier-select" class="tier-select" aria-label="Select a plan">
-        <option value="Starter">Starter - R199/mo</option>
-        <option value="Growth">Growth - R899/mo</option>
-        <option value="Business" selected>Business - R2,299/mo</option>
-        <option value="Enterprise">Enterprise - R6,499/mo</option>
-      </select>
+      <div class="tier-dropdown" data-default="Business">
+        <button type="button" class="tier-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Select a plan">
+          <span class="tier-dropdown-label">Business - R2,299/mo</span>
+          <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="tier-dropdown-menu" role="menu" hidden>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Starter">Starter - R199/mo</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Growth">Growth - R899/mo</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Business" aria-current="true">Business - R2,299/mo</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise - R6,499/mo</button></li>
+        </ul>
+      </div>
       <a id="core-register-link" href="#" class="btn-primary">Register Interest</a>
     </div>
     <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:14px;">
@@ -495,14 +526,44 @@
 
   <script>
     (function () {
-      var select = document.getElementById('core-tier-select');
+      var dropdown = document.querySelector('.tier-dropdown');
+      var toggle = dropdown.querySelector('.tier-dropdown-toggle');
+      var label = toggle.querySelector('.tier-dropdown-label');
+      var menu = dropdown.querySelector('.tier-dropdown-menu');
+      var options = dropdown.querySelectorAll('.tier-dropdown-option');
       var link = document.getElementById('core-register-link');
-      function updateLink() {
-        var tier = select.value;
+
+      function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+      function openMenu() { menu.hidden = false; toggle.setAttribute('aria-expanded', 'true'); }
+
+      function updateLink(tier) {
         link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Core - ' + tier);
       }
-      select.addEventListener('change', updateLink);
-      updateLink();
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (menu.hidden) { openMenu(); } else { closeMenu(); }
+      });
+
+      options.forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          label.textContent = opt.textContent;
+          options.forEach(function (o) { o.removeAttribute('aria-current'); });
+          opt.setAttribute('aria-current', 'true');
+          updateLink(opt.dataset.value);
+          closeMenu();
+          toggle.focus();
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
+      });
+
+      updateLink(dropdown.dataset.default);
     })();
   </script>
 
