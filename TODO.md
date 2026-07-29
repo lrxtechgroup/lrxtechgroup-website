@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (redundant website link removed) — Contact grid no longer links to lrxtechgroup.com
+
+- [x] Removed the "Website → lrxtechgroup.com" card from `index.html`'s
+      Contact grid - redundant since visitors are already on that site.
+      Grid reflows to 3 cards (Email / WhatsApp / Product) with no CSS
+      changes. See MEMORY.md.
+
 ## Fixed 2026-07-29 (pricing notice clause) — Terms of Service commits to one month's notice on pricing changes
 
 - [x] `terms.html` Section 3 (Subscriptions and payment): split the vague

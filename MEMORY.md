@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (redundant website link removed) — Contact grid no longer links to the page you're already on
+
+User spotted this from a live screenshot: the Contact section's grid had
+a "Website → lrxtechgroup.com" card, which is redundant since anyone
+seeing it is already on lrxtechgroup.com. Removed that `.contact-item`
+from `index.html`, leaving Email / WhatsApp / Product (lrxone.com). The
+grid uses `repeat(auto-fit, minmax(220px, 1fr))`, so it reflowed cleanly
+to 3 balanced cards with no CSS changes needed. Checked one.html and
+billing.html for the same pattern - neither had it, this was
+index.html-only.
+
+**Verified**: local `http.server` + Playwright screenshot of the Contact
+section, desktop and mobile, zero horizontal overflow.
+
+---
+
 ## 2026-07-29 (pricing notice clause) — Terms of Service now commits to one month's notice on pricing changes
 
 User asked for an explicit commitment in the Terms: LRX Tech Group
