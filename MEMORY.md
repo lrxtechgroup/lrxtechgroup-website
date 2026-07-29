@@ -6,6 +6,57 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Contact stops defaulting to email) — Added Call option, "Contact" links now go to the contact section
+
+User caught this from another live screenshot: the footer's "Contact"
+link (`index.html`, and the nav-cta/footer "Contact" links on `one.html`,
+`billing.html`, `terms.html`) was a `mailto:sales@lrxtechgroup.com` link
+that jumped straight into an email compose with no choice of channel or
+address - even though the homepage already had a full Contact section
+with Email/WhatsApp/Product options.
+
+- Changed all of those "Contact" links to point at `#contact` (same-page
+  anchor on `index.html`) or `/#contact` (root-relative, from the other
+  pages), so pressing "Contact" anywhere on the site lands on the full
+  contact section instead of defaulting to one inbox.
+- Added a fourth contact-item on `index.html`: "Call" (`tel:+27620498603`),
+  the same number as the WhatsApp card, per the user's explicit request.
+- Deliberately left `privacy.html`'s footer "Contact" link
+  (`mailto:brandon@lrxtechgroup.com`) untouched - that's the POPIA
+  Information Officer contact required on the privacy policy, a
+  different purpose from general site navigation.
+
+**Verified**: local `http.server` + Playwright mobile screenshot of the
+now-4-card contact grid (Email/WhatsApp/Call/Product) - stacks cleanly,
+zero horizontal overflow.
+
+---
+
+## 2026-07-29 (email options added) — Contact card now offers Sales/Support/Billing instead of one address
+
+User caught this from a live screenshot: the Contact section's Email
+card was a single `mailto:sales@lrxtechgroup.com` link, so every inquiry
+- sales, support, or billing - went to the same inbox with no way to
+pick. Since this is a static site with no backend, a JS-driven picker
+would be an over-engineered fix for what a plain link list already
+solves: converted the card from a single `<a>` into a `<div>` containing
+three separate `mailto:` links (Sales, Support, Billing), each with its
+own small role label above the address, reusing `billing@lrxtechgroup.com`
+(already live per the Refund/Cancellation policy pages) and
+`sales@lrxtechgroup.com` (already live sitewide), and adding
+`support@lrxtechgroup.com` as the new third option.
+
+Left the footer's separate `mailto:sales@lrxtechgroup.com` "Contact"
+shortcut link untouched - that's a different element the user didn't
+ask about, out of scope for this fix.
+
+**Verified**: local `http.server` + Playwright screenshot, desktop and
+mobile - the grid's other two cards stretch to match the taller Email
+card's height automatically (no CSS changes needed), zero horizontal
+overflow on mobile.
+
+---
+
 ## 2026-07-29 (scroll label removed) — Hero's "Scroll" text label dropped, indicator line kept
 
 User asked to remove the word "Scroll" from the hero. Removed the

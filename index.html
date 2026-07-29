@@ -585,6 +585,12 @@
     .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; display: block; }
     .contact-value { font-size: 14px; font-weight: 600; color: var(--gold); }
 
+    .contact-email-options { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .contact-email-option { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+    .contact-email-role { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-grey); }
+    .contact-email-address { font-size: 13px; font-weight: 600; color: var(--gold); }
+    .contact-email-option:hover .contact-email-address { text-decoration: underline; }
+
     /* ── FOOTER ───────────────────────────────────────────────────────────── */
     footer {
       padding: 40px 5%;
@@ -829,14 +835,32 @@
     <p class="section-eyebrow">Get in Touch</p>
     <h2 class="section-headline">Let's talk</h2>
     <div class="contact-grid">
-      <a href="mailto:sales@lrxtechgroup.com" class="contact-item">
+      <div class="contact-item">
         <span class="contact-icon">✉</span>
         <span class="contact-label">Email</span>
-        <span class="contact-value">sales@lrxtechgroup.com</span>
-      </a>
+        <div class="contact-email-options">
+          <a href="mailto:sales@lrxtechgroup.com" class="contact-email-option">
+            <span class="contact-email-role">Sales</span>
+            <span class="contact-email-address">sales@lrxtechgroup.com</span>
+          </a>
+          <a href="mailto:support@lrxtechgroup.com" class="contact-email-option">
+            <span class="contact-email-role">Support</span>
+            <span class="contact-email-address">support@lrxtechgroup.com</span>
+          </a>
+          <a href="mailto:billing@lrxtechgroup.com" class="contact-email-option">
+            <span class="contact-email-role">Billing</span>
+            <span class="contact-email-address">billing@lrxtechgroup.com</span>
+          </a>
+        </div>
+      </div>
       <a href="https://wa.me/27620498603" class="contact-item" target="_blank" rel="noopener">
         <span class="contact-icon">💬</span>
         <span class="contact-label">WhatsApp</span>
+        <span class="contact-value">+27 62 049 8603</span>
+      </a>
+      <a href="tel:+27620498603" class="contact-item">
+        <span class="contact-icon">📞</span>
+        <span class="contact-label">Call</span>
         <span class="contact-value">+27 62 049 8603</span>
       </a>
       <a href="https://lrxone.com" class="contact-item">
@@ -857,7 +881,7 @@
       <li><a href="/privacy.html">Privacy</a></li>
       <li><a href="/refund-policy.html">Refund Policy</a></li>
       <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
-      <li><a href="mailto:sales@lrxtechgroup.com">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </footer>
 

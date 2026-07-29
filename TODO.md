@@ -3,6 +3,20 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Contact stops defaulting to email) — Added Call option, "Contact" links now go to the contact section
+
+- [x] "Contact" links on `index.html` footer, and nav-cta/footer on
+      `one.html`/`billing.html`/`terms.html`, now point to `#contact` /
+      `/#contact` instead of jumping straight into a `mailto:` compose.
+- [x] Added a "Call" contact card (`tel:+27620498603`) to `index.html`'s
+      contact grid, same number as WhatsApp. See MEMORY.md.
+
+## Fixed 2026-07-29 (email options added) — Contact card now offers Sales/Support/Billing instead of one address
+
+- [x] Converted `index.html`'s Email contact card from a single
+      `mailto:sales@` link into three options (Sales/Support/Billing),
+      each its own `mailto:` link. See MEMORY.md.
+
 ## Fixed 2026-07-29 (scroll label removed) — Hero "Scroll" text dropped
 
 - [x] Removed the "Scroll" label under the hero's animated line
