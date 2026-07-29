@@ -6,6 +6,64 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 — Removed arrows/em-dashes site-wide; two-tone LRX One wordmark on both product hero eyebrows
+
+Four-part request from the user, all applied across every `.html` file in
+the repo:
+
+- **Arrows out of "Register Interest"**: `index.html`'s two product-card
+  links, `one.html`'s consolidated pricing CTA, and `billing.html`'s
+  equivalent ("Talk to Us" - same register-interest mailto control, arrow
+  removed too for consistency between the two nearly-identical CTA
+  sections) all lost their trailing "→". Left every *other* arrow alone
+  (e.g. "See Full Details →", "Sign In →", the nav-back "←") since the
+  request was specifically about Register Interest, not arrows generally.
+- **"Register Interest" out of the email subject**: every `mailto:` link's
+  `subject=` (both the static hrefs and the two tier-select JS builders in
+  `one.html`/`billing.html`) now ends at the product/tier name -
+  e.g. `subject=LRX%20One%20Core` instead of `...%20-%20Register%20Interest`.
+  The button label itself still says "Register Interest" - only the
+  outgoing email's subject line changed.
+- **Long dashes removed site-wide**: every visible em-dash ("—") across
+  all 7 pages replaced with a plain hyphen with the same surrounding
+  spacing (" - "), including page `<title>`s, meta descriptions, body
+  copy, pricing-tier option labels, and the CSS `content: '—'` bullet
+  glyphs used before `.pricing-features`/`.doc-section ul` list items
+  (also em-dash characters, rendered on the page, so in scope). Left CSS/
+  JS *comments* alone (`/* ── HERO ── */` etc. in index.html) since those
+  aren't rendered content - not what "around the website" means.
+- **LRX One wordmark: gold "LRX One" + white product name**: matched the
+  existing pattern already on `index.html`'s two product cards
+  (`<span class="gold">LRX ONE</span> | CORE`) onto the one place per
+  product page where the name is displayed as a prominent badge -
+  `one.html`'s hero-eyebrow ("LRX One Core - Enterprise Operating
+  System") and `billing.html`'s ("Introducing LRX One Billing"). Both use
+  inline `style="color:var(--gold)"` / `style="color:var(--white)"`, not
+  a `.gold` class - checked first and found `.gold` is scoped per-page to
+  `.hero-headline .gold` (one.html/billing.html) or `.product-name .gold`
+  (index.html), not a standalone global class, so `class="gold"` on a span
+  outside those containers would silently apply no color at all. Caught
+  and fixed this before it shipped, not after.
+  **Deliberately did NOT apply this to**: inline body-prose mentions of
+  "LRX One Core"/"LRX One Billing" (hero descriptions, section-sub text,
+  legal-page paragraphs), or footer link-list items - gold text scattered
+  through dense paragraphs or singled out from an otherwise-uniform list
+  of footer links would look inconsistent, not intentional. Reserved the
+  two-tone treatment for prominent wordmark-style placements only (hero
+  eyebrows, product cards), matching how the pre-existing pattern was
+  already used.
+
+**Verified in a real browser, not just by reading the diff**: served the
+repo locally (`python3 -m http.server`) and used Playwright/Chromium to
+screenshot `one.html`'s and `billing.html`'s heroes (confirmed the gold/
+white split renders correctly), `index.html`'s products section (confirmed
+"Register Interest" lost its arrow while "See Full Details →" correctly
+kept its own), and both product pages at a 375px mobile viewport (zero
+horizontal overflow, eyebrow text wraps cleanly across two lines with the
+color split intact).
+
+---
+
 ## 2026-07-28 (pricing CTA consolidation) — One register-interest control per page
 
 Two asks in one turn. First: why does one pricing card look different?

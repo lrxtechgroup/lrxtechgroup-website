@@ -3,6 +3,32 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 — Arrows/em-dashes removed, LRX One wordmark two-toned on hero eyebrows
+
+- [x] Removed the arrow from every "Register Interest" (and billing.html's
+      equivalent "Talk to Us") link/button across `index.html`, `one.html`,
+      `billing.html`.
+- [x] Stripped "Register Interest" out of every `mailto:` subject line
+      (static hrefs and the two tier-select JS builders) - the button
+      label is unchanged, only the outgoing email subject.
+- [x] Replaced every visible em-dash ("—") with a plain hyphen across all
+      7 pages, including the CSS bullet-glyph `content: '—'` declarations
+      before pricing/legal-doc list items. Left non-rendered CSS/JS
+      comments alone.
+- [x] `one.html`'s and `billing.html`'s hero-eyebrows now show "LRX One"
+      in gold and the product name ("Core"/"Billing") in white, matching
+      `index.html`'s existing product-card pattern. See MEMORY.md for why
+      this wasn't extended to body-prose mentions or footer links, and for
+      a real `.gold`-class scoping mistake caught before it shipped.
+- [ ] **Not done, flagging rather than assuming**: body-prose mentions of
+      "LRX One Core"/"LRX One Billing" throughout the site (hero
+      descriptions, section-sub text, all 4 legal pages, footer link
+      lists) are still plain-colored, not gold/white. If "throughout" was
+      meant to include those too, say so and it's a quick follow-up -
+      deliberately scoped out this pass to avoid gold text scattered
+      through dense legal paragraphs or singling out one link from an
+      otherwise-uniform footer list.
+
 ## Fixed 2026-07-28 (pricing CTA consolidation) — One register-interest control per page
 
 - [x] User asked why one pricing card looked different — explained

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LRX One Core — The Intelligent Enterprise Operating System</title>
-  <meta name="description" content="LRX One Core is the intelligent enterprise operating system that connects, automates, analyzes, and scales every aspect of your business — from a single platform. Built in South Africa." />
+  <title>LRX One Core - The Intelligent Enterprise Operating System</title>
+  <meta name="description" content="LRX One Core is the intelligent enterprise operating system that connects, automates, analyzes, and scales every aspect of your business - from a single platform. Built in South Africa." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpolygon points='6,6 18,2 30,6 30,30 18,34 6,30' fill='%230E0E0E' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ctext x='18' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-size='10' font-weight='900' fill='%23D4AF37'%3ELRX%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -208,7 +208,7 @@
     .pricing-desc { font-size: 13px; color: var(--light-grey); line-height: 1.6; margin: 20px 0 24px; min-height: 40px; }
     .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
     .pricing-features li { font-size: 13px; color: var(--light-grey); display: flex; gap: 8px; align-items: flex-start; }
-    .pricing-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .pricing-features li::before { content: '-'; color: var(--gold); flex-shrink: 0; }
 
     /* ── CTA BANNER ───────────────────────────────────────────────────────── */
     .cta-banner { text-align: center; padding: 100px 5%; position: relative; overflow: hidden; }
@@ -280,20 +280,20 @@
   <section class="hero">
     <div class="hero-left">
       <p class="hero-badge">Coming Soon</p>
-      <p class="hero-eyebrow">LRX One Core — Enterprise Operating System</p>
+      <p class="hero-eyebrow"><span style="color:var(--gold)">LRX One</span> <span style="color:var(--white)">Core</span> - Enterprise Operating System</p>
       <h1 class="hero-headline">
         One Platform.<br/><span class="gold">Endless</span> Possibilities.
       </h1>
       <p class="hero-sub">Connect · Automate · Analyze · Scale · Secure</p>
       <p class="hero-desc">
         LRX One Core is the intelligent operating system that connects, automates, analyzes,
-        and scales every aspect of your business — from a single platform. Built in
+        and scales every aspect of your business - from a single platform. Built in
         South Africa for businesses everywhere. It's part of LRX One, LRX Tech
         Group's product suite, alongside LRX One Billing.
       </p>
       <div class="hero-buttons">
         <a href="https://app.lrxone.com/login" class="btn-primary">Sign In →</a>
-        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core%20-%20Register%20Interest" class="btn-secondary">Register Interest</a>
+        <a href="mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Core" class="btn-secondary">Register Interest</a>
       </div>
       <p class="hero-note">Already have a workspace? Sign in above. New here? Register your interest and we'll be in touch.</p>
     </div>
@@ -375,7 +375,7 @@
     <p class="section-eyebrow">The Platform</p>
     <h2 class="section-headline">Everything your business needs.<br/>Nothing it doesn't.</h2>
     <p class="section-sub">
-      LRX One Core brings together the tools your team already needs — without the
+      LRX One Core brings together the tools your team already needs - without the
       complexity of stitching ten different platforms together.
     </p>
     <div class="solution-grid">
@@ -417,7 +417,7 @@
   <section id="pricing" class="pricing-section">
     <p class="section-eyebrow">Simple Pricing</p>
     <h2 class="section-headline">Start small. Scale when you're ready.</h2>
-    <p class="section-sub">LRX One Core pricing is separate from LRX One Billing's — each product in the LRX One suite is billed on its own plan.</p>
+    <p class="section-sub">LRX One Core pricing is separate from LRX One Billing's - each product in the LRX One suite is billed on its own plan.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-tier">Starter</div>
@@ -481,12 +481,12 @@
     <p>Select the plan you're interested in and we'll let you know the moment LRX One Core is ready to onboard your business.</p>
     <div class="interest-form">
       <select id="core-tier-select" class="tier-select" aria-label="Select a plan">
-        <option value="Starter">Starter — R199/mo</option>
-        <option value="Growth">Growth — R899/mo</option>
-        <option value="Business" selected>Business — R2,299/mo</option>
-        <option value="Enterprise">Enterprise — R6,499/mo</option>
+        <option value="Starter">Starter - R199/mo</option>
+        <option value="Growth">Growth - R899/mo</option>
+        <option value="Business" selected>Business - R2,299/mo</option>
+        <option value="Enterprise">Enterprise - R6,499/mo</option>
       </select>
-      <a id="core-register-link" href="#" class="btn-primary">Register Interest →</a>
+      <a id="core-register-link" href="#" class="btn-primary">Register Interest</a>
     </div>
     <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:14px;">
       <a href="https://app.lrxone.com/login" class="btn-secondary">Sign In</a>
@@ -499,7 +499,7 @@
       var link = document.getElementById('core-register-link');
       function updateLink() {
         var tier = select.value;
-        link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Core - ' + tier + ' - Register Interest');
+        link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Core - ' + tier);
       }
       select.addEventListener('change', updateLink);
       updateLink();
