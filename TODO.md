@@ -20,14 +20,17 @@ done — don't just accumulate; keep this reflecting real, current state.
       `index.html`'s existing product-card pattern. See MEMORY.md for why
       this wasn't extended to body-prose mentions or footer links, and for
       a real `.gold`-class scoping mistake caught before it shipped.
-- [ ] **Not done, flagging rather than assuming**: body-prose mentions of
-      "LRX One Core"/"LRX One Billing" throughout the site (hero
-      descriptions, section-sub text, all 4 legal pages, footer link
-      lists) are still plain-colored, not gold/white. If "throughout" was
-      meant to include those too, say so and it's a quick follow-up -
-      deliberately scoped out this pass to avoid gold text scattered
-      through dense legal paragraphs or singling out one link from an
-      otherwise-uniform footer list.
+**Done 2026-07-29 (later same day)** - [x] User confirmed "everywhere"
+was meant literally. Extended the gold/white wordmark to every remaining
+body-prose mention and footer link across all 7 pages, and removed the 3
+remaining non-Register-Interest arrows (`index.html`'s "See Full Details
+→" ×2, `one.html`'s "Sign In →", the 4 legal pages' shared "← Back to
+lrxtechgroup.com"). Zero arrows and zero unstyled "LRX One" mentions
+remain anywhere except `<title>`/`<meta description>` and `mailto:`
+subject JS strings, which can't render HTML at all - not a scoping
+choice, a hard technical constraint. See MEMORY.md for the full list and
+the browser verification (legal-page prose, About section, footer link
+styling all screenshotted).
 
 ## Fixed 2026-07-28 (pricing CTA consolidation) — One register-interest control per page
 

@@ -6,6 +6,47 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (later same day) — Extended the LRX One wordmark treatment everywhere; removed every remaining arrow
+
+Follow-up to the same-day entry below. The user explicitly said to do
+both "everywhere," overriding the scoping decision made in that earlier
+pass:
+
+- **Arrows**: removed the 3 remaining ones this repo had - `index.html`'s
+  two "See Full Details →" product-card links, `one.html`'s "Sign In →"
+  hero button, and the "← Back to lrxtechgroup.com" nav-back link shared
+  by all 4 legal pages (`terms.html`, `privacy.html`, `refund-policy.html`,
+  `cancellation-policy.html`). Every arrow on the site is now gone, not
+  just the ones on Register Interest.
+- **LRX One wordmark**: extended the gold "LRX One" / white product-name
+  span pattern to every remaining rendered mention across all 7 pages -
+  hero descriptions, section-sub/section-body prose, all 4 legal pages'
+  intro paragraphs and body text, and the footer link lists (`one.html`'s
+  "LRX One Billing" footer link, `billing.html`'s "LRX One" footer link).
+  Applied consistently: "LRX One" alone (no Core/Billing following) gets
+  just the gold span; "LRX One Core"/"LRX One Billing" gets gold "LRX One"
+  + white "Core"/"Billing", including inside `<a>` tags (verified the
+  link's own hover-underline still applies across the whole differently-
+  colored text, since text-decoration is a property of the anchor, not
+  the inner spans) and around a possessive `'s` (left unstyled/inheriting,
+  e.g. "**Core**'s AI Assistant").
+  **Still not stylable, not a scoping choice**: `<title>` tags and
+  `<meta name="description">` content can't contain HTML at all - browsers
+  don't render markup inside either, so those stay plain text by hard
+  technical constraint, not a design decision. Same for the `mailto:`
+  subject-line JS string literals (never rendered as visible text).
+
+**Verified in a real browser again**: screenshotted `terms.html`'s intro
+(confirms the pattern reads cleanly even inside dense legal prose, which
+was the main open question from the previous pass), `index.html`'s About
+section body copy, and `one.html`'s footer (confirms the "LRX One Billing"
+footer link's gold/white split doesn't look broken sitting next to the
+other plain-grey footer links - reads as an intentional highlight, not an
+inconsistency). Re-confirmed zero arrows remain anywhere with a full-repo
+grep after the edits, not just spot checks.
+
+---
+
 ## 2026-07-29 — Removed arrows/em-dashes site-wide; two-tone LRX One wordmark on both product hero eyebrows
 
 Four-part request from the user, all applied across every `.html` file in
