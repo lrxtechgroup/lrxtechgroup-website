@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Product card removed from contact grids) — lrxone.com isn't a contact resource
+
+- [x] Removed the "Product → lrxone.com" card from `contact.html` and
+      `index.html`'s contact grids - it's the app sign-in link, not a
+      contact resource. See MEMORY.md.
+
 ## Fixed 2026-07-29 (contact.html intro copy) — "Every way you can contact us in One place"
 
 - [x] Replaced `contact.html`'s intro paragraph with the shorter

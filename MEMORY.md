@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Product card removed from contact grids) — lrxone.com isn't a contact resource
+
+User pointed out the "Product → lrxone.com" card didn't belong in
+either contact grid - it's the sign-in link to the application, not a
+way to reach a person or team. Removed it from both `contact.html`'s
+resource grid (now 5 cards: Sales/Support/Billing/WhatsApp/Call) and
+`index.html`'s homepage "Let's talk" quick-access section (now 3 cards:
+Email/WhatsApp/Call). lrxone.com is still reachable everywhere else it
+belongs (nav, footer product links, pillars band on lrxone.com itself)
+- this was specifically about the contact-purpose grids.
+
+**Verified**: local `http.server` + Playwright, desktop and mobile,
+both pages - grids reflow cleanly with no dangling cells, zero
+horizontal overflow.
+
+---
+
 ## 2026-07-29 (contact.html intro copy) — Simplified to "Every way you can contact us in One place"
 
 User asked to replace the intro paragraph with a shorter line, with
