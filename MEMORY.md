@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (post-deploy fix) — Hero headline's "LRX"/"TECH" colour mismatch
+
+User caught this from a real screenshot of the live site after the deploy
+merge, not a code read: the hero `<h1>` only wrapped `LRX` in
+`.lrx-gold`, leaving `TECH` (and `GROUP`, on its own line) in the default
+white body colour — same wordmark as the nav logo (`LRX TECH` gold,
+`GROUP` grey subtitle), but rendered inconsistently in the hero.  Widened
+the existing span to cover both words: `<span class="lrx-gold">LRX
+TECH</span><br/>GROUP` — no new CSS, `GROUP` intentionally left white,
+matching the nav logo's own LRX TECH (gold) / GROUP (secondary) split.
+
+**Verified**: screenshotted the hero at mobile width (412px) post-fix -
+"LRX TECH" reads as one consistent gold line, "GROUP" white beneath it,
+zero horizontal overflow. Committed straight to `main` (confirmed deploy
+path: this host auto-deploys from `main`), not a feature branch.
+
+---
+
+---
+
 ## 2026-07-29 (genuinely the last one today) — Brandon's real photo replaces BLR initials, both founder cards now match
 
 User supplied a full-length wedding-style photo (him + his son, both in

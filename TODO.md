@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (post-deploy fix) — Hero "LRX"/"TECH" colour mismatch
+
+- [x] User spotted this from a real screenshot of the live site after the
+      main-branch deploy - the hero `<h1>` only gold'd "LRX", leaving
+      "TECH" white. Widened the existing `.lrx-gold` span to cover both
+      words, matching the nav logo's own LRX TECH (gold) / GROUP (white/
+      grey) split. See MEMORY.md.
+
 ## Fixed 2026-07-29 (genuinely the last one today) — Brandon's real photo replaces BLR initials
 
 - [x] Cropped the user's supplied photo (shoulders-up, face/second-person
