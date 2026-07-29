@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (native select replaced with custom dropdown) — Open menu now on-brand everywhere
+
+- [x] Replaced the native `<select>` with a custom button+menu
+      disclosure component so the open list matches the dark/gold theme
+      on every device, not just the closed box (the native `<select>`'s
+      open list is OS-rendered on mobile and can't be styled). See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (email dropdown restyled) — Custom gold chevron, centered value text
 
 - [x] Restyled the homepage Email `<select>` to match the rest of the

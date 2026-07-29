@@ -6,6 +6,36 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (native select replaced with custom dropdown) — Open menu now matches the site too, not just the closed box
+
+User sent a screenshot showing the actual problem with the earlier
+"restyled" select: once tapped open on Android Chrome, the option list
+is rendered by the OS/browser itself (grey system popup) and CSS can't
+touch it - only the closed box was ever going to look on-brand. Asked
+whether to build a proper custom dropdown; user chose that over keeping
+the native select or reverting to three stacked links.
+
+Replaced `<select class="contact-email-select">` in `index.html` with a
+custom disclosure component:
+- `<button class="contact-email-toggle" aria-haspopup aria-expanded>`
+  showing the same closed-box look as before (dark background, gold
+  border/text, chevron that rotates 180° when open).
+- `<ul class="contact-email-menu" role="menu" hidden>` of plain
+  `mailto:` links (`role="menuitem"`), styled with the card's `--dark`
+  background, gold border, and a gold-dim hover per item - fully
+  CSS-controlled since it's real page DOM, not an OS control.
+- Small vanilla JS block (next to the existing footer-year script):
+  toggle on click, close on outside click, close on Escape (returning
+  focus to the toggle), and close whenever a menu link is clicked.
+
+**Verified**: local `http.server` + Playwright - closed state pixel-
+matches the prior restyle, open state renders the dark/gold menu on both
+desktop and mobile viewports (no native OS popup), outside-click-closes
+confirmed via `menu.hidden` after a click elsewhere, zero horizontal
+overflow at 390px.
+
+---
+
 ## 2026-07-29 (email dropdown restyled) — Custom gold chevron and centered value text to match the rest of the site
 
 User said the Email `<select>` should "have the same feel as the rest
