@@ -6,6 +6,31 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (final one today) — Added WhatsApp to index.html's Contact section
+
+`index.html`'s `#contact` section (`.contact-grid` — Email / Product /
+Website cards) is the site's only real "contact info hub"; every other
+page just has a bare `mailto:` "Contact" link in its nav/footer, not a
+card grid, so this is the one place a new contact channel actually fits
+without inventing new UI elsewhere. Added a 4th card: `wa.me/27620498603`
+(South African mobile 062 049 8603, converted to E.164 without the `+`,
+which is `wa.me`'s required link format), displayed as `+27 62 049 8603`,
+`target="_blank" rel="noopener"` since it hands off to WhatsApp itself.
+
+Checked `.contact-grid`'s CSS before adding a 4th item into what was a
+3-card row: it's `grid-template-columns: repeat(auto-fit, minmax(220px,
+1fr))` with individually-bordered cards (`.contact-item { border: ... }`),
+NOT the shared-background-through-gaps trick that caused the real
+orphaned-cell bug fixed earlier this session in `.pricing-grid`/
+`.solution-grid` — so a 4th card just wraps to its own row on wrap-around
+widths with no risk of that bug recurring. Verified anyway: screenshotted
+desktop (3 cards top row, WhatsApp card wraps in the correct place next
+to Email) and confirmed zero horizontal overflow at 375px mobile.
+
+---
+
+---
+
 ## 2026-07-29 (yet later same day) — Removed Sign In + product link from both product pages' footers
 
 `one.html`'s footer had `Home | Sign In | LRX One Billing | Terms |
