@@ -6,6 +6,37 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Jessica photo replaced) — New photo swapped in, shoulders-up crop tuned to clear the caption bar
+
+User uploaded a new photo of Jessica (different from the first one used
+earlier) and asked for the same shoulders-up treatment as Brandon's card,
+with an explicit constraint: the crop had to leave enough room below her
+chin that the "Founder & COO" caption overlay bar (the bottom gradient
+bar from `.founder-visual--photo .founder-name-plate`) wouldn't sit on
+her face.
+
+Produced two square candidate crops from the original photo (a wider one
+showing more shoulder/dress, a tighter one closer to Brandon's framing)
+and sent both for approval. User then sent back a phone screenshot/zoom
+of the tighter candidate as "use this" - that file was a blurry upscale
+(1289×1415, clearly a pinch-zoomed re-crop of the 700×700 preview I'd
+sent, not a fresh source photo), so rather than ship a soft image to
+production, the same tighter framing was rebuilt from the original
+high-resolution source photo to keep the final asset sharp. Sent that
+rebuild for a final check; approved ("Yes, use that one").
+
+Saved over `images/jessica-le-roux.jpg` (crop resized to 700×700, JPEG
+quality 85, optimize=True - same pipeline as Brandon's photo). No
+HTML/CSS changes needed - the `<img>` tag already pointed at this
+filename.
+
+**Verified**: local `http.server` + Playwright screenshot of the
+Leadership section - caption bar sits cleanly below her chin with no
+overlap, framing matches Brandon's card, zero horizontal overflow on
+mobile viewport.
+
+---
+
 ## 2026-07-29 (photo re-crop) — Brandon's photo re-cropped tighter on the left
 
 Follow-up to the approved Brandon photo: user asked to crop more from the

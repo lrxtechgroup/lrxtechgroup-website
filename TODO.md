@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Jessica photo replaced) — New photo swapped in with a tighter shoulders-up crop
+
+- [x] Replaced `images/jessica-le-roux.jpg` with a crop of a new photo the
+      user supplied, tuned so the "Founder & COO" caption overlay bar
+      doesn't sit on her face. Sent candidates for approval, rebuilt the
+      final approved framing from the original high-res source (the
+      user's "use this" file was a blurry phone-zoomed screenshot of a
+      preview, not a fresh source photo) to keep the site asset sharp.
+      No HTML/CSS changes needed. See MEMORY.md.
+
 ## Fixed 2026-07-29 (photo re-crop) — Brandon's photo cropped tighter on the left
 
 - [x] Re-cropped `images/brandon-le-roux.jpg`, keeping the right edge from
