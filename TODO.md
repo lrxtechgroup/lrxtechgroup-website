@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (yet later same day) — Sign In + product link removed from both product-page footers
+
+- [x] `one.html` footer: removed "Sign In" and the "LRX One Billing" link.
+      `billing.html` footer: removed the "LRX One" link (it never had a
+      Sign In link in its footer). Both now read Home / Terms / Privacy /
+      Refund Policy / Cancellation Policy / Contact. See MEMORY.md.
+- [x] Confirmed `index.html` and all 4 legal pages' footers don't have
+      this pattern (different link sets entirely) - left untouched, not
+      overlooked.
+
 ## Fixed 2026-07-29 — Arrows/em-dashes removed, LRX One wordmark two-toned on hero eyebrows
 
 - [x] Removed the arrow from every "Register Interest" (and billing.html's

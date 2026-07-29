@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (yet later same day) — Removed Sign In + product link from both product pages' footers
+
+`one.html`'s footer had `Home | Sign In | LRX One Billing | Terms |
+Privacy | Refund Policy | Cancellation Policy | Contact`; `billing.html`'s
+had `Home | LRX One | Terms | Privacy | Refund Policy | Cancellation
+Policy | Contact` (no Sign In there to begin with — checked before
+assuming both pages had the same two link types to remove). Removed
+"Sign In" and the product-name link from `one.html`, and the product-name
+link from `billing.html`, leaving both footers as `Home | Terms | Privacy
+| Refund Policy | Cancellation Policy | Contact`.
+
+Deliberately left `index.html`'s footer and all 4 legal pages' footers
+untouched — checked each first: `index.html`'s footer has `About` and
+`Products` (an in-page anchor, not a named product link) instead of Sign
+In, structurally different from the pattern being removed; the 4 legal
+pages' footers never had Sign In or a product link at all. Also left
+`one.html`'s two other "Sign In" buttons alone (the hero CTA and the
+pricing `cta-banner` button) — those are prominent mid-page CTAs, not the
+"bottom of page, next to policy docs" footer link the request named.
+
+**Verified**: screenshotted both footers after the edit — clean
+`Home / Terms / Privacy / Refund Policy / Cancellation Policy / Contact`
+row on each, no orphaned separators or spacing artifacts from the removed
+`<li>`s.
+
+---
+
 ## 2026-07-29 (later same day) — Extended the LRX One wordmark treatment everywhere; removed every remaining arrow
 
 Follow-up to the same-day entry below. The user explicitly said to do
