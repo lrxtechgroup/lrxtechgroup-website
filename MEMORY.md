@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (scroll label removed) — Hero's "Scroll" text label dropped, indicator line kept
+
+User asked to remove the word "Scroll" from the hero. Removed the
+`<span>Scroll</span>` from `.hero-scroll` in `index.html`, keeping the
+animated gold `.scroll-line` indicator itself. Also removed the now-dead
+`.hero-scroll span` CSS rule (nothing else on the site used that
+selector).
+
+**Verified**: local `http.server` + Playwright mobile screenshot of the
+hero after the reveal animation - line indicator still pulses, no
+leftover label text.
+
+---
+
 ## 2026-07-29 (redundant website link removed) — Contact grid no longer links to the page you're already on
 
 User spotted this from a live screenshot: the Contact section's grid had

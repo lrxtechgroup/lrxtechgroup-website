@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (scroll label removed) — Hero "Scroll" text dropped
+
+- [x] Removed the "Scroll" label under the hero's animated line
+      indicator, and the now-unused `.hero-scroll span` CSS rule. See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (redundant website link removed) — Contact grid no longer links to lrxtechgroup.com
 
 - [x] Removed the "Website → lrxtechgroup.com" card from `index.html`'s
