@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (email dropdown restyled) — Custom gold chevron, centered value text
+
+- [x] Restyled the homepage Email `<select>` to match the rest of the
+      site: custom gold chevron instead of the browser default, centered
+      bold gold text, and the same hover treatment used on `.btn-outline`
+      buttons. See MEMORY.md.
+
 ## Fixed 2026-07-29 (Product card removed from contact grids) — lrxone.com isn't a contact resource
 
 - [x] Removed the "Product → lrxone.com" card from `contact.html` and

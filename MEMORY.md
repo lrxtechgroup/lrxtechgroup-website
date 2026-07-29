@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (email dropdown restyled) — Custom gold chevron and centered value text to match the rest of the site
+
+User said the Email `<select>` should "have the same feel as the rest
+of the website" - it was rendering with the browser's default OS-styled
+dropdown arrow and left-aligned text, standing out against the
+hand-styled dark/gold cards around it. Restyled `.contact-email-select`
+in `index.html`:
+
+- `appearance: none` + an inline SVG gold chevron (matching `--gold`,
+  `#D4AF37`) replacing the native arrow.
+- Centered text (`text-align` + `text-align-last`) at 14px/600 weight,
+  matching the sibling WhatsApp/Call cards' `.contact-value` styling
+  instead of a plain 13px left-aligned box.
+- Hover/focus now uses the same `border-color: var(--gold); background:
+  var(--gold-dim)` treatment already used on the site's `.btn-outline`
+  buttons, instead of just a border-color change.
+- Dropdown option list background changed from pure black to `--dark`
+  (matches card backgrounds) with left-aligned option text (the
+  native OS option list can't take the custom chevron/centering, but
+  the closed-box appearance is what needed to match).
+
+**Verified**: local `http.server` + Playwright screenshots (default,
+hover, mobile) - zero horizontal overflow, chevron and hover state
+render correctly.
+
+---
+
 ## 2026-07-29 (Product card removed from contact grids) — lrxone.com isn't a contact resource
 
 User pointed out the "Product → lrxone.com" card didn't belong in
