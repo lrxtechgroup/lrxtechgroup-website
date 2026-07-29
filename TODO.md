@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (name-plate overlay removed) — Founder photos no longer show duplicate title text
+
+- [x] Removed the "Founder & CEO"/"Founder & COO" overlay caption from
+      both founder photos - that title already appears in the text next
+      to each quote. See MEMORY.md.
+
 ## Fixed 2026-07-29 (Contact stops defaulting to email) — Added Call option, "Contact" links now go to the contact section
 
 - [x] "Contact" links on `index.html` footer, and nav-cta/footer on

@@ -6,6 +6,28 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (name-plate overlay removed) — Founder photos no longer have duplicate title text on top of them
+
+User pointed out the role captions overlaid on the founder photos
+("Founder & CEO" / "Founder & COO", the `.founder-name-plate` bottom
+gradient bar) duplicated the same text already shown just below/beside
+each photo in `.founder-meta` ("Brandon Le Roux" / "Founder & CEO ·
+LRX Tech Group"). Removed the `.founder-name-plate` `<div>` from both
+founder cards' `.founder-visual--photo` markup, leaving clean photos.
+
+Left the `.founder-name-plate` / `.founder-visual--photo
+.founder-name-plate` CSS rules in place even though nothing currently
+uses them - they're an existing, documented fallback pattern (caption
+under plain initials, or overlay bar on a photo) for any future team
+member added without their own photo yet, not something newly dead from
+this change.
+
+**Verified**: local `http.server` + Playwright screenshot of the
+Leadership section - both photos are now clean, titles still visible in
+the text beside each quote.
+
+---
+
 ## 2026-07-29 (Contact stops defaulting to email) — Added Call option, "Contact" links now go to the contact section
 
 User caught this from another live screenshot: the footer's "Contact"
