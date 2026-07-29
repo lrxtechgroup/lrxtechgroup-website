@@ -6,6 +6,29 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (really the final one today) — WhatsApp added to one.html/billing.html footers too
+
+Follow-up to the same-day `index.html` contact-grid entry - user confirmed
+they wanted it "on both website pages" too (the two product pages,
+matching the "both sites" phrasing used earlier this session for the
+footer Sign-In/product-link removal). Neither page has a contact-info hub
+like `index.html`'s, just a bare `mailto:` "Contact" footer link, so added
+a matching `WhatsApp` (`wa.me/27620498603`, new tab) `<li>` right after
+Contact in both `one.html`'s and `billing.html`'s `.footer-links` lists -
+same list style/hover treatment as every other footer link, no new UI
+invented.
+
+**Verified**: screenshotted both footers at desktop (1280px) and mobile
+(375px) - `.footer-links` already had `flex-wrap: wrap` from an earlier
+mobile-overflow fix this session, so the extra item wraps cleanly with
+zero horizontal overflow at either width, confirmed programmatically
+(`scrollWidth - clientWidth === 0`) on all 4 combinations, not just visual
+spot-checks.
+
+---
+
+---
+
 ## 2026-07-29 (final one today) — Added WhatsApp to index.html's Contact section
 
 `index.html`'s `#contact` section (`.contact-grid` — Email / Product /

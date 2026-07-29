@@ -3,12 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
-## Fixed 2026-07-29 (final one today) — WhatsApp added to Contact section
+## Fixed 2026-07-29 (really the final one today) — WhatsApp added to Contact section + both product pages
 
 - [x] Added a WhatsApp card (`wa.me/27620498603`) to `index.html`'s
-      `#contact` grid, alongside Email/Product/Website. Not added to
-      other pages' plain `mailto:` "Contact" nav/footer links - those
-      aren't a contact-info hub the way this section is. See MEMORY.md.
+      `#contact` grid, alongside Email/Product/Website.
+- [x] User confirmed they also wanted it on `one.html` and `billing.html`
+      - added a "WhatsApp" footer link next to "Contact" on both, since
+      neither page has a contact-grid to add a card to. See MEMORY.md for
+      both entries.
 - [ ] Not verified: whether 062 049 8603 actually has WhatsApp Business
       registered/active on it - the link format itself is correct
       regardless, but that's a real-world check outside what I can
