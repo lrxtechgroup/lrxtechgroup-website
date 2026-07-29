@@ -3,6 +3,17 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (actually the final one today) — Jessica's real photo replaces JLR initials
+
+- [x] Added `images/jessica-le-roux.jpg` (resized/optimized) and wired it
+      into the Leadership section's founder card, replacing the "JLR"
+      initials placeholder. Brandon's "BLR" card is unchanged - no photo
+      supplied for him yet. See MEMORY.md for the CSS approach.
+- [ ] **Not done, flagging**: Brandon's card still shows initials. If/when
+      a photo for him is provided, the same `.founder-visual--photo`
+      pattern already exists to reuse - no new CSS needed, just the image
+      + swapping the markup the same way Jessica's was.
+
 ## Fixed 2026-07-29 (really the final one today) — WhatsApp added to Contact section + both product pages
 
 - [x] Added a WhatsApp card (`wa.me/27620498603`) to `index.html`'s

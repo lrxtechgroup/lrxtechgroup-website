@@ -6,6 +6,38 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (actually the final one today) — Real photo replaces Jessica's "JLR" initials placeholder
+
+User supplied a headshot; saved to `images/jessica-le-roux.jpg` (resized
+from the original 1125×1513 to 700×941 via Pillow, EXIF-orientation-
+corrected, JPEG quality 85 — 77KB vs the original 305KB, since this repo
+had no image-asset pipeline before this and a full-res upload was
+unnecessarily heavy for a small avatar box). This is the first real image
+file in a repo that was previously 100% inline HTML/CSS/SVG (even the
+favicon is a data URI) — new `images/` directory.
+
+`.founder-visual` was built for two states (initials-on-dark-background,
+unchanged for Brandon's card, which has no photo yet) and now also a
+photo variant: added `.founder-visual--photo` modifier + `.founder-photo`
+(absolutely positioned, `object-fit: cover`, `object-position: center
+22%` to keep the face framed rather than the empty ceiling space visible
+in the original photo) and turned `.founder-name-plate` into a bottom
+overlay bar (dark gradient behind white text) only when that modifier
+class is present — Brandon's card keeps its original centered-under-
+initials layout untouched. Also added `z-index: 1` to `.founder-visual`'s
+existing gold top-border pseudo-element, which is also absolutely
+positioned inset — without it the new photo (also absolute, `inset: 0`)
+would have painted over that 2px gold line.
+
+**Verified**: screenshotted the Leadership section at desktop (1280px)
+and mobile (375px) — face is well-framed at both sizes, the gold top
+border and "FOUNDER & COO" caption both render above the photo as
+intended, zero horizontal overflow on mobile.
+
+---
+
+---
+
 ## 2026-07-29 (really the final one today) — WhatsApp added to one.html/billing.html footers too
 
 Follow-up to the same-day `index.html` contact-grid entry - user confirmed
