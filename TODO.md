@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Billing footer link removed) — refund-policy.html only
+
+- [x] Removed the "Billing" mailto footer link from `refund-policy.html`.
+      See MEMORY.md.
+
 ## Fixed 2026-07-29 (nav-back link simplified) — "Back to lrxtechgroup.com" is now "Home"
 
 - [x] Simplified the nav-back link text on `contact.html`, `terms.html`,

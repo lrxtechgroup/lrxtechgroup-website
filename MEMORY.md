@@ -6,6 +6,15 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Billing footer link removed) — refund-policy.html only
+
+User asked to remove the "Billing" mailto footer link specifically from
+`refund-policy.html`. Removed it there only - `cancellation-policy.html`
+has the identical link but wasn't mentioned, so left untouched to avoid
+overreaching beyond what was asked.
+
+---
+
 ## 2026-07-29 (nav-back link simplified) — "Back to lrxtechgroup.com" is now just "Home"
 
 Applied to all five pages sharing this exact nav-back link/markup:
