@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (nav-back link simplified) — "Back to lrxtechgroup.com" is now "Home"
+
+- [x] Simplified the nav-back link text on `contact.html`, `terms.html`,
+      `privacy.html`, `refund-policy.html`, and `cancellation-policy.html`
+      from "Back to lrxtechgroup.com" to "Home". See MEMORY.md.
+
 ## Fixed 2026-07-29 (native select replaced with custom dropdown) — Open menu now on-brand everywhere
 
 - [x] Replaced the native `<select>` with a custom button+menu

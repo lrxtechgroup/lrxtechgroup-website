@@ -6,6 +6,18 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (nav-back link simplified) — "Back to lrxtechgroup.com" is now just "Home"
+
+Applied to all five pages sharing this exact nav-back link/markup:
+`contact.html`, `terms.html`, `privacy.html`, `refund-policy.html`,
+`cancellation-policy.html`. User only showed a screenshot of
+`contact.html`, but since all five use the identical
+`<a class="nav-back" href="/">Back to lrxtechgroup.com</a>` markup,
+changed it consistently everywhere rather than leaving the other four
+inconsistent.
+
+---
+
 ## 2026-07-29 (native select replaced with custom dropdown) — Open menu now matches the site too, not just the closed box
 
 User sent a screenshot showing the actual problem with the earlier
