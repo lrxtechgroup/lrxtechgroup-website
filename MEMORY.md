@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (pricing notice clause) — Terms of Service now commits to one month's notice on pricing changes
+
+User asked for an explicit commitment in the Terms: LRX Tech Group
+reserves the right to change pricing, but will give at least one
+month's notice before a change takes effect. The existing subscriptions
+clause (`terms.html`, Section 3) only had a vague "may change with
+reasonable notice" line - split it into two bullets: one on plan
+features/limits as published at signup, and a new one stating the
+one-month notice commitment explicitly, and that a pricing change only
+applies to billing periods starting after that notice period (so it
+can't be applied retroactively mid-cycle).
+
+---
+
 ## 2026-07-29 (Jessica photo replaced) — New photo swapped in, shoulders-up crop tuned to clear the caption bar
 
 User uploaded a new photo of Jessica (different from the first one used

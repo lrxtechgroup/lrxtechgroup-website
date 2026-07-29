@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (pricing notice clause) — Terms of Service commits to one month's notice on pricing changes
+
+- [x] `terms.html` Section 3 (Subscriptions and payment): split the vague
+      "may change with reasonable notice" line into an explicit
+      commitment - we reserve the right to change pricing, but will give
+      at least one month's notice, applying only to billing periods
+      starting after that notice period. See MEMORY.md.
+
 ## Fixed 2026-07-29 (Jessica photo replaced) — New photo swapped in with a tighter shoulders-up crop
 
 - [x] Replaced `images/jessica-le-roux.jpg` with a crop of a new photo the
