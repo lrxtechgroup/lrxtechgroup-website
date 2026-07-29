@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (photo re-crop) — Brandon's photo cropped tighter on the left
+
+- [x] Re-cropped `images/brandon-le-roux.jpg`, keeping the right edge from
+      the originally-approved crop fixed and trimming more off the left,
+      re-centered to stay square. Approved and swapped in. See MEMORY.md.
+
 ## Fixed 2026-07-29 (post-deploy fix) — Hero "LRX"/"TECH" colour mismatch
 
 - [x] User spotted this from a real screenshot of the live site after the

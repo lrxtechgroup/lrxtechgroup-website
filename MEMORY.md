@@ -6,6 +6,32 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (photo re-crop) — Brandon's photo re-cropped tighter on the left
+
+Follow-up to the approved Brandon photo: user asked to crop more from the
+left. First attempt shifted the whole crop window right (which also moved
+the right edge) - user corrected that: "leave the right as it was." Redid
+it properly: kept the original approved crop's right edge (x=1960 in the
+source photo's coordinate space) fixed, only moved the left edge in
+(660 → 790), then re-centered top/bottom around the same vertical midpoint
+to keep the crop square (1170×1170) rather than feeding a non-square
+source into the `object-fit: cover` square avatar box, which would have
+let the browser do its own unpredictable additional crop at render time.
+Sent for approval again before touching the repo - same approval-gated
+workflow as the original photo.
+
+Approved, then re-saved over `images/brandon-le-roux.jpg` (resized to
+700×700, same optimization settings as before) - no HTML/CSS changes
+needed, the `<img>` tag already pointed at this filename.
+
+**Verified**: screenshotted the Leadership section again post-swap -
+tighter left crop, same headroom/shoulder framing as before, still
+consistent with Jessica's card.
+
+---
+
+---
+
 ## 2026-07-29 (post-deploy fix) — Hero headline's "LRX"/"TECH" colour mismatch
 
 User caught this from a real screenshot of the live site after the deploy
