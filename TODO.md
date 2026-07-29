@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (contact.html intro copy) — "Every way you can contact us in One place"
+
+- [x] Replaced `contact.html`'s intro paragraph with the shorter
+      "Every way you can contact us in One place" line, "One" in gold.
+      See MEMORY.md.
+
 ## Fixed 2026-07-29 (email dropdown + dedicated Contact Us page) — Real `<select>`, full contact.html added
 
 - [x] Email card is now a real `<select>` dropdown (Sales/Support/

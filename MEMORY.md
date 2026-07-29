@@ -6,6 +6,16 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (contact.html intro copy) — Simplified to "Every way you can contact us in One place"
+
+User asked to replace the intro paragraph with a shorter line, with
+"One" in gold - a small wordplay on the product name. Changed
+`contact.html`'s `.doc-intro` from the earlier "Every way to reach LRX
+Tech Group, and what each one is for..." to "Every way you can contact
+us in <span style="color:var(--gold)">One</span> place."
+
+---
+
 ## 2026-07-29 (email dropdown + dedicated Contact Us page) — Real `<select>` for department, full contact.html added
 
 Two follow-ups to the Email card added earlier today:
