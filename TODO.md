@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (email dropdown + dedicated Contact Us page) — Real `<select>`, full contact.html added
+
+- [x] Email card is now a real `<select>` dropdown (Sales/Support/
+      Billing) instead of three stacked links.
+- [x] Added `/contact.html` - every contact resource (Sales, Support,
+      Billing, WhatsApp, Call, Product) as its own card with a
+      description of what it's for. Nav-cta/footer "Contact" links
+      across the site now point here instead of the homepage anchor.
+      See MEMORY.md.
+
 ## Fixed 2026-07-29 (name-plate overlay removed) — Founder photos no longer show duplicate title text
 
 - [x] Removed the "Founder & CEO"/"Founder & COO" overlay caption from

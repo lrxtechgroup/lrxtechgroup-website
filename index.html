@@ -585,11 +585,21 @@
     .contact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; display: block; }
     .contact-value { font-size: 14px; font-weight: 600; color: var(--gold); }
 
-    .contact-email-options { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
-    .contact-email-option { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
-    .contact-email-role { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-grey); }
-    .contact-email-address { font-size: 13px; font-weight: 600; color: var(--gold); }
-    .contact-email-option:hover .contact-email-address { text-decoration: underline; }
+    .contact-email-select {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      color: var(--gold);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 12px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+    .contact-email-select:hover, .contact-email-select:focus { border-color: var(--gold); outline: none; }
+    .contact-email-select option { background: var(--black); color: var(--white); }
 
     /* ── FOOTER ───────────────────────────────────────────────────────────── */
     footer {
@@ -655,7 +665,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#founder">Leadership</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
+      <li><a href="/contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -832,24 +842,17 @@
   <section id="contact" class="contact-section">
     <p class="section-eyebrow">Get in Touch</p>
     <h2 class="section-headline">Let's talk</h2>
+    <p style="text-align:center; margin-top:12px;"><a href="/contact.html" style="color:var(--gold); font-size:13px; text-decoration:underline;">See what each contact option is for</a></p>
     <div class="contact-grid">
       <div class="contact-item">
         <span class="contact-icon">✉</span>
         <span class="contact-label">Email</span>
-        <div class="contact-email-options">
-          <a href="mailto:sales@lrxtechgroup.com" class="contact-email-option">
-            <span class="contact-email-role">Sales</span>
-            <span class="contact-email-address">sales@lrxtechgroup.com</span>
-          </a>
-          <a href="mailto:support@lrxtechgroup.com" class="contact-email-option">
-            <span class="contact-email-role">Support</span>
-            <span class="contact-email-address">support@lrxtechgroup.com</span>
-          </a>
-          <a href="mailto:billing@lrxtechgroup.com" class="contact-email-option">
-            <span class="contact-email-role">Billing</span>
-            <span class="contact-email-address">billing@lrxtechgroup.com</span>
-          </a>
-        </div>
+        <select class="contact-email-select" onchange="if(this.value){window.location.href=this.value;this.selectedIndex=0;}">
+          <option value="" selected disabled>Choose a department</option>
+          <option value="mailto:sales@lrxtechgroup.com">Sales - sales@lrxtechgroup.com</option>
+          <option value="mailto:support@lrxtechgroup.com">Support - support@lrxtechgroup.com</option>
+          <option value="mailto:billing@lrxtechgroup.com">Billing - billing@lrxtechgroup.com</option>
+        </select>
       </div>
       <a href="https://wa.me/27620498603" class="contact-item" target="_blank" rel="noopener">
         <span class="contact-icon">💬</span>
@@ -879,7 +882,7 @@
       <li><a href="/privacy.html">Privacy</a></li>
       <li><a href="/refund-policy.html">Refund Policy</a></li>
       <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </footer>
 

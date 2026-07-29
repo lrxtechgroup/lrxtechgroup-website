@@ -6,6 +6,55 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (email dropdown + dedicated Contact Us page) — Real `<select>` for department, full contact.html added
+
+Two follow-ups to the Email card added earlier today:
+
+1. **Dropdown instead of stacked links**: the three-link stack
+   (Sales/Support/Billing) worked but wasn't what the user asked for -
+   they wanted an actual dropdown selection. Replaced it with a
+   `<select class="contact-email-select">` styled to match the site's
+   dark/gold theme, with an inline `onchange` handler
+   (`window.location.href = this.value`) that opens the right
+   `mailto:` link, then resets the select back to the placeholder so it
+   can be used again. Removed the now-unused `.contact-email-options` /
+   `.contact-email-option` / `.contact-email-role` /
+   `.contact-email-address` CSS from the earlier version.
+
+2. **New `contact.html` page**: a dedicated Contact Us page listing
+   every contactable resource (Sales, Support, Billing emails,
+   WhatsApp, Call, Product/lrxone.com) as its own card with a short
+   description of what to contact that resource for - e.g. Billing's
+   card links out to the Refund and Cancellation policies, Sales'
+   explains it's for pricing/demos/setup. Built on the same
+   nav/footer shell as `terms.html`/`privacy.html` (logo + "Back to
+   lrxtechgroup.com", plain footer link list) rather than the
+   full marketing nav, matching how the other standalone utility pages
+   are built.
+   - Updated the nav-cta and footer "Contact" links on `index.html`,
+     `one.html`, `billing.html`, and `terms.html` (previously pointing
+     at `#contact` / `/#contact`, from this morning's earlier fix) to
+     point at `/contact.html` instead, since it's now the fuller,
+     canonical contact destination.
+   - Left `refund-policy.html`/`cancellation-policy.html` alone (they
+     only ever had a "Billing" mailto link, no "Contact" link, and
+     adding one wasn't asked for) and `privacy.html`'s POPIA Information
+     Officer link alone (different purpose, as before).
+   - The homepage's inline `#contact` "Let's talk" section stays in
+     place for quick access, now with a text link ("See what each
+     contact option is for") pointing to the new page for the fuller
+     picture.
+
+**Verified**: local `http.server` + Playwright, desktop and mobile, both
+`index.html`'s contact section and the new `contact.html` - zero
+horizontal overflow on either. Confirmed the select's `value` resolves
+to the correct `mailto:` target per option via `page.evaluate`
+(mailto navigation itself hands off to the OS mail client, so it isn't
+observable as an in-page navigation in headless Chromium - expected
+browser behaviour, not a bug).
+
+---
+
 ## 2026-07-29 (name-plate overlay removed) — Founder photos no longer have duplicate title text on top of them
 
 User pointed out the role captions overlaid on the founder photos
