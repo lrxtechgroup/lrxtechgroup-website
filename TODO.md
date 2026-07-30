@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (pricing headline reworded) — billing.html no longer implies pay-per-use refunds
+
+- [x] "Pay for what you use. Scale as you grow." -> "Predictable plans.
+      Scale as you grow." on `billing.html`'s pricing section - avoids
+      implying clients could get refunds for unused quota. See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (footer logo "GROUP" now grey) — matches nav logo, all 8 pages
 
 - [x] Footer's "LRX TECH GROUP" now splits gold "LRX TECH" / grey

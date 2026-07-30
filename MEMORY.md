@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (pricing headline reworded) — "Pay for what you use" removed from billing.html
+
+User flagged that "Pay for what you use. Scale as you grow." (the
+`billing.html` pricing section headline) implies usage-based billing
+where unused quota might be refundable - not the actual model (flat
+subscription tiers, non-refundable per the Refund Policy except when
+charged after cancellation). Changed to "Predictable plans. Scale as
+you grow." - same rhythm, no pay-per-use implication. `one.html` never
+had this phrase, so no change needed there.
+
+While checking this, also re-verified the "LRX One Billing pricing is
+separate from LRX One Core's..." paragraph the user asked about
+earlier (color mismatch report) - confirmed via fresh screenshot that
+all three "LRX One" mentions render consistently gold in the current
+source on both `one.html` and `billing.html`. That was a stale-cache
+issue on the user's end, not a real bug - no code change was needed for
+that part.
+
+---
+
 ## 2026-07-29 (footer logo "GROUP" now grey) — matches the nav logo's treatment at the top of every page
 
 User asked for the footer's "GROUP" to be grey, "like the top of page" -
