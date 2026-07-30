@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (WhatsApp footer link removed) — billing.html only
+
+- [x] Removed the "WhatsApp" footer link from `billing.html`. See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (highlighted pricing tier removed) — one.html and billing.html
 
 - [x] Removed the "featured" highlight (dark background + gold top

@@ -6,6 +6,15 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (WhatsApp footer link removed) — billing.html only
+
+User asked to remove the "WhatsApp" footer link specifically from
+`billing.html`. Removed it there only - `one.html` has the identical
+link but wasn't mentioned, so left untouched (same scope discipline as
+the earlier Billing-link-on-refund-policy-only fix).
+
+---
+
 ## 2026-07-29 (highlighted pricing tier removed) — one.html and billing.html
 
 User asked to remove the highlighted/"featured" pricing card on both
