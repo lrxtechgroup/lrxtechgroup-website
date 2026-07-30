@@ -200,8 +200,6 @@
     @media (min-width: 1020px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
     .pricing-note { text-align: center; font-size: 13px; color: var(--grey); max-width: 620px; margin: 32px auto 0; line-height: 1.7; }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
-    .pricing-card.featured { background: var(--dark); }
-    .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); }
     .pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .pricing-price { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
     .pricing-price .period { font-size: 12px; font-weight: 400; color: var(--light-grey); }
@@ -471,7 +469,7 @@
           <li>25GB storage</li>
         </ul>
       </div>
-      <div class="pricing-card featured">
+      <div class="pricing-card">
         <div class="pricing-tier">Business</div>
         <div class="pricing-price">R2,299<span class="period">/mo</span></div>
         <p class="pricing-desc">For growing businesses that need automation and AI at scale.</p>

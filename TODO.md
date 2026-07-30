@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (highlighted pricing tier removed) — one.html and billing.html
+
+- [x] Removed the "featured" highlight (dark background + gold top
+      border) from `one.html`'s Business card and `billing.html`'s
+      Growth card - all pricing tiers now render identically. See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (Enterprise Billing tier priced) — R14,999/mo instead of "Custom"
 
 - [x] `billing.html`'s Enterprise pricing card and tier-dropdown option

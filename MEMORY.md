@@ -6,6 +6,24 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (highlighted pricing tier removed) — one.html and billing.html
+
+User asked to remove the highlighted/"featured" pricing card on both
+product pages - `one.html`'s Business tier and `billing.html`'s Growth
+tier each had a `.pricing-card.featured` modifier (dark background +
+gold top border) marking them as the recommended plan. Removed the
+`featured` class from both cards' markup and deleted the now-dead
+`.pricing-card.featured` / `.pricing-card.featured::before` CSS rules
+from both files (nothing else referenced them - not a documented
+reusable pattern like the founder name-plate, just a one-off highlight
+being explicitly removed).
+
+**Verified**: local `http.server` + Playwright screenshots of both
+pricing grids - all four cards on each page now render identically, no
+leftover grid/column irregularities.
+
+---
+
 ## 2026-07-29 (Enterprise Billing tier priced) — "Custom" replaced with R14,999/mo
 
 User asked for `billing.html`'s Enterprise tier to have a real

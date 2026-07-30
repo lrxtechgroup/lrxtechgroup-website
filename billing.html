@@ -183,8 +183,6 @@
     @media (min-width: 620px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1020px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
-    .pricing-card.featured { background: var(--dark); }
-    .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); }
     .pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .pricing-price { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
     .pricing-price .period { font-size: 12px; font-weight: 400; color: var(--light-grey); }
@@ -415,7 +413,7 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
           <li>Email support</li>
         </ul>
       </div>
-      <div class="pricing-card featured">
+      <div class="pricing-card">
         <div class="pricing-tier">Growth</div>
         <div class="pricing-price">R2,999<span class="period">/mo</span></div>
         <div class="pricing-txn">+ 0.5% per transaction</div>
