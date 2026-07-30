@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (footer logo "GROUP" now grey) — matches the nav logo's treatment at the top of every page
+
+User asked for the footer's "GROUP" to be grey, "like the top of page" -
+the nav logo already splits "LRX TECH" (gold) from "GROUP" (grey,
+`.nav-logo-text .tech`), but the footer's `.footer-logo` span rendered
+"LRX TECH GROUP" as one uniformly gold string. Wrapped just "GROUP" in
+`<span style="color:var(--light-grey)">` inside `.footer-logo` on all
+eight pages that share this identical footer markup: `index.html`,
+`one.html`, `billing.html`, `terms.html`, `privacy.html`,
+`refund-policy.html`, `cancellation-policy.html`, `contact.html`.
+
+**Verified**: local `http.server` + Playwright screenshot of
+`index.html`'s nav and footer together - both now read gold "LRX TECH"
++ grey "GROUP" consistently.
+
+---
+
 ## 2026-07-29 (custom dropdown extended to pricing tier pickers) — one.html and billing.html
 
 User sent a screenshot of the same native-select problem on `one.html`'s

@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (footer logo "GROUP" now grey) — matches nav logo, all 8 pages
+
+- [x] Footer's "LRX TECH GROUP" now splits gold "LRX TECH" / grey
+      "GROUP", matching the nav logo above it, across every page. See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (custom dropdown extended to pricing tier pickers) — one.html and billing.html
 
 - [x] Replaced the native tier-select `<select>` on both `one.html` and
