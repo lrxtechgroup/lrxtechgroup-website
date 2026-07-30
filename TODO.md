@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (hero eyebrow centered + "Introducing" added) — closer match to billing.html
+
+- [x] Centered the "Coming Soon" badge and eyebrow line (not the whole
+      hero - it's a two-column layout unlike billing.html's single
+      centered column), and changed copy to "Introducing LRX One Core".
+      See MEMORY.md.
+
 ## Fixed 2026-07-29 (hero eyebrow restacked, line removed) — matches billing.html
 
 - [x] Removed the gold line next to "Coming Soon" and restacked "LRX

@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (hero eyebrow centered + "Introducing" added) — closer match to billing.html's copy and layout
+
+Follow-up to the restack: user wanted the "Coming Soon" badge and
+"LRX One Core" eyebrow centered (like `billing.html`'s hero, which is
+centered because its whole hero is a single centered column), and the
+copy changed to "Introducing LRX One Core" matching `billing.html`'s
+"Introducing LRX One Billing".
+
+`one.html`'s hero is a two-column grid (text left, dashboard mockup
+right) rather than billing's single centered column, so centering the
+*entire* hero-left would have pulled the headline/description/buttons
+out of alignment with each other - not what was asked. Centered just
+the badge and eyebrow instead:
+- `.hero-badge`: `inline-block` → `block; width: fit-content; margin: 0
+  auto 20px` so the pill self-centers regardless of siblings.
+- `.hero-eyebrow`: added `text-align: center` (it's already a
+  full-width block from the earlier restack, so centering its text
+  centers the visible line).
+- Copy: "LRX One Core" → "Introducing LRX One Core".
+
+**Verified**: local `http.server` + Playwright, desktop and mobile -
+badge and eyebrow both centered above the still-left-aligned headline,
+matches the intent without forcing the whole two-column hero into
+billing.html's single-column centered layout.
+
+---
+
 ## 2026-07-29 (hero eyebrow restacked, line removed) — one.html now matches billing.html's pattern
 
 User asked to remove the decorative gold line next to "Coming Soon" and

@@ -86,16 +86,17 @@
     .hero-left { position: relative; z-index: 1; }
 
     .hero-badge {
-      display: inline-block;
+      display: block;
+      width: fit-content;
       font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
-      padding: 6px 14px; border-radius: 2px; margin-bottom: 20px;
+      padding: 6px 14px; border-radius: 2px; margin: 0 auto 20px;
       background: var(--mid); color: var(--light-grey); border: 1px solid rgba(255,255,255,0.08);
       animation: fadeUp 0.8s 0.1s both;
     }
 
     .hero-eyebrow {
       font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 24px;
+      color: var(--gold); margin-bottom: 24px; text-align: center;
       animation: fadeUp 0.8s 0.2s both;
     }
 
@@ -313,7 +314,7 @@
   <section class="hero">
     <div class="hero-left">
       <p class="hero-badge">Coming Soon</p>
-      <p class="hero-eyebrow"><span style="color:var(--gold)">LRX One</span> <span style="color:var(--white)">Core</span></p>
+      <p class="hero-eyebrow">Introducing <span style="color:var(--gold)">LRX One</span> <span style="color:var(--white)">Core</span></p>
       <h1 class="hero-headline">
         One Platform.<br/><span class="gold">Endless</span> Possibilities.
       </h1>
