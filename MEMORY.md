@@ -6,6 +6,14 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (WhatsApp footer link removed) — one.html, matching the earlier billing.html fix
+
+User asked for the same fix already applied to `billing.html`'s footer
+("Contact" left, "WhatsApp" removed) - `one.html` had the identical
+link. Removed it, so both product pages' footers now match.
+
+---
+
 ## 2026-07-29 (hero eyebrow centered + "Introducing" added) — closer match to billing.html's copy and layout
 
 Follow-up to the restack: user wanted the "Coming Soon" badge and

@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (WhatsApp footer link removed) — one.html
+
+- [x] Removed the "WhatsApp" footer link from `one.html`, matching the
+      earlier `billing.html` fix. See MEMORY.md.
+
 ## Fixed 2026-07-29 (hero eyebrow centered + "Introducing" added) — closer match to billing.html
 
 - [x] Centered the "Coming Soon" badge and eyebrow line (not the whole
