@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (one.html mobile eyebrow fixed) — no more wrap-mess, dash removed
+
+- [x] Shortened the hero eyebrow to "LRX One Core" (was "LRX One Core -
+      Enterprise Operating System") - fixes both the mobile wrapping
+      break and removes the dash. Checked the rest of the page's mobile
+      layout too - nothing else broken. See MEMORY.md.
+
 ## Fixed 2026-07-29 (Home button added to product page navs) — one.html and billing.html
 
 - [x] Added an always-visible "Home" nav link to `one.html` and

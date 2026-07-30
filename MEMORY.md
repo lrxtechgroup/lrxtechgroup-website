@@ -6,6 +6,39 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (one.html mobile eyebrow fixed) — hero-eyebrow no longer wraps into a mess
+
+User sent a mobile screenshot showing the hero eyebrow badly broken:
+"LRX One Core - Enterprise Operating System" (an `inline-flex` `<p>`
+where the gold divider line, "LRX One", "Core", and the trailing
+"- Enterprise Operating System" text were all separate flex items) was
+overflowing its available width and wrapping across three ragged lines
+next to the "Coming Soon" badge.
+
+Shortened `.hero-eyebrow` to just "LRX One Core" (dropping "- Enterprise
+Operating System" and its dash) - that fixed both the layout break and
+the "remove the dash by LRX One Core" request in one change, since the
+dash was part of the removed tail text. The full phrase isn't lost:
+it's still in the `<title>`, the meta description, and the hero
+description paragraph below. Left the decorative gold divider line
+(`.hero-eyebrow::before`) in place - that's a design element used
+consistently before eyebrow text sitewide, not literal "wording", and
+wasn't part of what the user asked to remove.
+
+Did a fuller mobile pass on the rest of the page per the user's "sort
+out the mobile layout" ask - pillars strip (intentionally
+horizontally-scrollable via `overflow-x: auto`, contained, no page-level
+overflow), pricing grid, CTA banner with the tier dropdown, and footer
+all check out clean at 390px with nothing else broken.
+
+**Verified**: local `http.server` + Playwright mobile screenshots (after
+letting the `fadeUp` reveal animations finish, since a too-early
+screenshot makes still-fading-in content look missing rather than just
+timing) - eyebrow now renders "COMING SOON — LRX ONE CORE" on one tidy
+row, zero horizontal overflow anywhere on the page.
+
+---
+
 ## 2026-07-29 (Home button added to product page navs) — one.html and billing.html
 
 User asked for a "Home" button at the top of every screen when moving
