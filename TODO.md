@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Home button added to product page navs) — one.html and billing.html
+
+- [x] Added an always-visible "Home" nav link to `one.html` and
+      `billing.html` (previously only the unlabeled logo linked home,
+      and it was the only nav item left on mobile). See MEMORY.md.
+
 ## Fixed 2026-07-29 (WhatsApp footer link removed) — billing.html only
 
 - [x] Removed the "WhatsApp" footer link from `billing.html`. See

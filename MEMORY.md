@@ -6,6 +6,34 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Home button added to product page navs) — one.html and billing.html
+
+User asked for a "Home" button at the top of every screen when moving
+away from the homepage. The five standalone utility pages (`terms.html`,
+`privacy.html`, `refund-policy.html`, `cancellation-policy.html`,
+`contact.html`) already had this via their `.nav-back` link (renamed to
+"Home" earlier today). The gap was `one.html` and `billing.html`: their
+nav only had a logo (which links to `/` but isn't labeled) plus
+Products/Pricing/Leadership/Contact - and on mobile, `.nav-links`
+disappears entirely (`display: none` under 768px), leaving *no* visible
+navigation text at all, home or otherwise.
+
+Fixed by wrapping the existing `<ul class="nav-links">` and a new
+`<a class="nav-home" href="/">Home</a>` together in a `.nav-right` flex
+container, so `nav` itself still has exactly two direct children (logo,
+nav-right) and the `space-between` layout is unaffected. The mobile
+`display: none` rule still only targets `.nav-links`, so "Home" stays
+visible at every breakpoint while Products/Pricing/Leadership/Contact
+still collapse as before (unchanged, pre-existing behavior - not part of
+this request).
+
+**Verified**: local `http.server` + Playwright, desktop (1200px) and
+mobile (390px) screenshots of both pages - "Home" renders in the nav
+row on desktop and survives alone on mobile after the rest of
+`.nav-links` hides, zero horizontal overflow.
+
+---
+
 ## 2026-07-29 (WhatsApp footer link removed) — billing.html only
 
 User asked to remove the "WhatsApp" footer link specifically from

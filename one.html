@@ -50,6 +50,11 @@
     .nav-logo-text .lrx { font-size: 16px; font-weight: 800; letter-spacing: 0.12em; color: var(--gold); }
     .nav-logo-text .tech { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; color: var(--light-grey); text-transform: uppercase; }
 
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+
+    .nav-home { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.2s; }
+    .nav-home:hover { color: var(--gold); }
+
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
@@ -292,12 +297,15 @@
         <span class="tech">Group</span>
       </div>
     </a>
-    <ul class="nav-links">
-      <li><a href="/#products">Products</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="/#founder">Leadership</a></li>
-      <li><a href="/contact.html" class="nav-cta">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <a class="nav-home" href="/">Home</a>
+      <ul class="nav-links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/#founder">Leadership</a></li>
+        <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <section class="hero">
