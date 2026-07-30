@@ -6,6 +6,30 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (pillars strip fixed for mobile) — all 5 tiles visible instead of horizontally scrolling
+
+Follow-up to the mobile pass on `one.html`: the pillars band (Connect/
+Automate/Analyze/Scale/Secure) had been flagged in that pass as
+"intentionally horizontally-scrollable, contained, no page overflow" -
+but the user pointed out that's exactly the problem: with no scroll
+indicator, mobile users only ever see the first ~3 tiles (Automate/
+Analyze/Scale peeking at the edge) and have no visual cue that Connect
+and Secure exist off-screen. Effectively invisible.
+
+Replaced the `flex; overflow-x: auto` layout with a CSS grid, reusing
+the same gap+background hairline-divider technique this page already
+uses for `.pricing-grid` (`gap: 1px; background: var(--gold-line)`,
+each item's own `background: var(--dark)` painting over the gap lines).
+5 columns on desktop (unchanged visually), 2 columns under 640px with
+the 5th item (`Secure`) spanning both columns via `grid-column: 1 / -1`
+so it doesn't leave a dangling half-empty row.
+
+**Verified**: local `http.server` + Playwright - all 5 tiles visible
+without scrolling at 390px (2+2+1 layout), desktop unchanged (5 across),
+zero horizontal overflow.
+
+---
+
 ## 2026-07-29 (one.html mobile eyebrow fixed) — hero-eyebrow no longer wraps into a mess
 
 User sent a mobile screenshot showing the hero eyebrow badly broken:

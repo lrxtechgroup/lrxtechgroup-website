@@ -169,12 +169,16 @@
     .mock-status.run { background: rgba(100,200,100,0.1); color: #6cc; }
 
     /* ── PILLARS BAND ─────────────────────────────────────────────────────── */
-    .pillars-band { display: flex; justify-content: center; background: var(--dark); overflow-x: auto; }
-    .pillar-item { flex: 1; min-width: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 32px 24px; border-right: 1px solid var(--gold-line); transition: background 0.2s; }
-    .pillar-item:last-child { border-right: none; }
+    .pillars-band { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--gold-line); border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line); }
+    .pillar-item { background: var(--dark); display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 32px 24px; transition: background 0.2s; }
     .pillar-item:hover { background: var(--gold-dim); }
     .pillar-item svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .pillar-item span { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-grey); }
+    .pillar-item span { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-grey); text-align: center; }
+
+    @media (max-width: 640px) {
+      .pillars-band { grid-template-columns: repeat(2, 1fr); }
+      .pillar-item:last-child { grid-column: 1 / -1; }
+    }
 
     /* ── SECTION BASE ─────────────────────────────────────────────────────── */
     section { padding: 90px 5%; }

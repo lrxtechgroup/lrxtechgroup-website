@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (pillars strip fixed for mobile) — all 5 tiles visible
+
+- [x] Replaced the pillars band's horizontal-scroll layout (only ~3 of
+      5 tiles visible, no scroll indicator) with a wrapping grid - 2
+      columns on mobile, 5th tile spans full width. See MEMORY.md.
+
 ## Fixed 2026-07-29 (one.html mobile eyebrow fixed) — no more wrap-mess, dash removed
 
 - [x] Shortened the hero eyebrow to "LRX One Core" (was "LRX One Core -
