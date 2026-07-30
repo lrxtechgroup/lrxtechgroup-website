@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (pricing headline matched on one.html) — "Predictable plans. Scale as you grow."
+
+- [x] Changed `one.html`'s pricing headline to match `billing.html`'s
+      new wording for consistency. See MEMORY.md.
+
 ## Fixed 2026-07-29 (pricing headline reworded) — billing.html no longer implies pay-per-use refunds
 
 - [x] "Pay for what you use. Scale as you grow." -> "Predictable plans.

@@ -6,6 +6,17 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (pricing headline matched on one.html too) — "Predictable plans. Scale as you grow."
+
+Follow-up to the `billing.html` pricing headline fix: user asked to
+change `one.html`'s equivalent headline as well. It didn't have the
+same pay-per-use wording ("Start small. Scale when you're ready." -
+no refund-implying language), but changed it to match `billing.html`'s
+new "Predictable plans. Scale as you grow." for consistency between
+the two product pages.
+
+---
+
 ## 2026-07-29 (pricing headline reworded) — "Pay for what you use" removed from billing.html
 
 User flagged that "Pay for what you use. Scale as you grow." (the
