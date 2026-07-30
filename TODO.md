@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (Enterprise Billing tier priced) — R14,999/mo instead of "Custom"
+
+- [x] `billing.html`'s Enterprise pricing card and tier-dropdown option
+      now show R14,999/mo instead of "Custom"/"Custom pricing". See
+      MEMORY.md.
+
 ## Fixed 2026-07-29 (pricing headline matched on one.html) — "Predictable plans. Scale as you grow."
 
 - [x] Changed `one.html`'s pricing headline to match `billing.html`'s

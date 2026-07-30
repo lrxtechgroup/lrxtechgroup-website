@@ -6,6 +6,30 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (Enterprise Billing tier priced) — "Custom" replaced with R14,999/mo
+
+User asked for `billing.html`'s Enterprise tier to have a real
+subscription amount instead of "Custom" (which had been deliberately
+kept as "Custom pricing" up to now - see 2026-07-28's product-page
+migration entry, which explicitly left this tier untouched since it's
+a different pricing model from `one.html`'s Core tiers).
+
+Set it to **R14,999/mo**, following the existing ladder's tightening
+multiplier pattern (Starter R999 → Growth R2,999 is ~3.0x, → Business
+R6,999 is ~2.3x, → Enterprise R14,999 is ~2.1x - consistent economies
+of scale, no arbitrary jump). Left the "+ 0.15% per transaction" fee
+untouched - only the base subscription amount was asked for. Updated
+both the pricing card (`pricing-price`) and the tier-dropdown option
+label ("Enterprise - Custom pricing" → "Enterprise - R14,999/mo") so
+they stay in sync.
+
+**Verified**: local `http.server` + Playwright - card renders cleanly
+alongside the other three tiers, dropdown shows the new price, and
+selecting "Enterprise" still correctly updates the register-interest
+mailto link's subject line.
+
+---
+
 ## 2026-07-29 (pricing headline matched on one.html too) — "Predictable plans. Scale as you grow."
 
 Follow-up to the `billing.html` pricing headline fix: user asked to
