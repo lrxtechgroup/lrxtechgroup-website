@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-29 (hero eyebrow restacked, line removed) — matches billing.html
+
+- [x] Removed the gold line next to "Coming Soon" and restacked "LRX
+      One Core" underneath it - `.hero-eyebrow` now matches
+      `billing.html`'s plain-block pattern exactly. See MEMORY.md.
+
 ## Fixed 2026-07-29 (pillars strip fixed for mobile) — all 5 tiles visible
 
 - [x] Replaced the pillars band's horizontal-scroll layout (only ~3 of

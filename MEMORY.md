@@ -6,6 +6,27 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-29 (hero eyebrow restacked, line removed) — one.html now matches billing.html's pattern
+
+User asked to remove the decorative gold line next to "Coming Soon" and
+stack "LRX One Core" underneath the badge instead of beside it.
+Discovered `billing.html`'s hero already does exactly this - its
+`.hero-eyebrow` is a plain block `<p>` with no flex/line styling, so it
+naturally falls onto its own row below `.hero-badge`. `one.html`'s
+version had extra styling (`display: inline-flex; align-items: center;
+gap: 10px;` plus a `::before` divider line) that kept it sitting beside
+the badge on the same row instead.
+
+Removed the `::before` rule and the flex/gap properties from `one.html`'s
+`.hero-eyebrow`, matching `letter-spacing` to `billing.html`'s `0.35em`
+too - now byte-for-byte the same pattern on both product pages.
+
+**Verified**: local `http.server` + Playwright, desktop and mobile -
+"LRX ONE CORE" now sits directly under "Coming Soon", no line, matches
+`billing.html`'s "INTRODUCING LRX ONE BILLING" layout exactly.
+
+---
+
 ## 2026-07-29 (pillars strip fixed for mobile) — all 5 tiles visible instead of horizontally scrolling
 
 Follow-up to the mobile pass on `one.html`: the pillars band (Connect/
