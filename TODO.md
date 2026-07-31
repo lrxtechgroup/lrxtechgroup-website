@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-07-31 (org-wide rename) — "LRX One Core" → "LRX One Hive"
+
+- [x] Renamed the product across all 8 live pages (`index.html`,
+      `one.html`, `billing.html`, `privacy.html`, `refund-policy.html`,
+      `terms.html`, `cancellation-policy.html`, `contact.html`),
+      including the split gold/white span styling, the all-caps `LRX
+      ONE | CORE` product-grid label, and URL-encoded mailto subject
+      lines. See MEMORY.md.
+
 ## Fixed 2026-07-29 (WhatsApp footer link removed) — one.html
 
 - [x] Removed the "WhatsApp" footer link from `one.html`, matching the

@@ -6,6 +6,39 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-07-31 (org-wide rename) — "LRX One Core" → "LRX One Hive" across every live page
+
+User asked to systematically rename the product across all `lrxtechgroup`
+repos: every occurrence of "Core" that's part of the product name "LRX
+One Core" becomes "LRX One Hive" — not a generic find/replace of the
+word "core".
+
+Updated all 8 HTML pages that reference the product: `index.html`,
+`one.html`, `billing.html`, `privacy.html`, `refund-policy.html`,
+`terms.html`, `cancellation-policy.html`, `contact.html`. Two patterns
+needed separate handling since a plain string search for "LRX One Core"
+alone missed them:
+- The gold/white two-span brand styling
+  (`<span style="color:var(--gold)">LRX One</span> <span
+  style="color:var(--white)">Core</span>`) used throughout body copy —
+  the word "Core" is in its own span, not adjacent text.
+- `index.html`'s products-grid product name, styled as `LRX ONE |
+  CORE` (all-caps, no spaces around the pipe).
+- URL-encoded `mailto:` links (`subject=LRX%20One%20Core`) in `one.html`
+  and `index.html`'s "Register Interest" buttons.
+
+Deliberately left `MEMORY.md`/`TODO.md` history untouched — those are a
+changelog of what was true at the time each entry was written, not live
+copy, so past entries still say "LRX One Core" describing the old name
+correctly for that point in time. This entry and the one below are the
+only place the new name enters these two files going forward.
+
+**Verified**: `grep -rn '\bCore\b\|\bCORE\b'` across all `.html` files
+after the change returns nothing — no leftover brand references to the
+old name.
+
+---
+
 ## 2026-07-29 (WhatsApp footer link removed) — one.html, matching the earlier billing.html fix
 
 User asked for the same fix already applied to `billing.html`'s footer
