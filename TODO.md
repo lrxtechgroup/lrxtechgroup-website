@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-02 (pricing intro wording tweak)
+
+- [x] "Each product in LRX One is billed separately." → "Each product
+      in the LRX One suite is billed separately." on both `one.html`
+      and `billing.html`. See MEMORY.md.
+
 ## Fixed 2026-08-02 (pricing intro simplified)
 
 - [x] `one.html`/`billing.html` pricing intro no longer names both

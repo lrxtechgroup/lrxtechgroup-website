@@ -6,6 +6,15 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-02 (pricing intro wording tweak) — "LRX One" → "the LRX One suite"
+
+Follow-up to the entry below: user asked to change the just-simplified
+pricing intro from "Each product in LRX One is billed separately." to
+"Each product in the LRX One suite is billed separately." — same fix
+on both `one.html` and `billing.html`.
+
+---
+
 ## 2026-08-02 (pricing intro simplified) — dropped naming both products by name on `one.html`/`billing.html`
 
 User flagged that the "Predictable plans. Scale as you grow." intro
