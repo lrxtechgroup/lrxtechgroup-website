@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-02 (pricing intro simplified)
+
+- [x] `one.html`/`billing.html` pricing intro no longer names both
+      products explicitly — now "Each product in LRX One is billed
+      separately," so it doesn't need editing every time a new product
+      is added to the suite. `index.html` has no equivalent section
+      (checked). See MEMORY.md.
+
 ## Fixed 2026-07-31 (org-wide rename) — "LRX One Core" → "LRX One Hive"
 
 - [x] Renamed the product across all 8 live pages (`index.html`,

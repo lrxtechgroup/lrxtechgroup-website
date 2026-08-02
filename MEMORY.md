@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-02 (pricing intro simplified) — dropped naming both products by name on `one.html`/`billing.html`
+
+User flagged that the "Predictable plans. Scale as you grow." intro
+paragraph named both products explicitly ("LRX One Hive pricing is
+separate from LRX One Billing's - each product in the LRX One suite is
+billed on its own plan.") and pointed out this doesn't scale — every
+future product added to the suite would need this sentence edited
+again. Replaced with a generic, product-count-agnostic version: "Each
+product in LRX One is billed separately."
+
+Checked `billing.html` as asked (it mirrors `one.html`'s copy, naming
+the same two products in the opposite order) — same fix applied there.
+`index.html` doesn't have this section at all (checked via grep, no
+match), so no third page involved.
+
+Also pulled in upstream changes that had landed on `origin/main` since
+this session's local clone was last synced: the "LRX One Core" → "LRX
+One Hive" rename (see the entry below) plus several other commits — a
+plain `git pull --ff-only` before starting, no merge needed.
+
+**Verified visually**: local `http.server` + Playwright screenshots of
+the pricing section on both `one.html` and `billing.html` after the
+edit — clean single-sentence intro, no leftover product names, layout
+unaffected.
+
+---
+
 ## 2026-07-31 (org-wide rename) — "LRX One Core" → "LRX One Hive" across every live page
 
 User asked to systematically rename the product across all `lrxtechgroup`
