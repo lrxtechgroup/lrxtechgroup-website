@@ -6,6 +6,28 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-02 (leadership titles) — "Founder" → "Co-Founder" for Brandon and Jessica
+
+User asked to change Founder to Co-Founder for both. Updated
+`index.html`'s `#founder` leadership section: "Founder & CEO · LRX Tech
+Group" → "Co-Founder & CEO" (Brandon Le Roux), "Founder & COO" →
+"Co-Founder & COO" (Jessica Le Roux).
+
+Checked for other mentions before touching only this one spot: grepped
+every page on this site, `lrxone-website`, and `lrxone`'s docs/config.
+Found no other title reference to either of them anywhere — `privacy.html`
+names them as "Information Officer"/"Deputy Information Officer" (a
+POPIA-specific designation, unrelated to Founder/Co-Founder), and
+`lrxone`'s strategy docs use "founder" generically in planning prose,
+not as a title field naming either person. So `index.html`'s leadership
+section was the only real match.
+
+**Verified visually**: local `http.server` + Playwright screenshot of
+`#founder` after the edit — both cards now read "CO-FOUNDER & CEO" /
+"CO-FOUNDER & COO".
+
+---
+
 ## 2026-08-02 (pricing intro wording tweak) — "LRX One" → "the LRX One suite"
 
 Follow-up to the entry below: user asked to change the just-simplified

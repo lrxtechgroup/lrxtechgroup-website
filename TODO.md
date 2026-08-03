@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-02 (leadership titles)
+
+- [x] "Founder & CEO"/"Founder & COO" → "Co-Founder & CEO"/"Co-Founder
+      & COO" for Brandon and Jessica Le Roux in `index.html`'s
+      leadership section. Checked for other mentions across this site
+      and the sibling repos — none found. See MEMORY.md.
+
 ## Fixed 2026-08-02 (pricing intro wording tweak)
 
 - [x] "Each product in LRX One is billed separately." → "Each product
