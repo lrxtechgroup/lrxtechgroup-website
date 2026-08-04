@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (product-name divider re-centered against both "ONE" and "HIVE") — top: -3px → -2px
+
+User sent a photo showing the "LRX ONE | HIVE" divider sitting too
+high relative to the surrounding text. Re-measured properly this time
+against *both* sides (previous pass only checked against "LRX ONE"):
+pixel-scanned ink extents for "LRX ONE" (gold span) and "HIVE" (plain
+text after the divider) separately — both came back essentially
+identical (ink center ~450.4 in page coordinates, height ~22px, as
+expected since same font/size/weight), confirming the two sides agree
+so there's one correct target, not two competing ones. Divider's
+measured center was 449.08, ~1.3px high. Adjusted `top: -3px` →
+`top: -2px`, re-measured: divider center now 450.08, within 0.3px of
+target. Height (22px) already matched the surrounding text's ink
+height almost exactly, so no length reduction was needed — verified
+via a zoomed screenshot crop rather than assumed.
+
 ## 2026-08-04 (nav logo/text gap widened) — 10px → 18px
 
 User asked for more breathing room between the logo icon and the

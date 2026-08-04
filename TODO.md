@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (product-name divider re-centered against both sides)
+
+- [x] `.product-name .divider` `top: -3px` → `-2px`, now measured
+      within 0.3px of center against both "LRX ONE" and "HIVE" (was
+      only checked against one side previously). See MEMORY.md.
+
 ## Fixed 2026-08-04 (nav logo/text gap widened)
 
 - [x] `.nav-logo` gap 10px → 18px across all 8 pages. See MEMORY.md.
