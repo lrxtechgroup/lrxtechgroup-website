@@ -6,6 +6,67 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-02 (real logo, both sites) — favicon + nav logo replaced with the actual LRX Tech Group mark
+
+User uploaded the real logo artwork (`LRXTECHGROUPLOGO_FullColour.png`
+— a black textured background, the gold ribbon "LX" icon mark, then
+"LRX TECH GROUP" wordmark text and an "INNOVATE · INTEGRATE ·
+ELEVATE" tagline below it) and asked to use just the icon mark — not
+the full lockup — as both the favicon and nav logo, on this site and
+`lrxone-website`.
+
+**Extraction** (installed Pillow/numpy via pip, PyPI is allowlisted
+through this sandbox's egress proxy even though Docker registries
+aren't): auto-detected the icon's bounding box by scanning for
+gold-colored pixel rows/columns rather than eyeballing crop
+coordinates, found the row-gap that separates the icon from the
+wordmark text below it, and cropped there. The source background was a
+textured near-black (not flat #000, had visible grain/noise) — removed
+it by ramping alpha from the pixel brightness (max channel), calibrated
+against the actual measured brightness distributions of background vs.
+gold pixels in this specific image so real anti-aliased edges stay
+smooth while background noise speckle doesn't survive as faint grey
+flecks (an earlier pass with a looser threshold visibly left some;
+verified fixed by compositing onto a white background and inspecting
+before finalizing, not just trusting the transparent PNG alone).
+
+**Assets generated**: a rectangular transparent PNG for nav use, a
+square-padded transparent version for browser-tab favicons (16/32/192/
+512px + multi-size `.ico`), and a square version with a solid `#0E0E0E`
+background for `apple-touch-icon.png` specifically — iOS doesn't
+render alpha transparency on home-screen icons well, so that one
+variant needed an opaque brand-matched backdrop instead of transparency
+like the others.
+
+**Applied to all 8 pages on this site** (`index.html`, `one.html`,
+`billing.html`, `privacy.html`, `terms.html`, `refund-policy.html`,
+`cancellation-policy.html`, `contact.html` — confirmed byte-identical
+favicon `<link>` and nav-logo `<svg>` blocks across all 8 before
+scripting the replacement, so one Python find-replace pass could safely
+cover every file): the old inline-SVG data-URI favicon replaced with
+real `<link rel="icon">`/`apple-touch-icon` tags pointing at
+`/favicon.ico` and `/images/favicon-*.png`; the nav's inline SVG
+hexagon-plus-"LRX"-text icon replaced with an `<img>` tag pointing at
+`/images/logo-mark.png`. `.nav-logo-icon`'s CSS changed from a fixed
+36x36 square (which would have squashed the new non-square mark) to
+`height: 36px; width: auto`. The "LRX TECH GROUP" text lockup next to
+the icon was left untouched — the request was to swap the icon
+graphic, not replace the existing text treatment with the logo file's
+own wordmark.
+
+Same pass applied to `lrxone-website` (5 pages) — see that repo's
+MEMORY.md for the sibling entry, since its nav previously had no icon
+at all (text-only "LRX One"), so this added one rather than swapping
+one.
+
+**Verified**: local `http.server` + Playwright screenshot of the nav
+bar on both sites (icon reads cleanly at 36-40px display height,
+aligns with the text), plus a `curl` check that every new asset URL
+(`/favicon.ico`, `/images/favicon-32.png`, `/images/apple-touch-icon.png`,
+`/images/logo-mark.png`) returns 200 rather than 404.
+
+---
+
 ## 2026-08-02 (leadership titles) — "Founder" → "Co-Founder" for Brandon and Jessica
 
 User asked to change Founder to Co-Founder for both. Updated

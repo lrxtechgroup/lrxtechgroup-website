@@ -3,6 +3,19 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-02 (real logo, both sites)
+
+- [x] Extracted just the icon mark (not the full "LRX TECH GROUP" +
+      tagline lockup) from the user-supplied logo artwork, background
+      removed, and applied as both the favicon (`/favicon.ico` +
+      `/images/favicon-*.png` + `apple-touch-icon.png`) and the nav
+      logo (`/images/logo-mark.png`) across all 8 pages on this site
+      and all 5 on `lrxone-website`. See MEMORY.md for the extraction
+      method and verification.
+- [ ] Only English/default favicon set generated — no dark/light-mode
+      variant favicons (some browsers support `media` query icons).
+      Not requested, flagged as a possible future nicety only.
+
 ## Fixed 2026-08-02 (leadership titles)
 
 - [x] "Founder & CEO"/"Founder & COO" → "Co-Founder & CEO"/"Co-Founder
