@@ -6,7 +6,29 @@ time you finish a unit of work here.
 
 ---
 
-## 2026-08-04 (nav logo enlarged) — icon bumped 36px → 52px, heading kept vertically centered beside it
+## 2026-08-04 (nav heading optically re-centered against the logo) — text nudged +13px down from bounding-box center
+
+Follow-up to the "nav logo enlarged" entry below. User felt the heading
+text ("LRX TECH / Group") still wasn't centered against the logo even
+though `.nav-logo`'s `align-items: center` puts both elements' bounding
+boxes at the exact same geometric center — confirmed via
+`getBoundingClientRect()` (icon and text wrapper both centered at
+y≈35.5 in the 72px nav).
+
+The mismatch is optical, not geometric: measured actual ink/pixel
+weight (screenshot → grayscale → per-row brightness centroid,
+background-subtracted) shows the icon's visual weight centered around
+y≈41.7 (the "hx" mark's ink is denser in its lower half) while the
+two-line text block's visual weight centers around y≈31.8 (all-caps
+text has no descenders, so it sits high in its own line box). That's
+roughly a 10px gap between how "centered" each element actually reads.
+
+Rather than guess, built a side-by-side mockup (three variants: 0px/
++5px/+10px shift) using the measured centroid as the "full correction"
+reference point, got user sign-off on the +10px variant as close, then
+iterated by two more explicit user-specified nudges (+2px, then +1px)
+to land on the final `.nav-logo-text { transform: translateY(13px); }`
+across all 8 pages.
 
 User asked for the nav logo to be bigger, with the heading text ("LRX
 TECH / GROUP") centered to the right of it. `.nav-logo` already used

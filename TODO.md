@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav heading optically re-centered)
+
+- [x] `.nav-logo-text` given `transform: translateY(13px)` across all 8
+      pages so the heading's visual weight lines up with the logo's
+      (bounding boxes were already centered, but optically the logo
+      reads lower — see MEMORY.md for the measurement method).
+
 ## Fixed 2026-08-04 (nav logo enlarged, heading kept centered)
 
 - [x] `.nav-logo-icon` height 36px → 52px across all 8 pages; heading
