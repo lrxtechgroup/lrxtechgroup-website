@@ -6,6 +6,50 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (logo recolored to match brand gold, all 5 LRX repos) — extracted mark's gradient replaced with the site's exact --gold/--gold-dark palette
+
+Follow-up across all 5 `lrxtechgroup` repos: user asked to make sure
+the logo's colour actually matched each site's colour scheme, not just
+"looks gold." Checked, and it didn't quite — the extracted icon's own
+gradient (sampled directly from pixel data: min `#513C1C`, max
+`#F5C46F`, mean `#C7974A`) was measurably warmer/more orange-bronze
+than this site's (and every sibling site/app's) actual brand gold
+(`--gold: #D4AF37`, `--gold-dark: #B8922E` — confirmed identical across
+`lrxtechgroup-website`, `lrxone-website`, and `lrxone`'s Tailwind
+`brand` scale before doing anything, so there was one true target, not
+three slightly different ones).
+
+**Fix**: recolored the icon's gradient in place rather than replacing
+it with a flat fill — computed each pixel's luminosity (contrast-
+stretched across the icon's own observed brightness range) and used it
+to interpolate between `--gold-dark` (shadow end) through `--gold`
+(midtone) to a slightly brighter highlight tone (`#E8C66A`, matching
+how this site's own buttons brighten toward their highlight edge) for
+the lightest pixels. This keeps the ribbon-fold 3D shading structure
+intact (the highlights and shadows are still there, in the same
+places) while every pixel's actual hue now sits on the site's real
+gold, not the artwork's original off-brand gradient. Verified by
+resampling the recolored PNG: new mean `#D3AE40`, a near-exact match to
+`--gold`'s `#D4AF37`.
+
+Regenerated the full asset pipeline from this recolored master and
+redeployed it over the previous (correctly-cropped, but off-color)
+versions — same file set as before (`favicon.ico` + sized PNGs +
+`apple-touch-icon.png` + `logo-mark.png`), just recolored. Same
+regeneration applied identically to `lrxone-website`, `lrxone`'s
+frontend favicon/nav assets (see that repo's own MEMORY.md — this pass
+also fixed a real pre-existing bug there, a favicon link pointing at a
+`favicon.svg` that never existed), and `lrxone-mobile`'s Android
+launcher icons (see that repo's MEMORY.md).
+
+**Verified**: local `http.server` + Playwright screenshot of both
+sites' nav bars side by side with their own gold UI elements (the
+"CONTACT"/"SIGN IN" buttons, "LRX TECH"/"LRX One" text) — icon and
+surrounding brand gold now read as the same colour family instead of a
+visibly warmer icon next to cooler UI gold.
+
+---
+
 ## 2026-08-02 (real logo, both sites) — favicon + nav logo replaced with the actual LRX Tech Group mark
 
 User uploaded the real logo artwork (`LRXTECHGROUPLOGO_FullColour.png`

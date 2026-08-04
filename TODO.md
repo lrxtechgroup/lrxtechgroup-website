@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (logo recolored to match brand gold, all 5 repos)
+
+- [x] Recolored the extracted logo mark's gradient from its original
+      off-brand warm/orange tone (measured mean `#C7974A`) to the
+      site's actual `--gold`/`--gold-dark` palette (`#D4AF37`/
+      `#B8922E`), preserving the original shading structure. Same fix
+      applied identically across `lrxone-website`, `lrxone`, and
+      `lrxone-mobile`. See MEMORY.md.
+
 ## Fixed 2026-08-02 (real logo, both sites)
 
 - [x] Extracted just the icon mark (not the full "LRX TECH GROUP" +
