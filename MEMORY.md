@@ -6,6 +6,37 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (leadership photos sharpened) — unsharp mask pass on both founder JPEGs, real-resolution increase declined
+
+User asked to "increase resolution" of Brandon and Jessica's photos
+after a phone photo of the live site made them look blocky/blurry.
+Inspected the actual source files directly (not the phone photo, which
+had its own moiré/compression artifacts from photographing a screen)
+— both are genuine 700x700 JPEGs, but compressed harder than ideal
+(~0.12 bytes/px, low for detailed photo content like hair), so there's
+real softness baked into the pixel data itself, especially visible in
+hair strands.
+
+Explained the honest options rather than guessing: (1) a real
+resolution/quality increase requires the original less-compressed
+source photos, which I don't have — asked if the user could provide
+them; (2) declined to run an AI/generative upscaler on real people's
+photos, since that fabricates facial detail that was never actually
+there and risks misrepresenting how the founders actually look; (3)
+offered a standard, honest sharpening pass instead. User chose option
+3 for now.
+
+Applied `PIL.ImageFilter.UnsharpMask(radius=2, percent=110,
+threshold=3)` to `brandon-le-roux.jpg` and `jessica-le-roux.jpg`,
+re-saved at JPEG quality=92 (up from whatever the originals were
+encoded at — file sizes grew 60KB→86KB and 55KB→75KB accordingly).
+This doesn't add real resolution or invent detail, just increases edge
+contrast on what's already there (bow tie, lapels, eyebrows, hair part
+lines read visibly crisper). Verified via direct before/after image
+reads and a live-page screenshot. Still 700x700px — a genuine
+resolution bump remains blocked on the user supplying better source
+photos.
+
 ## 2026-08-04 (leadership quote dashes changed to commas) — Brandon's "deserve -" and Jessica's "work -"
 
 User asked to replace two dashes with commas in the leadership

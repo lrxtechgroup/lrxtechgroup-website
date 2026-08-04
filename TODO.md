@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (leadership photos sharpened, real upscale still pending)
+
+- [x] Applied unsharp-mask sharpening + higher JPEG quality re-save to
+      both founder photos — crisper edges, no fabricated detail.
+- [ ] **Still only 700x700px.** A genuine resolution increase needs
+      the original higher-quality source photos from the user —
+      asked, no reply yet. AI upscaling was deliberately declined
+      (would fabricate facial detail on real people). See MEMORY.md.
+
 ## Fixed 2026-08-04 (leadership quote dashes changed to commas)
 
 - [x] Brandon's "...deserve -" and Jessica's "...half the work -"
