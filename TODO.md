@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav wordmark scale-up re-applied)
+
+- [x] The size revert two entries back was a misread of user intent —
+      re-applied the 33px/19px scale-up across all 8 pages. See
+      MEMORY.md.
+
 ## Fixed 2026-08-04 (nav wordmark text size reverted)
 
 - [x] Reverted the "match logo height" text scaling — "LRX TECH /

@@ -6,6 +6,21 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav wordmark scale-up re-applied — the revert was a misread) — text back to 33px/19px, unrelated to the logo-left padding fix
+
+The previous entry's revert was based on a misreading of "leave the
+wording where it was" — the user clarified they meant something else
+entirely (they hadn't asked for the text to shrink back down) and
+explicitly said "i didnt want you to make the size smaller again."
+Re-applied the "match logo height" scale-up: `.lrx` back to 33px,
+`.tech` back to 19px, letter-spacing 0.06em/0.14em, wrapper back to
+`justify-content: center; height: 52px;`. Across all 8 pages
+(index.html's multi-line `.lrx`/`.tech` handled separately again).
+
+This is independent of the nav horizontal-padding cap (`clamp(20px,
+3vw, 56px)`) from two entries back — that stays as-is; this entry only
+concerns the wordmark's own font-size, not nav padding.
+
 ## 2026-08-04 (nav wordmark text size reverted) — "leave the wording where it was"
 
 User asked to revert the earlier "nav wordmark scaled to match logo
