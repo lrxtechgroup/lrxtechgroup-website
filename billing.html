@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LRX One Billing - South Africa's Native Subscription Billing Infrastructure</title>
-  <meta name="description" content="LRX One Billing is ZAR-native, POPIA-compliant subscription billing infrastructure for South African SaaS companies, marketplaces, and subscription businesses. Stitch EFT, PayFast, and Stripe support." />
+  <meta name="description" content="LRX One Billing is ZAR-native, POPIA-compliant subscription billing infrastructure for South African SaaS companies, marketplaces, and subscription businesses. Powered by PayFast." />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -349,14 +349,9 @@
     </p>
     <div class="solution-grid">
       <div class="solution-item">
-        <div class="solution-icon">🏧</div>
-        <h3>Stitch EFT + Card Tokenisation</h3>
-        <p>Native South African bank debit and card payments, tokenised for recurring billing.</p>
-      </div>
-      <div class="solution-item">
         <div class="solution-icon">💳</div>
-        <h3>PayFast as Backup</h3>
-        <p>A second local payment rail, so a single provider outage never stops your revenue.</p>
+        <h3>PayFast EFT + Card Payments</h3>
+        <p>Native South African bank EFT and card payments, tokenised for recurring billing.</p>
       </div>
       <div class="solution-item">
         <div class="solution-icon">🧾</div>
@@ -366,7 +361,7 @@
       <div class="solution-item">
         <div class="solution-icon">🔒</div>
         <h3>POPIA Data Residency</h3>
-        <p>Hosted in AWS af-south-1 (Cape Town) - your customers' billing data stays in South Africa.</p>
+        <p>Hosted in AWS South Africa (Cape Town) - your customers' billing data stays in South Africa.</p>
       </div>
       <div class="solution-item">
         <div class="solution-icon">🔔</div>
@@ -377,6 +372,11 @@
         <div class="solution-icon">📊</div>
         <h3>Subscriber Dashboard</h3>
         <p>Manage plans, subscribers, and MRR from one place, without building it yourself.</p>
+      </div>
+      <div class="solution-item">
+        <div class="solution-icon">🔁</div>
+        <h3>Automated Dunning</h3>
+        <p>Grace-period retries on failed payments, so you recover revenue without manual chasing.</p>
       </div>
     </div>
   </section>
@@ -398,7 +398,7 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
   -d <span class="str">'{
     "subscriberEmail": "customer@example.com",
     "planId": "plan_growth_monthly",
-    "paymentMethod": "stitch"
+    "paymentMethod": "payfast"
   }'</span></code></pre>
     </div>
   </section>
@@ -417,7 +417,7 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
         <p class="pricing-desc">For businesses just getting started with recurring billing.</p>
         <ul class="pricing-features">
           <li>Up to 100 active subscriptions</li>
-          <li>Stitch + PayFast + Stripe</li>
+          <li>PayFast payments</li>
           <li>Branded PDF invoicing</li>
           <li>Email support</li>
         </ul>

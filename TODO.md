@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (billing copy: PayFast-only, af-south-1 de-jargoned)
+
+- [x] Removed all Stitch/Stripe billing-integration claims (they were
+      never actually built) across `billing.html`, `index.html`,
+      `privacy.html`, `refund-policy.html` — now PayFast-only,
+      matching `lrxone`'s real `billing-service`.
+- [x] `af-south-1` reworded to `AWS South Africa` everywhere it
+      appeared. See MEMORY.md.
+
 ## Fixed 2026-08-04 (products intro copy simplified)
 
 - [x] `index.html`'s Products section intro no longer names both

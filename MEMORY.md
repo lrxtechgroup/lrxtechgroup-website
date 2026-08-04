@@ -6,6 +6,48 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (billing copy reduced to PayFast-only, af-south-1 de-jargoned) — content now matches the actually-implemented payment rail
+
+User asked to change billing info to only mention PayFast (dropping
+Stitch and Stripe, which the site's marketing copy claimed but which
+were never actually built — the `lrxone` repo's `billing-service` only
+has `PayFastCheckoutService`/`PayFastClient`/`PayFastItnService`/etc.,
+no Stitch or Stripe integration exists), and to make "af-south-1" less
+technical (suggested "AWS South Africa").
+
+Changes across the site:
+- `billing.html`: meta description, hero solution grid (merged the
+  separate "Stitch EFT + Card Tokenisation" / "PayFast as Backup" cards
+  into one "PayFast EFT + Card Payments" card — this dropped the grid
+  from 6 to 5 items, which left an ugly empty cell showing raw grid-gap
+  background at the 3-column breakpoint, so added a 6th card,
+  "Automated Dunning," back in to fill the grid — accurate to the real
+  `DunningScheduler`/grace-period feature built in `billing-service`,
+  not invented), the code sample's `paymentMethod` value
+  (`"stitch"` → `"payfast"`), the Starter pricing tier's feature list
+  (`Stitch + PayFast + Stripe` → `PayFast payments`), and the POPIA
+  data-residency line (`af-south-1` → `AWS South Africa`). Left the
+  "Why not just use Stripe?" problem-framing section as-is — it's a
+  market-rationale comparison, not a claim that LRX One Billing
+  integrates Stripe.
+- `index.html`: the "LRX ONE | BILLING" product card's description and
+  feature list got the same PayFast-only + `af-south-1` → `AWS South
+  Africa` treatment.
+- `privacy.html`: removed the Stitch and Stripe rows from the
+  third-party processor table (only PayFast is actually used) and
+  reworded both `af-south-1` mentions.
+- `refund-policy.html`: "via PayFast or the applicable payment
+  processor for your account" simplified to "via PayFast" (no other
+  processor exists to hedge for).
+
+Deliberately left `terms.html`'s generic "via our payment processors"
+line untouched — it's plural, general billing language not specific to
+the Billing product's payment rail, out of scope for this pass.
+
+Verified via headless-Chromium screenshots of the billing solution
+grid, pricing tier, index.html product card, and privacy.html processor
+table before pushing.
+
 ## 2026-08-04 (products intro copy simplified) — "two products" enumeration replaced with a scale-agnostic line
 
 User asked to change "One account, two products - LRX One Hive and LRX
