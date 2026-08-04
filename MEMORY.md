@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav wordmark scaled to match logo height) — "LRX TECH / GROUP" text block now spans the full 52px icon height
+
+User wanted the nav text block (next to the logo, top-left) sized to
+match the logo's height rather than looking small next to it. Mocked
+up current (~25px text block against the 52px icon) vs. proposed
+(text scaled up) side by side before applying — user confirmed.
+
+`.nav-logo-text .lrx` 16px → 33px, `.tech` 9px → 19px (both roughly
+2.08x, preserving the original size ratio between the two lines so
+"LRX TECH" still reads as primary and "GROUP" as the subtitle).
+Letter-spacing tightened proportionally (0.12em → 0.06em, 0.25em →
+0.14em) since the same em-relative spacing at 2x the font-size would
+have looked too loose. `.nav-logo-text` switched from a fixed
+`translateY(13px)` optical-correction hack to `justify-content: center;
+height: 52px;` — with the text block now filling the same height as
+the icon, there's no longer a size mismatch to optically correct for.
+Applied across all 8 pages (`index.html` needed a separate edit since
+its `.lrx`/`.tech` rules use multi-line formatting, unlike the other 7
+pages' single-line format). Verified via screenshot on every page.
+
 ## 2026-08-04 ("Continue to LRX One" now points to www.lrxone.com, not straight into the app) — all 3 occurrences updated
 
 User corrected the destination: "Continue to LRX One" was linking

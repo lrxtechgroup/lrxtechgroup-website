@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav wordmark scaled to match logo height)
+
+- [x] `.nav-logo-text` ("LRX TECH / GROUP") scaled up to span the same
+      52px height as the logo icon, across all 8 pages. See MEMORY.md.
+
 ## Fixed 2026-08-04 ("Continue to LRX One" destination corrected)
 
 - [x] All 3 "Continue to LRX One" links (billing.html hero, one.html
