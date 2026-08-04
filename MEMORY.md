@@ -6,6 +6,13 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav logo/text gap widened) — 10px → 18px
+
+User asked for more breathing room between the logo icon and the
+wordmark text in the nav, now that both are sized bigger (52px icon,
+33px text). `.nav-logo`'s `gap` 10px → 18px across all 8 pages.
+Verified via screenshot.
+
 ## 2026-08-04 (nav wordmark scale-up re-applied — the revert was a misread) — text back to 33px/19px, unrelated to the logo-left padding fix
 
 The previous entry's revert was based on a misreading of "leave the

@@ -3,6 +3,10 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav logo/text gap widened)
+
+- [x] `.nav-logo` gap 10px → 18px across all 8 pages. See MEMORY.md.
+
 ## Fixed 2026-08-04 (nav wordmark scale-up re-applied)
 
 - [x] The size revert two entries back was a misread of user intent —
