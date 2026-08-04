@@ -3,6 +3,21 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (Jessica's photo swapped for a business portrait)
+
+- [x] Replaced `jessica-le-roux.jpg` with a new business-appropriate
+      portrait (dark green top, not the wedding dress) — already
+      square/well-framed, no trim needed. Cache-busting bumped to
+      `?v=3`. See MEMORY.md.
+
+## Fixed 2026-08-04 (founder photo cache-busting added)
+
+- [x] Added `?v=3`/`?v=2` query strings to the founder `<img src>`s so
+      browsers stop serving the stale cached photo from before this
+      session's swaps. Confirmed via md5sum the correct file was
+      already live on `origin/main` — this was purely a caching
+      issue, not a deploy issue. See MEMORY.md.
+
 ## Fixed 2026-08-04 (Brandon's photo: left-side space trimmed)
 
 - [x] Trimmed 130px of empty black space off the left edge (700x700 →

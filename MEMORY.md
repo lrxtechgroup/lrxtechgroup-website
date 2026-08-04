@@ -6,6 +6,35 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (Jessica's photo swapped for a business-appropriate portrait) — same "do it too" as Brandon's, resolves the earlier wedding-dress tone concern
+
+User followed up with a new Jessica photo (dark green top, not the
+wedding dress used earlier) and asked to do the same treatment applied
+to Brandon's latest swap. Extracted from the transcript the same way
+(recursive scan for the newest `type: "image"` block, base64-decoded)
+— this one was already 1254x1254 WEBP, square and well-framed with
+minimal empty space, so no left-side trim was needed like Brandon's
+required. Converted to JPEG, resized to the standard 700x700, replaced
+`images/jessica-le-roux.jpg`, cache-busting bumped to `?v=3`. This also
+resolves the tonal concern flagged earlier in the session (wedding
+dress vs. professional bio photo) — the new photo reads as a proper
+business portrait.
+
+## 2026-08-04 (founder photo cache-busting added) — user reported the new photo "isn't populating"
+
+User reported Brandon's newly-swapped photo wasn't showing on the live
+site. Verified this wasn't a deploy/push problem first — diffed
+`origin/main`'s `images/brandon-le-roux.jpg` against the local file via
+md5sum, identical, confirming the correct file really is live at that
+URL. Root cause is browser/CDN caching: every photo swap this session
+reused the exact same filename (`brandon-le-roux.jpg`,
+`jessica-le-roux.jpg`), so a browser that already fetched an older
+version has no reason to re-request it — same URL, no cache-busting
+signal. Added `?v=3` / `?v=2` query strings to both `<img src>`s in
+`index.html` to force a fresh fetch. (The query string is arbitrary and
+ignored server-side for a static file; it only exists to change the
+URL the browser caches against.)
+
 ## 2026-08-04 (Brandon's photo: left-side empty space trimmed) — 700x700 square → 570x700 portrait
 
 The previous swap's square crop left a noticeable band of empty black
