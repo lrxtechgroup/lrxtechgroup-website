@@ -6,6 +6,37 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (cross-linked product hero mentions, "Sign In" reworded) — one.html/billing.html now link to each other, and the sign-in CTA reflects the real cross-domain flow
+
+Two fixes from a user screenshot of `one.html`'s hero:
+
+1. **"LRX One Billing" wasn't a link.** The hero paragraph on
+   `one.html` mentions the sibling product ("alongside LRX One
+   Billing") as plain text; same on `billing.html` ("alongside LRX One
+   Hive"). Both now link to the other product's page (`/billing.html`
+   and `/one.html` respectively) — only the "alongside X" mention is
+   linked, not the earlier "It's part of LRX One" brand mention in the
+   same paragraph, since that refers to the whole suite, not a specific
+   product page. Added `.hero-desc a { text-decoration: none; }` +
+   `:hover { text-decoration: underline; }` to both pages since neither
+   had a global link-underline reset, so plain `<a>` tags would
+   otherwise render with the browser default underline.
+
+2. **"Sign In" was misleading** — the button/link (`href="https://
+   app.lrxone.com/login"`) doesn't sign anyone in on lrxtechgroup.com;
+   it navigates off-domain to lrxone.com, where the actual Keycloak
+   login happens. User asked what to put in its place to reflect that;
+   offered a few options (Continue to LRX One / Sign In at LRX One / Go
+   to App / Open LRX One) and they picked **"Continue to LRX One."**
+   Applied to both occurrences on `one.html` (hero primary button, and
+   the bottom pricing CTA's secondary button) plus the hero note
+   ("Already have a workspace? Continue to LRX One above to sign in.").
+   Confirmed via grep this was the only page with sign-in links —
+   `billing.html`/`index.html` don't have one.
+
+Verified all of the above via headless-Chromium screenshots (hero,
+bottom CTA banner) before pushing.
+
 ## 2026-08-04 (billing copy reduced to PayFast-only, af-south-1 de-jargoned) — content now matches the actually-implemented payment rail
 
 User asked to change billing info to only mention PayFast (dropping

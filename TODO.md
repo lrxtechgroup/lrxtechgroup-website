@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (product cross-links, "Sign In" reworded)
+
+- [x] `one.html`'s "LRX One Billing" hero mention and `billing.html`'s
+      "LRX One Hive" hero mention now link to each other's product
+      page.
+- [x] "Sign In" (→ `app.lrxone.com/login`) reworded to "Continue to
+      LRX One" across `one.html` (hero button, bottom CTA button, hero
+      note) since it's a cross-domain handoff, not an in-page sign-in.
+      See MEMORY.md.
+
 ## Fixed 2026-08-04 (billing copy: PayFast-only, af-south-1 de-jargoned)
 
 - [x] Removed all Stitch/Stripe billing-integration claims (they were
