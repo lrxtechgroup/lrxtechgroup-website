@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (product-name divider re-centered on "LRX ONE") — top: -3px to fix a 2.7px optical offset
+
+Follow-up to the divider-sizing fix below. `vertical-align: middle` on
+an inline-block aligns to the parent's x-height midpoint, not the
+actual glyph ink center — measured via `boundingClientRect()` on the
+`.gold` ("LRX ONE") span plus an ink-row pixel scan of a 4x-scaled
+element screenshot: text ink spanned page-Y 439.08–461.33 (center
+450.2), but the divider (still just `vertical-align: middle`) sat at
+438.875... no — sat 2.7px low, center 452.875. Added
+`position: relative; top: -3px;` to `.product-name .divider`, which
+closes the gap to within 0.3px (center 449.875 vs 450.2). Applied to
+both product cards. Verified via a zoomed-in before/after screenshot
+crop.
+
 ## 2026-08-04 (product-name pipe divider fixed) — "LRX ONE | HIVE" / "LRX ONE | BILLING" divider capped to text height, recolored to the nav's grey
 
 User flagged (with a screenshot of the Products section) that the literal

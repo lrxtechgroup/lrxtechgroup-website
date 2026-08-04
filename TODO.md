@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (product-name divider re-centered)
+
+- [x] `.product-name .divider` given `position: relative; top: -3px;`
+      to fix a measured 2.7px optical low-bias from `vertical-align:
+      middle` — now within 0.3px of "LRX ONE"'s true glyph-ink center.
+      See MEMORY.md.
+
 ## Fixed 2026-08-04 (product-name pipe divider fixed)
 
 - [x] `.product-name`'s `|` divider (between "LRX ONE" and "HIVE"/
