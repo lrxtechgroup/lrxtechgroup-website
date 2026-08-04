@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 ("Let's talk" link reworded)
+
+- [x] `index.html`'s "See what each contact option is for" link →
+      "Not sure which to pick?" (user's pick from 4 options). See
+      MEMORY.md.
+
 ## Fixed 2026-08-04 ("Register Interest" removed, moved to LRX One)
 
 - [x] Removed every "Register Interest" mailto CTA from `index.html`,

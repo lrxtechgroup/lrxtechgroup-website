@@ -6,6 +6,15 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 ("Let's talk" contact-page link reworded) — "See what each contact option is for" → "Not sure which to pick?"
+
+User wanted the small link under the homepage's "Let's talk" heading
+(→ `/contact.html`) to be catchier/quirkier than the plain, literal
+"See what each contact option is for." Offered four options (Decisions
+decisions.../Not sure which to pick?/Pick your poison/Confused? We
+don't blame you.) — user picked **"Not sure which to pick?"**. Only
+occurrence of that string on the site. Verified via screenshot.
+
 ## 2026-08-04 (all "Register Interest" mailto CTAs removed) — registration now lives on LRX One, not lrxtechgroup.com
 
 User asked to remove "Register Interest" from this site entirely — it
