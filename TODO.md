@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (products intro copy simplified)
+
+- [x] `index.html`'s Products section intro no longer names both
+      products individually — "One account, all LRX One products -
+      part of LRX Tech Group's product suite." See MEMORY.md.
+
 ## Fixed 2026-08-04 (product-name divider re-centered)
 
 - [x] `.product-name .divider` given `position: relative; top: -3px;`

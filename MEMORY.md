@@ -6,6 +6,16 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (products intro copy simplified) — "two products" enumeration replaced with a scale-agnostic line
+
+User asked to change "One account, two products - LRX One Hive and LRX
+One Billing are both part of LRX One, LRX Tech Group's product suite."
+to "One account, all LRX One products." — same motivation as the
+earlier `one.html`/`billing.html` pricing-intro simplification this
+session: naming both products by name doesn't scale as more are added.
+New copy: "One account, all LRX One products - part of LRX Tech Group's
+product suite." Verified via screenshot of the live Products section.
+
 ## 2026-08-04 (product-name divider re-centered on "LRX ONE") — top: -3px to fix a 2.7px optical offset
 
 Follow-up to the divider-sizing fix below. `vertical-align: middle` on
