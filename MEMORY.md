@@ -6,6 +6,16 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (one.html hero: "See Pricing" added back next to "Continue to LRX One") — matches billing.html's hero-buttons pattern
+
+Follow-up to the reverse direction of the previous entry: user wanted
+`one.html`'s hero to also have a "See Pricing" secondary button next to
+"Continue to LRX One" (`#pricing` anchor, `.btn-secondary` — both
+already existed in this page's CSS/markup elsewhere, just re-added the
+button itself). Verified side-by-side at realistic desktop widths
+(1280px, 1440px) — fits on one line there; only wraps under ~1024px
+which is normal `flex-wrap` responsive behavior, not a regression.
+
 ## 2026-08-04 (billing.html hero note matched to one.html's) — same "Continue to LRX One" note added under billing's hero buttons
 
 User wanted `billing.html`'s hero to carry the same "Continue to LRX

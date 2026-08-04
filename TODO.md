@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (one.html hero: "See Pricing" button restored)
+
+- [x] Added "See Pricing" (`#pricing`) back next to "Continue to LRX
+      One" in `one.html`'s hero, matching `billing.html`'s hero-buttons
+      layout. See MEMORY.md.
+
 ## Fixed 2026-08-04 (billing.html hero note matched to one.html)
 
 - [x] Added the same hero-note text under `billing.html`'s hero
