@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav logo enlarged, heading kept centered)
+
+- [x] `.nav-logo-icon` height 36px → 52px across all 8 pages; heading
+      text stays vertically centered beside it via the existing
+      `align-items: center` on `.nav-logo`. See MEMORY.md.
+
 ## Fixed 2026-08-04 (logo recolored to match brand gold, all 5 repos)
 
 - [x] Recolored the extracted logo mark's gradient from its original

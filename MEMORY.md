@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav logo enlarged) — icon bumped 36px → 52px, heading kept vertically centered beside it
+
+User asked for the nav logo to be bigger, with the heading text ("LRX
+TECH / GROUP") centered to the right of it. `.nav-logo` already used
+`display: flex; align-items: center`, so growing `.nav-logo-icon`'s
+height doesn't need any other layout change — the cross-axis centering
+re-derives automatically against the taller icon. Applied the same
+`height: 36px` → `52px` edit to `.nav-logo-icon` across all 8 pages
+(confirmed byte-identical before scripting, same pattern as the earlier
+favicon/logo rollout). Nav bar is 72px tall, so 52px still leaves
+comfortable padding — no clipping. Verified via headless-Chromium
+screenshot of the live nav (both cropped and full-page) before
+committing.
+
 ## 2026-08-04 (logo recolored to match brand gold, all 5 LRX repos) — extracted mark's gradient replaced with the site's exact --gold/--gold-dark palette
 
 Follow-up across all 5 `lrxtechgroup` repos: user asked to make sure
