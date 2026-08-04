@@ -6,6 +6,14 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (leadership quote dashes changed to commas) — Brandon's "deserve -" and Jessica's "work -"
+
+User asked to replace two dashes with commas in the leadership
+blockquotes: Brandon Le Roux's "...businesses deserve - enterprise-
+grade..." and Jessica Le Roux's "...only half the work - the other
+half...". Both changed to commas (", enterprise-grade" and ", the
+other half"). Verified via screenshot.
+
 ## 2026-08-04 (product-name divider re-centered against both "ONE" and "HIVE") — top: -3px → -2px
 
 User sent a photo showing the "LRX ONE | HIVE" divider sitting too
