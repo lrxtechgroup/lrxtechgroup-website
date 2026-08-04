@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (billing.html hero note matched to one.html)
+
+- [x] Added the same hero-note text under `billing.html`'s hero
+      buttons that `one.html` already has ("Already have a workspace,
+      or ready to get started?..."), plus the `.hero-note` CSS that
+      page never had. See MEMORY.md.
+
 ## Fixed 2026-08-04 ("Let's talk" link reworded)
 
 - [x] `index.html`'s "See what each contact option is for" link →

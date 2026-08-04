@@ -6,6 +6,21 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (billing.html hero note matched to one.html's) — same "Continue to LRX One" note added under billing's hero buttons
+
+User wanted `billing.html`'s hero to carry the same "Continue to LRX
+One" note text that `one.html`'s hero already has below its buttons.
+`billing.html` had no `.hero-note` CSS at all (never used there before)
+— added the same rule (`font-size:12px; color:var(--grey); margin-top:
+20px;` plus link-hover styling) with an explicit `text-align:center`
+since billing's hero layout is center-aligned throughout (unlike
+one.html's left-aligned hero), and added the identical note paragraph:
+"Already have a workspace, or ready to get started? Continue to LRX
+One above to sign in or create your workspace." Kept billing's existing
+"See Pricing" secondary button as-is — user only asked to match the
+"Continue to LRX One" button + the writing under it, not to remove the
+pricing button. Verified via screenshot.
+
 ## 2026-08-04 ("Let's talk" contact-page link reworded) — "See what each contact option is for" → "Not sure which to pick?"
 
 User wanted the small link under the homepage's "Let's talk" heading
