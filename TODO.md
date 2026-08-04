@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 ("Continue to LRX One" destination corrected)
+
+- [x] All 3 "Continue to LRX One" links (billing.html hero, one.html
+      hero + bottom CTA) now point to `https://www.lrxone.com` instead
+      of straight into `app.lrxone.com/login`. See MEMORY.md.
+
 ## Fixed 2026-08-04 (one.html hero: "See Pricing" button restored)
 
 - [x] Added "See Pricing" (`#pricing`) back next to "Continue to LRX

@@ -6,6 +6,18 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 ("Continue to LRX One" now points to www.lrxone.com, not straight into the app) — all 3 occurrences updated
+
+User corrected the destination: "Continue to LRX One" was linking
+directly to `https://app.lrxone.com/login` (the gated app itself),
+skipping past LRX One's own marketing/landing site. Changed all three
+occurrences (`billing.html` hero, `one.html` hero, `one.html` bottom
+CTA banner) to `https://www.lrxone.com` instead — that site (worked on
+earlier this session as the `lrxone-website` repo) is where visitors
+land first and choose sign-in vs. register from there. Left the
+dashboard mockup's decorative `app.lrxone.com/dashboard` URL bar text
+on `one.html` untouched — it's illustrative UI chrome, not a real link.
+
 ## 2026-08-04 (one.html hero: "See Pricing" added back next to "Continue to LRX One") — matches billing.html's hero-buttons pattern
 
 Follow-up to the reverse direction of the previous entry: user wanted
