@@ -6,6 +6,25 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (product-name pipe divider fixed) — "LRX ONE | HIVE" / "LRX ONE | BILLING" divider capped to text height, recolored to the nav's grey
+
+User flagged (with a screenshot of the Products section) that the literal
+`|` character between "LRX ONE" and "HIVE"/"BILLING" in `.product-name`
+(32px/900-weight) rendered taller than the surrounding capital letters —
+a plain pipe glyph's height comes from the font's full line-box metrics,
+not the cap-height, so at that size/weight it visibly overshoots the
+text it's supposed to separate. It also inherited the default white
+text color rather than any deliberate brand grey.
+
+Replaced the literal `|` with a sized `<span class="divider"></span>`
+(`display:inline-block`, `width:3px`, `height:22px` — matched to this
+font/weight's cap-height rather than the pipe glyph's box, `vertical-
+align:middle`) and set its color to `var(--light-grey)` (`#888888`) —
+the same grey the nav wordmark uses for "GROUP" under "LRX TECH".
+Applied to both product cards ("LRX ONE | HIVE" and "LRX ONE |
+BILLING"); confirmed no other page uses this pipe pattern. Verified via
+headless-Chromium screenshot of the live Products section.
+
 ## 2026-08-04 (nav heading optically re-centered against the logo) — text nudged +13px down from bounding-box center
 
 Follow-up to the "nav logo enlarged" entry below. User felt the heading

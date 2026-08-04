@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (product-name pipe divider fixed)
+
+- [x] `.product-name`'s `|` divider (between "LRX ONE" and "HIVE"/
+      "BILLING") was taller than the surrounding text and plain white —
+      replaced with a sized `.divider` span capped to text cap-height,
+      colored `var(--light-grey)` (same grey as nav's "GROUP"). See
+      MEMORY.md.
+
 ## Fixed 2026-08-04 (nav heading optically re-centered)
 
 - [x] `.nav-logo-text` given `transform: translateY(13px)` across all 8
