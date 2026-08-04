@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (Brandon's photo swapped for a better-quality version)
+
+- [x] Replaced `brandon-le-roux.jpg` again with a cleaner
+      already-black-background version the user supplied directly
+      (better edge quality than the `rembg` cutout). See MEMORY.md.
+
 ## Fixed 2026-08-04 (leadership photos replaced with real higher-res sources)
 
 - [x] User supplied the actual higher-quality wedding photos requested

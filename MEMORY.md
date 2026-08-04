@@ -6,6 +6,22 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (Brandon's photo swapped for a better-quality already-processed version) — user supplied a cleaner 1402x1122 crop directly
+
+Immediately after the tight-crop/black-background pass, user pasted a
+better version of Brandon's headshot — same pose/tux, but with cleaner
+edge quality than the `rembg` cutout produced (no haloing around hair,
+crisper detail generally), already on a black background. Extracted it
+from the transcript the same way as before (recursive scan of the
+session JSONL for the newest `type: "image"` content block, since it
+was pasted directly rather than `@`-referenced). Source was 1402x1122
+(landscape, WEBP) — cropped to a centered 1122x1122 square around the
+face (`crop((270, 0, 1392, 1122))`) rather than using the frame's full
+width, since the face sat right-of-center in the original, then
+resized to the standard 700x700. Replaced `images/brandon-le-roux.jpg`
+only — Jessica's photo from the previous entry is untouched. Verified
+via live-page screenshot.
+
 ## 2026-08-04 (leadership photos replaced with real higher-res sources, tight crop, black background) — resolves the pending TODO from the sharpening pass
 
 User followed up on the earlier sharpening entry by supplying the
