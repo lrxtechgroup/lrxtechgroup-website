@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (Brandon's photo over-zoom fixed)
+
+- [x] Root cause was a non-square (570x700) source fighting
+      `object-fit: cover` on a square container, compounding the
+      crop's own tightness. Replaced with a user-supplied
+      near-square, well-framed source (1099x1122 → 1099x1099 →
+      700x700), verified comparable framing to Jessica's card.
+      Cache-busting bumped to `?v=4`. See MEMORY.md.
+
 ## Fixed 2026-08-04 (Jessica's photo swapped for a business portrait)
 
 - [x] Replaced `jessica-le-roux.jpg` with a new business-appropriate

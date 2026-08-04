@@ -6,6 +6,30 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (Brandon's photo: over-zoom fixed, then replaced with a better-framed source) — root cause was a non-square crop fighting object-fit: cover
+
+User reported Brandon's photo was "too zoomed in" after the left-trim
+in an earlier entry. Root cause: that trim produced a 570x700
+*portrait* file, but `.founder-photo`'s CSS renders into a *square*
+(`aspect-ratio: 1`) container via `object-fit: cover` — cover scales
+to fill the container's width first, so a source narrower than it is
+tall gets scaled up (and cropped vertically) more than a square source
+would, compounding on top of the crop's own tightness. First fix
+attempt re-cropped to a proper square (570x570 from the same source,
+upscaled to 700x700) to remove that compounding effect — better, but
+side-by-side against Jessica's card it was still visibly tighter
+(barely any headroom, bow tie knot right at the frame edge), so not
+pushed.
+
+User then supplied a different, better-framed source photo directly
+(1099x1122, near-square, generous headroom, full bow tie visible) with
+"use this as is." Center-cropped to an exact 1099x1099 square (trimming
+23px off the bottom only, to correct the slight non-square aspect
+without touching the well-framed top/sides) and resized to 700x700 —
+no additional tightening this time. Verified side-by-side against
+Jessica's card via screenshot: comparable headroom and framing now.
+Cache-busting bumped to `?v=4`.
+
 ## 2026-08-04 (Jessica's photo swapped for a business-appropriate portrait) — same "do it too" as Brandon's, resolves the earlier wedding-dress tone concern
 
 User followed up with a new Jessica photo (dark green top, not the
