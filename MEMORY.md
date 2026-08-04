@@ -6,6 +6,25 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav horizontal padding capped) — logo was drifting too far from the left edge on large monitors
+
+User sent a photo from a large desktop monitor showing the nav logo
+sitting a long way in from the browser's left edge. Root cause: `nav {
+padding: 0 5%; }` is percentage-based, so on a genuinely wide viewport
+(the photo's monitor looked to be rendering well past 1920px) 5%
+becomes 100px+ of empty space before the logo even starts — it keeps
+growing unbounded with viewport width, unlike a fixed design that
+caps out.
+
+Changed to `padding: 0 clamp(20px, 3vw, 56px);` across all 8 pages —
+scales the same as before on typical laptop/smaller-desktop widths
+(3vw ≈ 5% in the ~1400-1900px range these were tuned around) but caps
+at 56px, so it stops growing on large/ultra-wide monitors instead of
+pushing the logo further right the bigger the screen gets. Verified
+the fix directly: measured the logo's left edge at a 1920px viewport
+before (96px, from the old 5%) and after (56px, capped) via
+`getBoundingClientRect()`.
+
 ## 2026-08-04 (nav wordmark scaled to match logo height) — "LRX TECH / GROUP" text block now spans the full 52px icon height
 
 User wanted the nav text block (next to the logo, top-left) sized to
