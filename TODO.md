@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 ("Register Interest" removed, moved to LRX One)
+
+- [x] Removed every "Register Interest" mailto CTA from `index.html`,
+      `one.html` (hero + bottom CTA banner, including the now-unused
+      tier-dropdown markup/CSS/script), and `billing.html` (hero).
+      Registration now happens on `app.lrxone.com` via "Continue to
+      LRX One." Left `billing.html`'s "Talk to Us" sales-contact CTA
+      alone — different ask, out of scope. See MEMORY.md.
+
 ## Fixed 2026-08-04 (product cross-links, "Sign In" reworded)
 
 - [x] `one.html`'s "LRX One Billing" hero mention and `billing.html`'s

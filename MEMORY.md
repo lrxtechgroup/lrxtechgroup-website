@@ -6,6 +6,43 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (all "Register Interest" mailto CTAs removed) — registration now lives on LRX One, not lrxtechgroup.com
+
+User asked to remove "Register Interest" from this site entirely — it
+lives on LRX One now (`app.lrxone.com`'s login page already has a "New
+to LRX One Hive? Create a workspace" link per `LoginPage.tsx`, from
+earlier work in the `lrxone` repo this session). Every explicit
+"Register Interest" CTA (all `mailto:sales@...` links) removed:
+
+- `index.html`: both product cards ("LRX ONE | HIVE" and "LRX ONE |
+  BILLING") had "See Full Details" + "Register Interest" — dropped the
+  latter, "See Full Details" alone remains (it links to the product
+  page, where "Continue to LRX One" is the actionable CTA).
+- `one.html` hero: dropped the secondary "Register Interest" button,
+  leaving "Continue to LRX One" as the sole hero CTA. Updated the hero
+  note ("Already have a workspace, or ready to get started? Continue to
+  LRX One above to sign in or create your workspace.") since it used to
+  reference the now-removed button.
+- `one.html` bottom `cta-banner`: this section's only purpose was
+  feeding a selected pricing tier into the "Register Interest" mailto
+  subject line via a `.tier-dropdown` + inline `<script>` — with the
+  mailto gone, the dropdown had nothing left to do, so removed the
+  whole interest-form (dropdown, its ~30 lines of CSS, and the ~40-line
+  wiring script) and replaced it with a single "Continue to LRX One"
+  button, rewording the section copy to match.
+- `billing.html` hero: "Register Interest" → "Continue to LRX One"
+  (billing access comes bundled into one's LRX One account, not a
+  separate registration).
+
+**Deliberately left alone**: `billing.html`'s bottom `cta-banner`
+("Talk to Us" + tier dropdown, mailto to sales). It's not literally
+"Register Interest" and represents a different ask — sales-assisted
+conversation about a billing infrastructure migration, not self-serve
+registration — so it's out of scope for this instruction.
+
+Verified via headless-Chromium screenshots of all four touched
+sections before pushing.
+
 ## 2026-08-04 (cross-linked product hero mentions, "Sign In" reworded) — one.html/billing.html now link to each other, and the sign-in CTA reflects the real cross-domain flow
 
 Two fixes from a user screenshot of `one.html`'s hero:
