@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (Brandon's photo: left-side space trimmed)
+
+- [x] Trimmed 130px of empty black space off the left edge (700x700 →
+      570x700), face now centered in the card. See MEMORY.md.
+
 ## Fixed 2026-08-04 (Brandon's photo swapped for a better-quality version)
 
 - [x] Replaced `brandon-le-roux.jpg` again with a cleaner

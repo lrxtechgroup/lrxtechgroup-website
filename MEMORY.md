@@ -6,6 +6,19 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (Brandon's photo: left-side empty space trimmed) — 700x700 square → 570x700 portrait
+
+The previous swap's square crop left a noticeable band of empty black
+space on the left before the face started. Trimmed 130px off the left
+edge (`crop((130, 0, 700, 700))`), keeping full height so the bow tie
+and jacket framing at the bottom weren't lost — first attempt tried
+re-squaring by also cutting the bottom, but that lost the bow tie
+entirely, so kept it as a 570x700 portrait instead and let
+`.founder-photo`'s existing `object-fit: cover` handle squaring it up
+for display, same as it already does for any source aspect ratio.
+Verified via live-page screenshot — face now sits centered in the
+card with no wasted space.
+
 ## 2026-08-04 (Brandon's photo swapped for a better-quality already-processed version) — user supplied a cleaner 1402x1122 crop directly
 
 Immediately after the tight-crop/black-background pass, user pasted a
