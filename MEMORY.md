@@ -6,6 +6,40 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (leadership photos replaced with real higher-res sources, tight crop, black background) — resolves the pending TODO from the sharpening pass
+
+User followed up on the earlier sharpening entry by supplying the
+actual higher-quality source photos requested there: two wedding
+photos (Jessica in her dress, Brandon in a group shot wearing the same
+tux/bow-tie as the existing site photo) at ~1300x2000, pasted directly
+into the conversation rather than as `@`-referenced uploads — extracted
+the raw bytes from the session transcript JSONL (searched all message
+content recursively for `type: "image"` blocks, took the last/newest
+match, base64-decoded it) since there was no file path to read
+directly this time.
+
+Cropped each to a tight head-and-shoulders square from the original
+high-res source (not the old 700x700), flagged before applying that
+Jessica's photo being in a wedding dress was a tonal mismatch for a
+B2B leadership bio (showed both a "tight" and "wider" crop option so
+the dress neckline visibility could be judged) — user picked tight
+crop for both and asked for a black background to match the site
+besides.
+
+Background removal: installed `rembg[cpu]` (downloads the U2Net ONNX
+model, ~176MB, from GitHub releases — worked fine through the PyPI/
+GitHub-allowlisted proxy) rather than reaching for a classical
+approach, since a proper ML matte handles hair strand edges far better
+than GrabCut would. Composited the resulting RGBA cutouts onto solid
+`#0E0E0E` (the site's `--black`) and re-encoded at 700x700 JPEG
+quality 95, replacing `images/brandon-le-roux.jpg` and
+`images/jessica-le-roux.jpg` in place. Verified via a live-page
+screenshot — `.founder-photo`'s existing `object-position: center 22%`
+still frames both correctly with the new crops, no CSS changes needed.
+
+This resolves the "still only 700x700px, needs the original source
+photos" item left open in the sharpening entry below.
+
 ## 2026-08-04 (leadership photos sharpened) — unsharp mask pass on both founder JPEGs, real-resolution increase declined
 
 User asked to "increase resolution" of Brandon and Jessica's photos

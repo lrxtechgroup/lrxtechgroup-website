@@ -3,14 +3,21 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (leadership photos replaced with real higher-res sources)
+
+- [x] User supplied the actual higher-quality wedding photos requested
+      below — cropped tight, background removed via `rembg`, composited
+      onto the site's `#0E0E0E` black. Both `brandon-le-roux.jpg` and
+      `jessica-le-roux.jpg` replaced in place at 700x700. See MEMORY.md.
+
 ## Fixed 2026-08-04 (leadership photos sharpened, real upscale still pending)
 
 - [x] Applied unsharp-mask sharpening + higher JPEG quality re-save to
       both founder photos — crisper edges, no fabricated detail.
-- [ ] **Still only 700x700px.** A genuine resolution increase needs
-      the original higher-quality source photos from the user —
-      asked, no reply yet. AI upscaling was deliberately declined
-      (would fabricate facial detail on real people). See MEMORY.md.
+- [x] ~~Still only 700x700px.~~ Resolved above — real source photos
+      now used instead of an AI upscale (which was deliberately
+      declined, since that would fabricate facial detail on real
+      people). See MEMORY.md.
 
 ## Fixed 2026-08-04 (leadership quote dashes changed to commas)
 
