@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav wordmark text size reverted)
+
+- [x] Reverted the "match logo height" text scaling — "LRX TECH /
+      GROUP" back to its original 16px/9px sizing across all 8 pages.
+      See MEMORY.md.
+
 ## Fixed 2026-08-04 (nav horizontal padding capped for large monitors)
 
 - [x] `nav { padding: 0 5%; }` → `padding: 0 clamp(20px, 3vw, 56px);`

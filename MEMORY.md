@@ -6,6 +6,19 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav wordmark text size reverted) — "leave the wording where it was"
+
+User asked to revert the earlier "nav wordmark scaled to match logo
+height" change — the size of "LRX TECH / GROUP" next to the logo goes
+back to its original values: `.lrx` 33px → 16px, `.tech` 19px → 9px,
+letter-spacing back to 0.12em/0.25em, and `.nav-logo-text` back to the
+`transform: translateY(13px)` optical-centering approach instead of
+`justify-content: center; height: 52px;`. The nav padding cap from
+the entry below is unrelated and was kept as-is. Applied across all 8
+pages (index.html's multi-line `.lrx`/`.tech` rules handled
+separately, same as when the size-up was first applied). Verified via
+screenshot.
+
 ## 2026-08-04 (nav horizontal padding capped) — logo was drifting too far from the left edge on large monitors
 
 User sent a photo from a large desktop monitor showing the nav logo
