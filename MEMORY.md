@@ -6,6 +6,28 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-05 (hero height hard-capped on touch devices) — same fix as lrxone-website, "still like this on request desktop view"
+
+User's fresh real-device screenshots after the `--vh` fix showed the
+gap unchanged under Request Desktop Site. Confirmed via git that the
+fix genuinely was on `main` (not a failed push); tried to check the
+live site directly but both curl and WebFetch got HTTP 403 from the
+site's own bot/WAF protection, so deployment/cache staleness couldn't
+be ruled out from this environment — flagged to the user that Request
+Desktop Site changes the User-Agent but most caches don't vary on it,
+so a pre-fix cached copy could still be served.
+
+Independent of that, hardened the fix itself: added a
+`@media (pointer: coarse)` rule (matches real touchscreen hardware,
+survives Request Desktop Site since that mode only fakes width/UA,
+not input hardware) capping `.hero`'s `min-height` to
+`min(calc(var(--vh, 1vh) * 100), 820px)`. Real desktop (`pointer:
+fine`) is untouched — verified via Playwright with real pointer/touch
+emulation (not just viewport size): 1440×1080 mouse context stayed
+uncapped at 1080px; 980×2200 touch context (deliberately extreme)
+capped to exactly 820px with content flowing straight into the rest
+of the page, no gap. Full detail in lrxone-website's MEMORY.md.
+
 ## 2026-08-05 (hero viewport-height fix upgraded to JS-measured `--vh`) — same fix as lrxone-website, "it is on the desktop view on mobile"
 
 User confirmed the gap only shows under Chrome's "Request Desktop

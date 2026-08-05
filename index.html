@@ -711,6 +711,16 @@
       .nav-logo-text .tech { font-size: 14px; }
     }
 
+    /* Touch-primary devices only (real phones/tablets, regardless of what
+       viewport width they're currently rendering — this still matches under
+       "Request Desktop Site", where width/UA lie but pointer hardware doesn't).
+       Caps the hero's height as a hard backstop against any viewport-unit
+       value a mobile browser's chrome-collapse quirks might report, without
+       touching real desktop (pointer: fine) at all. */
+    @media (pointer: coarse) {
+      .hero { min-height: min(calc(var(--vh, 1vh) * 100), 820px); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }

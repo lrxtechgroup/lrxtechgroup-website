@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-05 (hero height hard-capped on touch devices)
+
+- [x] Same fix as lrxone-website: `@media (pointer: coarse)` caps
+      `.hero` to `min(calc(var(--vh,1vh)*100), 820px)` on real
+      touchscreens only, leaves desktop untouched. See MEMORY.md.
+- [ ] **Unverified**: couldn't confirm from this environment whether
+      the live site has picked up today's commits (WAF blocked direct
+      checks). Asked user to hard-refresh / test in a private tab.
+
 ## Fixed 2026-08-05 (hero empty-space bug — desktop-site-on-mobile case)
 
 - [x] Same fix as lrxone-website: replaced the `100dvh` approach with
