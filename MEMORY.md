@@ -6,6 +6,21 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-05 (hero viewport-height fix upgraded to JS-measured `--vh`) — same fix as lrxone-website, "it is on the desktop view on mobile"
+
+User confirmed the gap only shows under Chrome's "Request Desktop
+Site" on a phone, not normal mobile view. The `100dvh` fix wasn't
+guaranteed to cover that case since desktop-site emulation may not
+apply the same dynamic-viewport recalculation `dvh` relies on.
+Replaced with a JS-measured `--vh` custom property (real
+`window.innerHeight`, re-measured on resize/orientation change) that
+`.hero`'s `min-height` now uses via `calc(var(--vh, 1vh) * 100)` —
+bypasses CSS viewport-unit quirks entirely. `100vh`/`100dvh` stay as
+earlier fallback declarations. Verified via Playwright at mobile and
+two desktop-site-style viewport sizes — `--vh` matched
+`window.innerHeight` exactly in all cases, no gap. Full detail in
+lrxone-website's MEMORY.md (same investigation, same fix).
+
 ## 2026-08-05 (hero 100vh mobile-empty-space bug fixed) — same fix as lrxone-website, found via a real-device screenshot of app.lrxone.com
 
 lrxone-website's homepage hero had a bug where `.hero { min-height:

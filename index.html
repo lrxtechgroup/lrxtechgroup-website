@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      function setVH() { document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px'); }
+      setVH();
+      window.addEventListener('resize', setVH);
+      window.addEventListener('orientationchange', setVH);
+    })();
+  </script>
   <title>LRX Tech Group - Innovate. Integrate. Elevate.</title>
   <meta name="description" content="LRX Tech Group is a South African technology company building intelligent enterprise software. Home of LRX One Hive." />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -120,6 +128,7 @@
     .hero {
       min-height: 100vh;
       min-height: 100dvh;
+      min-height: calc(var(--vh, 1vh) * 100);
       display: flex;
       flex-direction: column;
       align-items: center;

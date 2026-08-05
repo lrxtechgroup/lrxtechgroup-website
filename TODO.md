@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-05 (hero empty-space bug — desktop-site-on-mobile case)
+
+- [x] Same fix as lrxone-website: replaced the `100dvh` approach with
+      a JS-measured `--vh` custom property, since desktop-site
+      emulation on mobile isn't guaranteed to get `dvh`'s dynamic
+      recalculation. See MEMORY.md.
+
 ## Fixed 2026-08-05 (hero mobile empty-space bug)
 
 - [x] Same fix as lrxone-website: `.hero`'s `min-height: 100vh` could
