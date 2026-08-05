@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-05 (hero mobile empty-space bug)
+
+- [x] Same fix as lrxone-website: `.hero`'s `min-height: 100vh` could
+      compute taller than the visible mobile viewport (browser-chrome
+      quirk), pushing hero content below a big black gap. Added a
+      `100dvh` override. See MEMORY.md.
+
 ## Fixed 2026-08-05 (FAQ keyword search)
 
 - [x] Added a live client-side search box to `faq.html` — filters

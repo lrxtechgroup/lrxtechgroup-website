@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-05 (hero 100vh mobile-empty-space bug fixed) — same fix as lrxone-website, found via a real-device screenshot of app.lrxone.com
+
+lrxone-website's homepage hero had a bug where `.hero { min-height:
+100vh; ... align-items: center }` combined with mobile browsers
+computing `100vh` against the largest/chrome-collapsed viewport
+(taller than what's actually visible when the address bar is
+showing) meant the vertically-centered hero content could render
+mostly below the fold, with a big empty black gap above it. Confirmed
+this repo's own `index.html` homepage hero uses the exact same
+pattern (`min-height: 100vh` at line 121, only occurrence in the
+file), so applied the identical fix here: added `min-height: 100dvh;`
+right after the existing `100vh` declaration (dvh tracks the
+currently-visible mobile viewport; kept `100vh` first as a fallback
+for browsers without `dvh` support, so nothing regresses there).
+Verified via Playwright at a 390×844 mobile viewport — renders
+identically, no layout change.
+
 ## 2026-08-05 (FAQ keyword search added) — "let's have a key word search function in faq"
 
 Added a live search box (`#faqSearch`) to `faq.html`, right above the
