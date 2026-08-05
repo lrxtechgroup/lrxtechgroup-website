@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-05 (FAQ keyword search added) — "let's have a key word search function in faq"
+
+Added a live search box (`#faqSearch`) to `faq.html`, right above the
+three accordion groups. Vanilla JS, no dependencies: on every keystroke
+it substring-matches (case-insensitive) each `.faq-item`'s full text
+(question + answer) against the query, hides non-matching items,
+hides a whole `.faq-group` if none of its items match, auto-opens
+matching `<details>` items so the hit is visible immediately, and
+shows a "No matching questions" message with a contact link when
+nothing matches. Clearing the box restores the original collapsed
+state. Verified via Playwright screenshots: a matching query
+("refund") correctly narrows to one item, opened; a nonsense query
+shows the no-results message; clearing restores the full list.
+
 ## 2026-08-04 (new FAQ page added; hosting copy updated to South Africa + EU everywhere) — two changes landed together
 
 **FAQ page** (`faq.html`, new): user asked whether an FAQ page was

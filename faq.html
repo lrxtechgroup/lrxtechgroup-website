@@ -66,6 +66,29 @@
     .doc-intro a { color: var(--gold); text-decoration: none; }
     .doc-intro a:hover { text-decoration: underline; }
 
+    .faq-search { margin-bottom: 40px; }
+    .faq-search input {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--gold-line);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .faq-search input::placeholder { color: var(--light-grey); }
+    .faq-search input:focus { border-color: var(--gold); }
+
+    .faq-no-results { font-size: 14px; line-height: 1.8; color: var(--light-grey); padding: 8px 0 32px; }
+    .faq-no-results a { color: var(--gold); text-decoration: none; }
+    .faq-no-results a:hover { text-decoration: underline; }
+
+    .faq-group[hidden] { display: none; }
+    .faq-item[hidden] { display: none; }
+
     .faq-group { margin-bottom: 40px; }
     .faq-group-title {
       font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
@@ -171,6 +194,14 @@
       <a href="/billing.html"><span style="color:var(--gold)">LRX One</span> <span style="color:var(--white)">Billing</span></a>,
       and how LRX Tech Group works. Can't find what you're looking for?
       <a href="/contact.html">Get in touch</a> - we're happy to help.
+    </p>
+
+    <div class="faq-search">
+      <input type="text" id="faqSearch" placeholder="Search FAQs…" autocomplete="off" />
+    </div>
+    <p class="faq-no-results" id="faqNoResults" hidden>
+      No matching questions. Try a different search term, or
+      <a href="/contact.html">get in touch</a> directly.
     </p>
 
     <div class="faq-group">
@@ -325,6 +356,36 @@
 
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    (function () {
+      var input = document.getElementById('faqSearch');
+      var noResults = document.getElementById('faqNoResults');
+      var groups = Array.prototype.slice.call(document.querySelectorAll('.faq-group'));
+
+      input.addEventListener('input', function () {
+        var query = input.value.trim().toLowerCase();
+        var anyVisible = false;
+
+        groups.forEach(function (group) {
+          var items = Array.prototype.slice.call(group.querySelectorAll('.faq-item'));
+          var groupHasMatch = false;
+
+          items.forEach(function (item) {
+            var matches = query === '' || item.textContent.toLowerCase().indexOf(query) !== -1;
+            item.hidden = !matches;
+            item.open = matches && query !== '';
+            if (matches) {
+              groupHasMatch = true;
+              anyVisible = true;
+            }
+          });
+
+          group.hidden = !groupHasMatch;
+        });
+
+        noResults.hidden = anyVisible || query === '';
+      });
+    })();
   </script>
 
 </body>
