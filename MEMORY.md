@@ -6,6 +6,27 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (nav wordmark scaled back down on mobile) — "LRX TECH GROUP" was oversized next to the logo on phone screens
+
+User sent a phone screenshot showing the nav text disproportionately
+large next to the icon on mobile. Root cause: the earlier "match logo
+height" sizing (`.lrx` 33px, `.tech` 19px, icon 52px) was set as fixed
+px with no responsive scaling — fine on desktop, but on a ~412px-wide
+phone viewport that fixed-size text visually overwhelms the icon and
+crowds the nav.
+
+Added a mobile-only override (icon 52px→38px, `.lrx` 33px→24px, `.tech`
+19px→14px, gap 18px→12px — same proportions as the desktop sizing,
+just scaled down) inside each page's existing responsive breakpoint:
+`index.html`/`billing.html`/`one.html` already had a `@media
+(max-width: 768px)` block (for hiding `.nav-links`), so the rules were
+added there; the 5 legal pages (`privacy.html`, `terms.html`,
+`refund-policy.html`, `cancellation-policy.html`, `contact.html`) use
+their own `@media (max-width: 600px)` block instead — matched that
+breakpoint rather than introducing a new one, so this landed correctly
+on all 8 pages. Verified via a 412px-wide screenshot on three
+representative pages (index, billing, privacy).
+
 ## 2026-08-04 (Brandon's photo: over-zoom fixed, then replaced with a better-framed source) — root cause was a non-square crop fighting object-fit: cover
 
 User reported Brandon's photo was "too zoomed in" after the left-trim

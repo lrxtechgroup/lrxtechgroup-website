@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (nav wordmark scaled down on mobile)
+
+- [x] Added a mobile-only nav sizing override (52px→38px icon,
+      33px/19px→24px/14px text) across all 8 pages, in each page's
+      existing responsive breakpoint (768px or 600px depending on the
+      page). Fixes the wordmark looking oversized next to the logo on
+      phone screens. See MEMORY.md.
+
 ## Fixed 2026-08-04 (Brandon's photo over-zoom fixed)
 
 - [x] Root cause was a non-square (570x700) source fighting
