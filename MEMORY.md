@@ -6,6 +6,46 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-04 (new FAQ page added; hosting copy updated to South Africa + EU everywhere) — two changes landed together
+
+**FAQ page** (`faq.html`, new): user asked whether an FAQ page was
+worth adding. Recommended a short, tightly-scoped one (rather than
+speculative/exhaustive) since both products are still pre-launch with
+no real support-ticket history yet to draw from — user agreed. Reused
+the same legal-doc chrome (nav/footer/doc-header styles) as
+`terms.html`/`privacy.html` for visual consistency, but built the body
+as three grouped `<details>`/`<summary>` accordions (Products &
+Account, Pricing & Billing, Data & Compliance) rather than numbered
+sections — no JS needed, native and accessible. Every answer was
+synthesized from what's already stated elsewhere on the site (terms,
+privacy, refund/cancellation policies, pricing pages) rather than
+inventing new policy positions — e.g. "no free tier" pulls directly
+from `terms.html`'s existing subscriptions clause, "cancel anytime, no
+minimum term" from `cancellation-policy.html`. Linked from the footer
+of all 8 existing pages (inserted before "Contact" in each, matching
+each page's own slightly-varying footer link list).
+
+**Hosting/data-residency copy** (separate change, same session): user
+asked to reflect that hosting will also be in the EU, not framed as
+South-Africa-exclusive. Updated every place that made an exclusivity
+claim: `billing.html`'s "POPIA Data Residency" solution card ("stays in
+South Africa" → "stays close to home, wherever that is" + "AWS South
+Africa and the EU"), `index.html`'s LRX One Billing feature list
+("POPIA data residency (AWS South Africa)" → "POPIA-compliant data
+residency (South Africa & EU)"), and `privacy.html`'s processor table
+row plus its infrastructure paragraph (both now say "AWS South Africa
+and EU" instead of naming only Cape Town/South Africa). Left
+`terms.html`'s "Governing law" section (Republic of South Africa
+jurisdiction) and the general "Built in South Africa" origin-story
+copy untouched — those are about company registration/founding
+story, not hosting region, so out of scope for this change. New FAQ
+page's "Where is my data hosted?" answer was written to match the
+updated wording from the start.
+
+Verified both changes via screenshots (FAQ page open/closed accordion
+states, billing.html's solution card, privacy.html's processor table)
+before pushing.
+
 ## 2026-08-04 (nav wordmark scaled back down on mobile) — "LRX TECH GROUP" was oversized next to the logo on phone screens
 
 User sent a phone screenshot showing the nav text disproportionately

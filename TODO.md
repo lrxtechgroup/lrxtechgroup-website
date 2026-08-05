@@ -3,6 +3,18 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-04 (FAQ page added, hosting copy updated to SA + EU)
+
+- [x] New `faq.html` — 3 grouped accordions (Products & Account,
+      Pricing & Billing, Data & Compliance), linked from all 8
+      pages' footers. Content synthesized from existing site copy,
+      nothing new invented.
+- [x] All "hosted only in South Africa" claims updated to "South
+      Africa and the EU" — `billing.html`, `index.html`,
+      `privacy.html` (table + paragraph). Governing-law/jurisdiction
+      copy in `terms.html` deliberately left alone (different thing).
+      See MEMORY.md.
+
 ## Fixed 2026-08-04 (nav wordmark scaled down on mobile)
 
 - [x] Added a mobile-only nav sizing override (52px→38px icon,
