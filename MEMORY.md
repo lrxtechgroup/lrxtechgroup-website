@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-06 — Dial back "300+ integration connectors" claim to "100+"
+
+First step of "get everything advertised actually working before building
+specialized AI workers" — `index.html`'s product-features list and
+`one.html`'s Integration Hub blurb both claimed 300+ connectors;
+`lrxone`'s `integration-service` has 8 real ones today (Google Workspace,
+Microsoft 365, QuickBooks, Salesforce, Slack, Stripe, WhatsApp, Xero).
+300+ was never going to be a credible near-term target — changed both to
+"100+" as a number actually worth building toward. Building the connectors
+themselves happens in `lrxone`, not here; this repo's job was just not
+advertising a number nobody's building toward.
+
+---
+
 ## 2026-08-04 (Brandon's photo: over-zoom fixed, then replaced with a better-framed source) — root cause was a non-square crop fighting object-fit: cover
 
 User reported Brandon's photo was "too zoomed in" after the left-trim
