@@ -3,6 +3,32 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-11 (user-directed: "we can remove the thing of figures under the analysis being done")
+
+- [x] Removed the "in-depth cost analysis" pricing-note paragraph from
+      `one.html` and `billing.html` — the placeholders now stand alone
+      without the extra explanatory line underneath. See MEMORY.md.
+
+## Fixed 2026-08-11 (user-directed: "change the current pricing values to something quirky ... until we can do an in depth price analysis")
+
+- [x] Swapped all 8 real price figures on `one.html`/`billing.html` for
+      a "Crunching the numbers / stay tuned" placeholder; `billing.html`'s
+      per-transaction fee lines and CTA dropdown also lost their real
+      numbers. Tier names and feature lists were left alone. Verified no
+      layout overflow via Playwright screenshots (desktop + mobile). See
+      MEMORY.md.
+- [ ] Real pricing analysis itself is still outstanding — when it's
+      done, these placeholders need to go back to real numbers (and the
+      `.pricing-price.tbd` CSS/markup can come back out).
+
+## Fixed 2026-08-11 (user-directed: "indicate on the websites that the pricing is still subject to changes")
+
+- [x] Added a "pricing subject to change" note under the pricing grid on
+      `one.html` and `billing.html` (the only two pages with real
+      pricing tables — `lrxone-website` just links to these), linking
+      to `terms.html#pricing`'s existing one-month-notice clause. See
+      MEMORY.md.
+
 ## Fixed 2026-08-05 (hero height hard-capped on touch devices)
 
 - [x] Same fix as lrxone-website: `@media (pointer: coarse)` caps
@@ -51,7 +77,6 @@ done — don't just accumulate; keep this reflecting real, current state.
       existing responsive breakpoint (768px or 600px depending on the
       page). Fixes the wordmark looking oversized next to the logo on
       phone screens. See MEMORY.md.
-
 ## Fixed 2026-08-04 (Brandon's photo over-zoom fixed)
 
 - [x] Root cause was a non-square (570x700) source fighting

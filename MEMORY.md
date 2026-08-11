@@ -6,6 +6,76 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-11 — Removed the "in-depth cost analysis" note under the pricing placeholders
+
+User-directed follow-up, same session: "we can remove the thing of
+figures under the analysis being done" — the `pricing-note` paragraph
+added right after switching to "Crunching the numbers" placeholders
+("We're running an in-depth cost analysis... final pricing isn't set
+yet...") is gone from both `one.html` and `billing.html`. `one.html`'s
+other pricing-note (the resource-marketplace add-on blurb) stays. The
+`terms.html#pricing` anchor added earlier is now unreferenced from the
+pricing pages but left in place since it's harmless and the underlying
+legal clause is still accurate.
+
+## 2026-08-11 — Replaced actual price numbers with "Crunching the numbers" placeholders
+
+Follow-up to the note-added-below entry, same session: user asked to go
+further and swap the real ZAR figures out entirely — "something quirky
+... until we can do an in depth price analysis and give proper
+pricing". Confirmed exact wording via `AskUserQuestion` (big text:
+"Crunching the numbers", small text under it: "stay tuned") and that
+tier names/feature lists should stay real — only the numbers themselves
+are unknowns right now.
+
+Replaced all 8 `.pricing-price` values (4 tiers × `one.html` +
+`billing.html`) with the placeholder pair, added a `.pricing-price.tbd`
+modifier (smaller font, 19px vs 34px) so the longer phrase doesn't
+overflow the card — verified via a quick Playwright screenshot at both
+desktop and mobile widths, no wrapping/overflow. `billing.html`'s
+per-transaction fee line (`+ 0.8% per transaction` etc.) became "txn fee
+TBD" on all four cards, and its CTA-section tier-picker dropdown/label
+dropped their price suffixes ("Growth - R2,999/mo" → "Growth") — the
+dropdown's own JS just copies `option.textContent` into the label, so
+no script changes needed. Also reworded the "subject to change" note
+added just before this (see previous entry) to match the new reality:
+it now says pricing isn't set yet rather than implying the shown
+numbers are current rates.
+
+## 2026-08-11 — Pricing pages now note that pricing is subject to change
+
+User-directed: "I need you to indicate on the websites that the pricing
+is still subject to changes". Checked both live sites for actual pricing
+tables — `lrxone-website`'s `index.html` doesn't render its own; it just
+links out to this repo's `one.html`/`billing.html`, so those two files
+(LRX One Core and LRX One Billing) were the only places that needed the
+notice.
+
+Added a `.pricing-note` line under each product's pricing grid: "Pricing
+shown reflects current rates and is subject to change. We'll give at
+least one month's notice before any change takes effect on your account
+— see our Terms for details." `one.html` already had a `.pricing-note`
+class (used for the resource-marketplace add-on blurb); `billing.html`
+didn't, so copied the class in. The note links to `terms.html#pricing`
+— added that `id` to the "Subscriptions and payment" section, which
+already stated the one-month-notice policy in its legal text (`terms.html`
+line ~157), so the new copy summarizes an existing commitment rather
+than inventing a new one.
+
+## 2026-08-06 — Dial back "300+ integration connectors" claim to "100+"
+
+First step of "get everything advertised actually working before building
+specialized AI workers" — `index.html`'s product-features list and
+`one.html`'s Integration Hub blurb both claimed 300+ connectors;
+`lrxone`'s `integration-service` has 8 real ones today (Google Workspace,
+Microsoft 365, QuickBooks, Salesforce, Slack, Stripe, WhatsApp, Xero).
+300+ was never going to be a credible near-term target — changed both to
+"100+" as a number actually worth building toward. Building the connectors
+themselves happens in `lrxone`, not here; this repo's job was just not
+advertising a number nobody's building toward.
+
+---
+
 ## 2026-08-05 (hero height hard-capped on touch devices) — same fix as lrxone-website, "still like this on request desktop view"
 
 User's fresh real-device screenshots after the `--vh` fix showed the
@@ -134,7 +204,6 @@ their own `@media (max-width: 600px)` block instead — matched that
 breakpoint rather than introducing a new one, so this landed correctly
 on all 8 pages. Verified via a 412px-wide screenshot on three
 representative pages (index, billing, privacy).
-
 ## 2026-08-04 (Brandon's photo: over-zoom fixed, then replaced with a better-framed source) — root cause was a non-square crop fighting object-fit: cover
 
 User reported Brandon's photo was "too zoomed in" after the left-trim
