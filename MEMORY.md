@@ -6,6 +6,18 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-11 — Removed the "in-depth cost analysis" note under the pricing placeholders
+
+User-directed follow-up, same session: "we can remove the thing of
+figures under the analysis being done" — the `pricing-note` paragraph
+added right after switching to "Crunching the numbers" placeholders
+("We're running an in-depth cost analysis... final pricing isn't set
+yet...") is gone from both `one.html` and `billing.html`. `one.html`'s
+other pricing-note (the resource-marketplace add-on blurb) stays. The
+`terms.html#pricing` anchor added earlier is now unreferenced from the
+pricing pages but left in place since it's harmless and the underlying
+legal clause is still accurate.
+
 ## 2026-08-11 — Replaced actual price numbers with "Crunching the numbers" placeholders
 
 Follow-up to the note-added-below entry, same session: user asked to go

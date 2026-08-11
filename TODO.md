@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-11 (user-directed: "we can remove the thing of figures under the analysis being done")
+
+- [x] Removed the "in-depth cost analysis" pricing-note paragraph from
+      `one.html` and `billing.html` — the placeholders now stand alone
+      without the extra explanatory line underneath. See MEMORY.md.
+
 ## Fixed 2026-08-11 (user-directed: "change the current pricing values to something quirky ... until we can do an in depth price analysis")
 
 - [x] Swapped all 8 real price figures on `one.html`/`billing.html` for
