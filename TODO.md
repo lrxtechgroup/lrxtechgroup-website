@@ -3,6 +3,18 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-11 (user-directed: "change the current pricing values to something quirky ... until we can do an in depth price analysis")
+
+- [x] Swapped all 8 real price figures on `one.html`/`billing.html` for
+      a "Crunching the numbers / stay tuned" placeholder; `billing.html`'s
+      per-transaction fee lines and CTA dropdown also lost their real
+      numbers. Tier names and feature lists were left alone. Verified no
+      layout overflow via Playwright screenshots (desktop + mobile). See
+      MEMORY.md.
+- [ ] Real pricing analysis itself is still outstanding — when it's
+      done, these placeholders need to go back to real numbers (and the
+      `.pricing-price.tbd` CSS/markup can come back out).
+
 ## Fixed 2026-08-11 (user-directed: "indicate on the websites that the pricing is still subject to changes")
 
 - [x] Added a "pricing subject to change" note under the pricing grid on

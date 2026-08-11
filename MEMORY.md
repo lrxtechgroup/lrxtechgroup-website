@@ -6,6 +6,30 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-11 — Replaced actual price numbers with "Crunching the numbers" placeholders
+
+Follow-up to the note-added-below entry, same session: user asked to go
+further and swap the real ZAR figures out entirely — "something quirky
+... until we can do an in depth price analysis and give proper
+pricing". Confirmed exact wording via `AskUserQuestion` (big text:
+"Crunching the numbers", small text under it: "stay tuned") and that
+tier names/feature lists should stay real — only the numbers themselves
+are unknowns right now.
+
+Replaced all 8 `.pricing-price` values (4 tiers × `one.html` +
+`billing.html`) with the placeholder pair, added a `.pricing-price.tbd`
+modifier (smaller font, 19px vs 34px) so the longer phrase doesn't
+overflow the card — verified via a quick Playwright screenshot at both
+desktop and mobile widths, no wrapping/overflow. `billing.html`'s
+per-transaction fee line (`+ 0.8% per transaction` etc.) became "txn fee
+TBD" on all four cards, and its CTA-section tier-picker dropdown/label
+dropped their price suffixes ("Growth - R2,999/mo" → "Growth") — the
+dropdown's own JS just copies `option.textContent` into the label, so
+no script changes needed. Also reworded the "subject to change" note
+added just before this (see previous entry) to match the new reality:
+it now says pricing isn't set yet rather than implying the shown
+numbers are current rates.
+
 ## 2026-08-11 — Pricing pages now note that pricing is subject to change
 
 User-directed: "I need you to indicate on the websites that the pricing
