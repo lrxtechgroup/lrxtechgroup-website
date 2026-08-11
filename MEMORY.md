@@ -6,6 +6,26 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-11 — Pricing pages now note that pricing is subject to change
+
+User-directed: "I need you to indicate on the websites that the pricing
+is still subject to changes". Checked both live sites for actual pricing
+tables — `lrxone-website`'s `index.html` doesn't render its own; it just
+links out to this repo's `one.html`/`billing.html`, so those two files
+(LRX One Core and LRX One Billing) were the only places that needed the
+notice.
+
+Added a `.pricing-note` line under each product's pricing grid: "Pricing
+shown reflects current rates and is subject to change. We'll give at
+least one month's notice before any change takes effect on your account
+— see our Terms for details." `one.html` already had a `.pricing-note`
+class (used for the resource-marketplace add-on blurb); `billing.html`
+didn't, so copied the class in. The note links to `terms.html#pricing`
+— added that `id` to the "Subscriptions and payment" section, which
+already stated the one-month-notice policy in its legal text (`terms.html`
+line ~157), so the new copy summarizes an existing commitment rather
+than inventing a new one.
+
 ## 2026-08-06 — Dial back "300+ integration connectors" claim to "100+"
 
 First step of "get everything advertised actually working before building

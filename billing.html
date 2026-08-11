@@ -197,6 +197,7 @@
     .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
     @media (min-width: 620px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1020px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--grey); max-width: 620px; margin: 32px auto 0; line-height: 1.7; }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
     .pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .pricing-price { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
@@ -466,6 +467,7 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
         </ul>
       </div>
     </div>
+    <p class="pricing-note">Pricing shown reflects current rates and is subject to change. We'll give at least one month's notice before any change takes effect on your account — see our <a href="terms.html#pricing" style="color:var(--gold)">Terms</a> for details.</p>
   </section>
 
   <section class="cta-banner">

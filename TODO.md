@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-11 (user-directed: "indicate on the websites that the pricing is still subject to changes")
+
+- [x] Added a "pricing subject to change" note under the pricing grid on
+      `one.html` and `billing.html` (the only two pages with real
+      pricing tables — `lrxone-website` just links to these), linking
+      to `terms.html#pricing`'s existing one-month-notice clause. See
+      MEMORY.md.
+
 ## Fixed 2026-08-04 (Brandon's photo over-zoom fixed)
 
 - [x] Root cause was a non-square (570x700) source fighting
