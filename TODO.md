@@ -3,6 +3,16 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-12 (user-directed: "change continue to lrxone from lrxtechgroup website to register interest with the dropdown of which package")
+
+- [x] `one.html`'s bottom-of-page CTA banner (after the pricing
+      section) now matches `billing.html`'s existing "Register
+      Interest" + tier-dropdown pattern instead of a plain "Continue to
+      LRX One" link — copied the CSS/markup/script over, mailto subject
+      reads "LRX One Hive - {tier}". The hero's "Continue to LRX One"
+      button was deliberately left as-is (it doubles as the sign-in
+      path for existing customers). See MEMORY.md.
+
 ## Fixed 2026-08-11 (user-directed: "we can remove the thing of figures under the analysis being done")
 
 - [x] Removed the "in-depth cost analysis" pricing-note paragraph from

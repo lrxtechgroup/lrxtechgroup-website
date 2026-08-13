@@ -6,6 +6,32 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-12 — one.html's bottom CTA switched from "Continue to LRX One" to Register Interest + tier dropdown
+
+User-directed: "change continue to lrxone from lrxtechgroup website to
+register interest with the dropdown of which package". `one.html` had
+two "Continue to LRX One" links: the hero button (dual-purpose — sign
+in for existing customers or start onboarding for new ones, per its own
+note text) and the bottom-of-page CTA banner right after the pricing
+section. Only changed the bottom one — it's the direct sibling of
+`billing.html`'s own CTA banner, which already had exactly this
+register-interest + tier-dropdown pattern (added back when pricing was
+consolidated onto a single selector, see the 2026-08-04 "Register
+Interest removed, moved to LRX One" / "Consolidate pricing CTAs" work).
+The hero button was left alone since converting it to a lead-capture
+form would break its "sign in to your existing workspace" purpose.
+
+Copied `billing.html`'s `.interest-form`/`.tier-dropdown*` CSS and
+dropdown markup/script verbatim into `one.html` (they didn't exist
+there — removed in an earlier session), swapping the mailto subject
+from "LRX One Billing - {tier}" to "LRX One Hive - {tier}" (this
+product's current on-page name) and the button id from
+`billing-register-link` to `one-register-link` to avoid colliding if
+both scripts ever load on the same page. Verified via Playwright:
+dropdown opens/closes, selecting each tier updates both the button
+label and the `mailto:` link's subject line correctly (e.g.
+`mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Hive%20-%20Enterprise`).
+
 ## 2026-08-11 — Removed the "in-depth cost analysis" note under the pricing placeholders
 
 User-directed follow-up, same session: "we can remove the thing of
