@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-11 (billing.html CTA renamed)
+
+- [x] `billing.html`'s pricing CTA "Talk to Us" → "Register Interest".
+      See MEMORY.md — only instance of "Talk to Us" found site-wide
+      after a full grep; flagged to user in case a second location was
+      meant and not found.
+
 ## Fixed 2026-08-05 (hero height hard-capped on touch devices)
 
 - [x] Same fix as lrxone-website: `@media (pointer: coarse)` caps

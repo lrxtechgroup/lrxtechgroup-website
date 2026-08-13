@@ -6,6 +6,28 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-11 (billing.html pricing CTA: "Talk to Us" → "Register Interest") — "I asked that the talk to us is changed to register interest in both places... on billing page"
+
+User referenced a prior request (from before this session's visible
+context) to rename "Talk to Us" to "Register Interest" in two places,
+reporting the billing page still showed the old text. Searched the
+entire site (`grep -rn -i "talk to us"` across both
+`lrxtechgroup-website` and `lrxone-website`) — the string existed in
+exactly one place: `billing.html`'s pricing-tier CTA
+(`#billing-register-link`, the button next to the tier dropdown).
+Changed it to "Register Interest" there.
+
+Note: this was deliberately kept as "Talk to Us" on 2026-08-04 (see
+that entry below) on the reasoning that it represented sales-assisted
+contact, distinct from self-serve registration — today's explicit
+request supersedes that earlier call. Left `billing.html`'s hero
+button ("Continue to LRX One", a real sign-in/create-workspace link,
+not a Coming-Soon-inconsistency like the ones fixed historically)
+untouched, since it isn't literally "Talk to Us" text and its own
+hero-note explains it's a legitimate app entry point. Flagged to the
+user that only one instance was found, in case the second "place"
+they meant is somewhere I haven't identified.
+
 ## 2026-08-05 (hero height hard-capped on touch devices) — same fix as lrxone-website, "still like this on request desktop view"
 
 User's fresh real-device screenshots after the `--vh` fix showed the
