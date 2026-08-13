@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 — one.html's hero CTA also switched to Register Interest + tier dropdown
+
+User-directed follow-up, sent as a screenshot of the mobile hero with
+"this one too": the hero's "Continue to LRX One" button (left alone in
+the 2026-08-12 change below, since it doubled as the existing-customer
+sign-in path) is now the same Register Interest + tier dropdown as the
+bottom CTA. Replaced the `.hero-buttons` primary button in place,
+keeping the "See Pricing" secondary button beside it, and reworded the
+`.hero-note` paragraph underneath (was "Already have a workspace...
+Continue to LRX One above to sign in", now "Choose a plan above and
+register your interest - we'll reach out as LRX One Hive rolls out")
+since the old copy no longer matched what the button does.
+
+The page now has two independent `.interest-form` instances (hero +
+bottom CTA banner), so the dropdown script — which previously assumed a
+single instance via `document.querySelector('.tier-dropdown')` and
+`document.getElementById('one-register-link')` — was generalized to
+loop over every `.interest-form` on the page and scope its queries to
+that container, with the link identified by a `data-register-link`
+attribute instead of a page-unique id (both forms now use the same
+attribute rather than one keeping `id="one-register-link"`). Verified
+via Playwright that both dropdowns open/close and update their own
+`mailto:` link independently without cross-talk (selecting Enterprise
+in the hero and Business in the bottom CTA in the same page load
+produced two different correct hrefs, and re-checked the hero's href
+was untouched by the bottom CTA's click).
+
 ## 2026-08-12 — one.html's bottom CTA switched from "Continue to LRX One" to Register Interest + tier dropdown
 
 User-directed: "change continue to lrxone from lrxtechgroup website to

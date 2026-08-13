@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (user-directed, screenshot of hero + "this one too")
+
+- [x] `one.html`'s hero CTA also switched from "Continue to LRX One" to
+      the Register Interest + tier-dropdown pattern, matching the
+      bottom CTA banner. Hero note copy reworded to match. Dropdown
+      script generalized to support multiple `.interest-form` instances
+      on one page instead of assuming a single one. See MEMORY.md.
+
 ## Fixed 2026-08-12 (user-directed: "change continue to lrxone from lrxtechgroup website to register interest with the dropdown of which package")
 
 - [x] `one.html`'s bottom-of-page CTA banner (after the pricing
