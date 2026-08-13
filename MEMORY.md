@@ -6,6 +6,27 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 — one.html hero-buttons: centered "See Pricing" to match the dropdown row
+
+User-directed follow-up, same session, sent as a screenshot showing
+"GROWTH"/"REGISTER INTEREST" centered on mobile while "SEE PRICING" sat
+left-aligned under them, with "centre see pricing". Root cause:
+`.hero-buttons` wraps (flex-wrap) and has no `justify-content`, so it
+defaults to flex-start; `.interest-form` (the dropdown + Register
+Interest button) has its own `flex-wrap` + `justify-content: center`,
+so on narrow viewports where the dropdown and button each drop to their
+own line *inside* `.interest-form`, each single-item line gets centered
+by `.interest-form`'s own rule — but "See Pricing" lives outside
+`.interest-form` as a direct `.hero-buttons` child, so it never got that
+centering and stayed pinned to the left text margin. Fix: added
+`justify-content: center` to `.hero-buttons` itself, so every wrapped
+line (the dropdown, the Register Interest button, and See Pricing) is
+centered consistently. Verified via Playwright at 390px/480px (mobile:
+all three stack and center, matching the reported screenshot) and at
+900px/1440px (desktop: buttons row still fits on one line and sits at
+its natural position — no visible change since there's no leftover
+line-width to redistribute).
+
 ## 2026-08-13 — one.html's hero CTA also switched to Register Interest + tier dropdown
 
 User-directed follow-up, sent as a screenshot of the mobile hero with

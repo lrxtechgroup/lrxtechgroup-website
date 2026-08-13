@@ -3,6 +3,13 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (user-directed: "centre see pricing")
+
+- [x] `one.html`'s hero `.hero-buttons` row now has `justify-content:
+      center`, so "See Pricing" lines up with the tier dropdown +
+      Register Interest button on mobile instead of sitting left-aligned
+      under them. See MEMORY.md.
+
 ## Fixed 2026-08-13 (user-directed, screenshot of hero + "this one too")
 
 - [x] `one.html`'s hero CTA also switched from "Continue to LRX One" to
