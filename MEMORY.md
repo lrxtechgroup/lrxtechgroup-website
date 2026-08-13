@@ -6,27 +6,206 @@ time you finish a unit of work here.
 
 ---
 
-## 2026-08-11 (billing.html pricing CTA: "Talk to Us" → "Register Interest") — "I asked that the talk to us is changed to register interest in both places... on billing page"
+## 2026-08-13 (billing.html: both "Talk to Us" buttons → "Register Interest") — "I asked that the talk to us is changed to register interest in both places... on billing page"
 
-User referenced a prior request (from before this session's visible
-context) to rename "Talk to Us" to "Register Interest" in two places,
-reporting the billing page still showed the old text. Searched the
-entire site (`grep -rn -i "talk to us"` across both
-`lrxtechgroup-website` and `lrxone-website`) — the string existed in
-exactly one place: `billing.html`'s pricing-tier CTA
-(`#billing-register-link`, the button next to the tier dropdown).
-Changed it to "Register Interest" there.
+User followed up reporting the billing page still showed "Talk to
+Us," referencing a prior request I didn't have visible context for.
+Searched the whole site for the literal string first and found only
+one match (the pricing-section CTA) — turned out the *second* place
+was a concurrent, independent change landed on `origin/main` in the
+meantime (see the entry directly below this one): the hero CTA had
+just been converted from "Continue to LRX One" to the same
+`.interest-form`/tier-dropdown pattern as the pricing section, but its
+button text was kept as "Talk to Us" to match what the pricing button
+said *at the time*. That gave this repo exactly the two "Talk to Us"
+instances the user was describing, once both changes were merged
+together.
 
-Note: this was deliberately kept as "Talk to Us" on 2026-08-04 (see
-that entry below) on the reasoning that it represented sales-assisted
-contact, distinct from self-serve registration — today's explicit
-request supersedes that earlier call. Left `billing.html`'s hero
-button ("Continue to LRX One", a real sign-in/create-workspace link,
-not a Coming-Soon-inconsistency like the ones fixed historically)
-untouched, since it isn't literally "Talk to Us" text and its own
-hero-note explains it's a legitimate app entry point. Flagged to the
-user that only one instance was found, in case the second "place"
-they meant is somewhere I haven't identified.
+Resolved the merge conflict this created by keeping `origin/main`'s
+structural work (the generalized `.interest-form`/`data-register-link`
+pattern supporting multiple forms per page, replacing my
+single-button `#billing-register-link` id-based approach, which is
+now obsolete) and applying this request's text on top of it: both the
+hero and pricing-section buttons now read "Register Interest."
+
+This reverses a 2026-08-04 decision (see that entry below) to
+deliberately keep "Talk to Us" distinct from "Register Interest"
+wording, on the reasoning that it represented sales-assisted contact
+rather than self-serve registration — this explicit, more recent
+request supersedes that earlier call. `billing.html`'s
+`.interest-form` script (shared across both buttons via
+`document.querySelectorAll('.interest-form')`) needed no changes —
+only the visible label text moved.
+
+## 2026-08-13 — billing.html hero CTA also switched to the tier-dropdown pattern ("the billing page too?")
+
+User-directed follow-up: after converting `one.html`'s hero to Register
+Interest + tier dropdown, asked "the billing page too?" — applied the
+same treatment to `billing.html`'s hero, which still had the old plain
+"Continue to LRX One" button. Kept the button label as "Talk to Us"
+(not "Register Interest") to match `billing.html`'s own existing bottom
+CTA banner convention rather than copying `one.html`'s wording verbatim.
+"See Pricing" kept alongside it; hero-note reworded from "sign in to
+your workspace" to "Choose a plan above and let's talk - we'll reach
+out as LRX One Billing rolls out." `billing.html`'s hero uses a
+different (single-column, already-centered) layout than `one.html`'s
+two-column grid hero, so the `.hero-buttons { justify-content: center }`
+fix from `one.html` wasn't needed here — it was already centered.
+
+Same generalization as `one.html`: the dropdown script previously
+assumed one `.interest-form` instance per page (`document.getElementById
+('billing-register-link')`); now loops over every `.interest-form` and
+scopes its queries per-container via a `data-register-link` attribute,
+since the page now has two instances (hero + bottom CTA). Verified via
+Playwright that both dropdowns work independently (hero Enterprise ->
+`mailto:...subject=LRX%20One%20Billing%20-%20Enterprise`, bottom CTA
+Business -> `...Billing%20-%20Business`, hero unaffected by the bottom
+CTA's click) and that the hero layout still looks right at 390px and
+1440px viewports.
+
+## 2026-08-13 — one.html hero-buttons: centered "See Pricing" to match the dropdown row
+
+User-directed follow-up, same session, sent as a screenshot showing
+"GROWTH"/"REGISTER INTEREST" centered on mobile while "SEE PRICING" sat
+left-aligned under them, with "centre see pricing". Root cause:
+`.hero-buttons` wraps (flex-wrap) and has no `justify-content`, so it
+defaults to flex-start; `.interest-form` (the dropdown + Register
+Interest button) has its own `flex-wrap` + `justify-content: center`,
+so on narrow viewports where the dropdown and button each drop to their
+own line *inside* `.interest-form`, each single-item line gets centered
+by `.interest-form`'s own rule — but "See Pricing" lives outside
+`.interest-form` as a direct `.hero-buttons` child, so it never got that
+centering and stayed pinned to the left text margin. Fix: added
+`justify-content: center` to `.hero-buttons` itself, so every wrapped
+line (the dropdown, the Register Interest button, and See Pricing) is
+centered consistently. Verified via Playwright at 390px/480px (mobile:
+all three stack and center, matching the reported screenshot) and at
+900px/1440px (desktop: buttons row still fits on one line and sits at
+its natural position — no visible change since there's no leftover
+line-width to redistribute).
+
+## 2026-08-13 — one.html's hero CTA also switched to Register Interest + tier dropdown
+
+User-directed follow-up, sent as a screenshot of the mobile hero with
+"this one too": the hero's "Continue to LRX One" button (left alone in
+the 2026-08-12 change below, since it doubled as the existing-customer
+sign-in path) is now the same Register Interest + tier dropdown as the
+bottom CTA. Replaced the `.hero-buttons` primary button in place,
+keeping the "See Pricing" secondary button beside it, and reworded the
+`.hero-note` paragraph underneath (was "Already have a workspace...
+Continue to LRX One above to sign in", now "Choose a plan above and
+register your interest - we'll reach out as LRX One Hive rolls out")
+since the old copy no longer matched what the button does.
+
+The page now has two independent `.interest-form` instances (hero +
+bottom CTA banner), so the dropdown script — which previously assumed a
+single instance via `document.querySelector('.tier-dropdown')` and
+`document.getElementById('one-register-link')` — was generalized to
+loop over every `.interest-form` on the page and scope its queries to
+that container, with the link identified by a `data-register-link`
+attribute instead of a page-unique id (both forms now use the same
+attribute rather than one keeping `id="one-register-link"`). Verified
+via Playwright that both dropdowns open/close and update their own
+`mailto:` link independently without cross-talk (selecting Enterprise
+in the hero and Business in the bottom CTA in the same page load
+produced two different correct hrefs, and re-checked the hero's href
+was untouched by the bottom CTA's click).
+
+## 2026-08-12 — one.html's bottom CTA switched from "Continue to LRX One" to Register Interest + tier dropdown
+
+User-directed: "change continue to lrxone from lrxtechgroup website to
+register interest with the dropdown of which package". `one.html` had
+two "Continue to LRX One" links: the hero button (dual-purpose — sign
+in for existing customers or start onboarding for new ones, per its own
+note text) and the bottom-of-page CTA banner right after the pricing
+section. Only changed the bottom one — it's the direct sibling of
+`billing.html`'s own CTA banner, which already had exactly this
+register-interest + tier-dropdown pattern (added back when pricing was
+consolidated onto a single selector, see the 2026-08-04 "Register
+Interest removed, moved to LRX One" / "Consolidate pricing CTAs" work).
+The hero button was left alone since converting it to a lead-capture
+form would break its "sign in to your existing workspace" purpose.
+
+Copied `billing.html`'s `.interest-form`/`.tier-dropdown*` CSS and
+dropdown markup/script verbatim into `one.html` (they didn't exist
+there — removed in an earlier session), swapping the mailto subject
+from "LRX One Billing - {tier}" to "LRX One Hive - {tier}" (this
+product's current on-page name) and the button id from
+`billing-register-link` to `one-register-link` to avoid colliding if
+both scripts ever load on the same page. Verified via Playwright:
+dropdown opens/closes, selecting each tier updates both the button
+label and the `mailto:` link's subject line correctly (e.g.
+`mailto:sales@lrxtechgroup.com?subject=LRX%20One%20Hive%20-%20Enterprise`).
+
+## 2026-08-11 — Removed the "in-depth cost analysis" note under the pricing placeholders
+
+User-directed follow-up, same session: "we can remove the thing of
+figures under the analysis being done" — the `pricing-note` paragraph
+added right after switching to "Crunching the numbers" placeholders
+("We're running an in-depth cost analysis... final pricing isn't set
+yet...") is gone from both `one.html` and `billing.html`. `one.html`'s
+other pricing-note (the resource-marketplace add-on blurb) stays. The
+`terms.html#pricing` anchor added earlier is now unreferenced from the
+pricing pages but left in place since it's harmless and the underlying
+legal clause is still accurate.
+
+## 2026-08-11 — Replaced actual price numbers with "Crunching the numbers" placeholders
+
+Follow-up to the note-added-below entry, same session: user asked to go
+further and swap the real ZAR figures out entirely — "something quirky
+... until we can do an in depth price analysis and give proper
+pricing". Confirmed exact wording via `AskUserQuestion` (big text:
+"Crunching the numbers", small text under it: "stay tuned") and that
+tier names/feature lists should stay real — only the numbers themselves
+are unknowns right now.
+
+Replaced all 8 `.pricing-price` values (4 tiers × `one.html` +
+`billing.html`) with the placeholder pair, added a `.pricing-price.tbd`
+modifier (smaller font, 19px vs 34px) so the longer phrase doesn't
+overflow the card — verified via a quick Playwright screenshot at both
+desktop and mobile widths, no wrapping/overflow. `billing.html`'s
+per-transaction fee line (`+ 0.8% per transaction` etc.) became "txn fee
+TBD" on all four cards, and its CTA-section tier-picker dropdown/label
+dropped their price suffixes ("Growth - R2,999/mo" → "Growth") — the
+dropdown's own JS just copies `option.textContent` into the label, so
+no script changes needed. Also reworded the "subject to change" note
+added just before this (see previous entry) to match the new reality:
+it now says pricing isn't set yet rather than implying the shown
+numbers are current rates.
+
+## 2026-08-11 — Pricing pages now note that pricing is subject to change
+
+User-directed: "I need you to indicate on the websites that the pricing
+is still subject to changes". Checked both live sites for actual pricing
+tables — `lrxone-website`'s `index.html` doesn't render its own; it just
+links out to this repo's `one.html`/`billing.html`, so those two files
+(LRX One Core and LRX One Billing) were the only places that needed the
+notice.
+
+Added a `.pricing-note` line under each product's pricing grid: "Pricing
+shown reflects current rates and is subject to change. We'll give at
+least one month's notice before any change takes effect on your account
+— see our Terms for details." `one.html` already had a `.pricing-note`
+class (used for the resource-marketplace add-on blurb); `billing.html`
+didn't, so copied the class in. The note links to `terms.html#pricing`
+— added that `id` to the "Subscriptions and payment" section, which
+already stated the one-month-notice policy in its legal text (`terms.html`
+line ~157), so the new copy summarizes an existing commitment rather
+than inventing a new one.
+
+## 2026-08-06 — Dial back "300+ integration connectors" claim to "100+"
+
+First step of "get everything advertised actually working before building
+specialized AI workers" — `index.html`'s product-features list and
+`one.html`'s Integration Hub blurb both claimed 300+ connectors;
+`lrxone`'s `integration-service` has 8 real ones today (Google Workspace,
+Microsoft 365, QuickBooks, Salesforce, Slack, Stripe, WhatsApp, Xero).
+300+ was never going to be a credible near-term target — changed both to
+"100+" as a number actually worth building toward. Building the connectors
+themselves happens in `lrxone`, not here; this repo's job was just not
+advertising a number nobody's building toward.
+
+---
 
 ## 2026-08-05 (hero height hard-capped on touch devices) — same fix as lrxone-website, "still like this on request desktop view"
 
@@ -156,7 +335,6 @@ their own `@media (max-width: 600px)` block instead — matched that
 breakpoint rather than introducing a new one, so this landed correctly
 on all 8 pages. Verified via a 412px-wide screenshot on three
 representative pages (index, billing, privacy).
-
 ## 2026-08-04 (Brandon's photo: over-zoom fixed, then replaced with a better-framed source) — root cause was a non-square crop fighting object-fit: cover
 
 User reported Brandon's photo was "too zoomed in" after the left-trim

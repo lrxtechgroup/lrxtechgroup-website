@@ -197,10 +197,13 @@
     .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gold-line); border: 1px solid var(--gold-line); max-width: 1200px; margin: 0 auto; }
     @media (min-width: 620px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1020px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--grey); max-width: 620px; margin: 32px auto 0; line-height: 1.7; }
     .pricing-card { background: var(--black); padding: 40px 28px; position: relative; }
     .pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .pricing-price { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
     .pricing-price .period { font-size: 12px; font-weight: 400; color: var(--light-grey); }
+    .pricing-price.tbd { font-size: 19px; line-height: 1.3; }
+    .pricing-price.tbd .period { display: block; margin-top: 6px; }
     .pricing-txn { font-size: 12px; color: var(--light-grey); margin-bottom: 20px; }
     .pricing-desc { font-size: 13px; color: var(--light-grey); line-height: 1.6; margin-bottom: 24px; min-height: 40px; }
     .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
@@ -312,10 +315,24 @@
       LRX Tech Group's product suite, alongside <a href="/one.html" style="color:var(--gold)">LRX One</a> <a href="/one.html" style="color:var(--white)">Hive</a>.
     </p>
     <div class="hero-buttons">
-      <a href="https://www.lrxone.com" class="btn-primary">Continue to LRX One</a>
+      <div class="interest-form">
+        <div class="tier-dropdown" data-default="Growth">
+          <button type="button" class="tier-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Select a plan">
+            <span class="tier-dropdown-label">Growth</span>
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="tier-dropdown-menu" role="menu" hidden>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Starter">Starter</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Growth" aria-current="true">Growth</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Business">Business</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise</button></li>
+          </ul>
+        </div>
+        <a href="#" class="btn-primary" data-register-link>Register Interest</a>
+      </div>
       <a href="#pricing" class="btn-secondary">See Pricing</a>
     </div>
-    <p class="hero-note">Already have a workspace, or ready to get started? Continue to LRX One above to sign in or create your workspace.</p>
+    <p class="hero-note">Choose a plan above and let's talk - we'll reach out as LRX One Billing rolls out.</p>
   </section>
 
   <div class="gold-divider"></div>
@@ -425,8 +442,8 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-tier">Starter</div>
-        <div class="pricing-price">R999<span class="period">/mo</span></div>
-        <div class="pricing-txn">+ 0.8% per transaction</div>
+        <div class="pricing-price tbd">Crunching the numbers<span class="period">stay tuned</span></div>
+        <div class="pricing-txn">txn fee TBD</div>
         <p class="pricing-desc">For businesses just getting started with recurring billing.</p>
         <ul class="pricing-features">
           <li>Up to 100 active subscriptions</li>
@@ -437,8 +454,8 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Growth</div>
-        <div class="pricing-price">R2,999<span class="period">/mo</span></div>
-        <div class="pricing-txn">+ 0.5% per transaction</div>
+        <div class="pricing-price tbd">Crunching the numbers<span class="period">stay tuned</span></div>
+        <div class="pricing-txn">txn fee TBD</div>
         <p class="pricing-desc">For growing subscription businesses that need more headroom.</p>
         <ul class="pricing-features">
           <li>Up to 500 active subscriptions</li>
@@ -449,8 +466,8 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Business</div>
-        <div class="pricing-price">R6,999<span class="period">/mo</span></div>
-        <div class="pricing-txn">+ 0.3% per transaction</div>
+        <div class="pricing-price tbd">Crunching the numbers<span class="period">stay tuned</span></div>
+        <div class="pricing-txn">txn fee TBD</div>
         <p class="pricing-desc">For established subscription businesses at scale.</p>
         <ul class="pricing-features">
           <li>Up to 2,000 active subscriptions</li>
@@ -461,8 +478,8 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
       </div>
       <div class="pricing-card">
         <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price">R14,999<span class="period">/mo</span></div>
-        <div class="pricing-txn">+ 0.15% per transaction</div>
+        <div class="pricing-price tbd">Crunching the numbers<span class="period">stay tuned</span></div>
+        <div class="pricing-txn">txn fee TBD</div>
         <p class="pricing-desc">For large-scale platforms and marketplaces with custom needs.</p>
         <ul class="pricing-features">
           <li>Unlimited active subscriptions</li>
@@ -480,60 +497,62 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
     <div class="interest-form">
       <div class="tier-dropdown" data-default="Growth">
         <button type="button" class="tier-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Select a plan">
-          <span class="tier-dropdown-label">Growth - R2,999/mo</span>
+          <span class="tier-dropdown-label">Growth</span>
           <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="tier-dropdown-menu" role="menu" hidden>
-          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Starter">Starter - R999/mo</button></li>
-          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Growth" aria-current="true">Growth - R2,999/mo</button></li>
-          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Business">Business - R6,999/mo</button></li>
-          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise - R14,999/mo</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Starter">Starter</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Growth" aria-current="true">Growth</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Business">Business</button></li>
+          <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise</button></li>
         </ul>
       </div>
-      <a id="billing-register-link" href="#" class="btn-primary">Register Interest</a>
+      <a href="#" class="btn-primary" data-register-link>Register Interest</a>
     </div>
   </section>
 
   <script>
     (function () {
-      var dropdown = document.querySelector('.tier-dropdown');
-      var toggle = dropdown.querySelector('.tier-dropdown-toggle');
-      var label = toggle.querySelector('.tier-dropdown-label');
-      var menu = dropdown.querySelector('.tier-dropdown-menu');
-      var options = dropdown.querySelectorAll('.tier-dropdown-option');
-      var link = document.getElementById('billing-register-link');
+      document.querySelectorAll('.interest-form').forEach(function (form) {
+        var dropdown = form.querySelector('.tier-dropdown');
+        var toggle = dropdown.querySelector('.tier-dropdown-toggle');
+        var label = toggle.querySelector('.tier-dropdown-label');
+        var menu = dropdown.querySelector('.tier-dropdown-menu');
+        var options = dropdown.querySelectorAll('.tier-dropdown-option');
+        var link = form.querySelector('[data-register-link]');
 
-      function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
-      function openMenu() { menu.hidden = false; toggle.setAttribute('aria-expanded', 'true'); }
+        function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+        function openMenu() { menu.hidden = false; toggle.setAttribute('aria-expanded', 'true'); }
 
-      function updateLink(tier) {
-        link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Billing - ' + tier);
-      }
+        function updateLink(tier) {
+          link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Billing - ' + tier);
+        }
 
-      toggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (menu.hidden) { openMenu(); } else { closeMenu(); }
-      });
-
-      options.forEach(function (opt) {
-        opt.addEventListener('click', function () {
-          label.textContent = opt.textContent;
-          options.forEach(function (o) { o.removeAttribute('aria-current'); });
-          opt.setAttribute('aria-current', 'true');
-          updateLink(opt.dataset.value);
-          closeMenu();
-          toggle.focus();
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (menu.hidden) { openMenu(); } else { closeMenu(); }
         });
-      });
 
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) closeMenu();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
-      });
+        options.forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            label.textContent = opt.textContent;
+            options.forEach(function (o) { o.removeAttribute('aria-current'); });
+            opt.setAttribute('aria-current', 'true');
+            updateLink(opt.dataset.value);
+            closeMenu();
+            toggle.focus();
+          });
+        });
 
-      updateLink(dropdown.dataset.default);
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
+        });
+
+        updateLink(dropdown.dataset.default);
+      });
     })();
   </script>
 

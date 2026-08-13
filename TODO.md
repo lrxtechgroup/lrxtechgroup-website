@@ -3,12 +3,73 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
-## Fixed 2026-08-11 (billing.html CTA renamed)
+## Fixed 2026-08-13 (billing.html: both CTAs renamed to "Register Interest")
 
-- [x] `billing.html`'s pricing CTA "Talk to Us" → "Register Interest".
-      See MEMORY.md — only instance of "Talk to Us" found site-wide
-      after a full grep; flagged to user in case a second location was
-      meant and not found.
+- [x] Both of `billing.html`'s `.interest-form` buttons (hero + pricing
+      section) now read "Register Interest" instead of "Talk to Us" —
+      supersedes the note directly below this one, which had kept
+      "Talk to Us" for both. See MEMORY.md for the full merge-conflict
+      resolution (this landed concurrently with the hero-CTA
+      conversion below).
+
+## Fixed 2026-08-13 (user-directed: "the billing page too?")
+
+- [x] `billing.html`'s hero CTA also switched from plain "Continue to
+      LRX One" to the tier-dropdown pattern (button text kept as "Talk
+      to Us" to match its own existing bottom CTA). Dropdown script
+      generalized to support both `.interest-form` instances on the
+      page. See MEMORY.md.
+
+## Fixed 2026-08-13 (user-directed: "centre see pricing")
+
+- [x] `one.html`'s hero `.hero-buttons` row now has `justify-content:
+      center`, so "See Pricing" lines up with the tier dropdown +
+      Register Interest button on mobile instead of sitting left-aligned
+      under them. See MEMORY.md.
+
+## Fixed 2026-08-13 (user-directed, screenshot of hero + "this one too")
+
+- [x] `one.html`'s hero CTA also switched from "Continue to LRX One" to
+      the Register Interest + tier-dropdown pattern, matching the
+      bottom CTA banner. Hero note copy reworded to match. Dropdown
+      script generalized to support multiple `.interest-form` instances
+      on one page instead of assuming a single one. See MEMORY.md.
+
+## Fixed 2026-08-12 (user-directed: "change continue to lrxone from lrxtechgroup website to register interest with the dropdown of which package")
+
+- [x] `one.html`'s bottom-of-page CTA banner (after the pricing
+      section) now matches `billing.html`'s existing "Register
+      Interest" + tier-dropdown pattern instead of a plain "Continue to
+      LRX One" link — copied the CSS/markup/script over, mailto subject
+      reads "LRX One Hive - {tier}". The hero's "Continue to LRX One"
+      button was deliberately left as-is (it doubles as the sign-in
+      path for existing customers). See MEMORY.md.
+
+## Fixed 2026-08-11 (user-directed: "we can remove the thing of figures under the analysis being done")
+
+- [x] Removed the "in-depth cost analysis" pricing-note paragraph from
+      `one.html` and `billing.html` — the placeholders now stand alone
+      without the extra explanatory line underneath. See MEMORY.md.
+
+## Fixed 2026-08-11 (user-directed: "change the current pricing values to something quirky ... until we can do an in depth price analysis")
+
+- [x] Swapped all 8 real price figures on `one.html`/`billing.html` for
+      a "Crunching the numbers / stay tuned" placeholder; `billing.html`'s
+      per-transaction fee lines and CTA dropdown also lost their real
+      numbers. Tier names and feature lists were left alone. Verified no
+      layout overflow via Playwright screenshots (desktop + mobile). See
+      MEMORY.md.
+- [ ] Real pricing analysis itself is still outstanding — when it's
+      done, these placeholders need to go back to real numbers (and the
+      `.pricing-price.tbd` CSS/markup can come back out).
+
+## Fixed 2026-08-11 (user-directed: "indicate on the websites that the pricing is still subject to changes")
+
+- [x] Added a "pricing subject to change" note under the pricing grid on
+      `one.html` and `billing.html` (the only two pages with real
+      pricing tables — `lrxone-website` just links to these), linking
+      to `terms.html#pricing`'s existing one-month-notice clause. See
+      MEMORY.md.
 
 ## Fixed 2026-08-05 (hero height hard-capped on touch devices)
 
@@ -58,7 +119,6 @@ done — don't just accumulate; keep this reflecting real, current state.
       existing responsive breakpoint (768px or 600px depending on the
       page). Fixes the wordmark looking oversized next to the logo on
       phone screens. See MEMORY.md.
-
 ## Fixed 2026-08-04 (Brandon's photo over-zoom fixed)
 
 - [x] Root cause was a non-square (570x700) source fighting
