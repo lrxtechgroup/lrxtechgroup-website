@@ -315,10 +315,24 @@
       LRX Tech Group's product suite, alongside <a href="/one.html" style="color:var(--gold)">LRX One</a> <a href="/one.html" style="color:var(--white)">Hive</a>.
     </p>
     <div class="hero-buttons">
-      <a href="https://www.lrxone.com" class="btn-primary">Continue to LRX One</a>
+      <div class="interest-form">
+        <div class="tier-dropdown" data-default="Growth">
+          <button type="button" class="tier-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Select a plan">
+            <span class="tier-dropdown-label">Growth</span>
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="tier-dropdown-menu" role="menu" hidden>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Starter">Starter</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Growth" aria-current="true">Growth</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Business">Business</button></li>
+            <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise</button></li>
+          </ul>
+        </div>
+        <a href="#" class="btn-primary" data-register-link>Talk to Us</a>
+      </div>
       <a href="#pricing" class="btn-secondary">See Pricing</a>
     </div>
-    <p class="hero-note">Already have a workspace, or ready to get started? Continue to LRX One above to sign in or create your workspace.</p>
+    <p class="hero-note">Choose a plan above and let's talk - we'll reach out as LRX One Billing rolls out.</p>
   </section>
 
   <div class="gold-divider"></div>
@@ -493,50 +507,52 @@ curl -X POST https://api.lrxbilling.com/v1/merchants/subscriptions \
           <li role="none"><button type="button" role="menuitem" class="tier-dropdown-option" data-value="Enterprise">Enterprise</button></li>
         </ul>
       </div>
-      <a id="billing-register-link" href="#" class="btn-primary">Talk to Us</a>
+      <a href="#" class="btn-primary" data-register-link>Talk to Us</a>
     </div>
   </section>
 
   <script>
     (function () {
-      var dropdown = document.querySelector('.tier-dropdown');
-      var toggle = dropdown.querySelector('.tier-dropdown-toggle');
-      var label = toggle.querySelector('.tier-dropdown-label');
-      var menu = dropdown.querySelector('.tier-dropdown-menu');
-      var options = dropdown.querySelectorAll('.tier-dropdown-option');
-      var link = document.getElementById('billing-register-link');
+      document.querySelectorAll('.interest-form').forEach(function (form) {
+        var dropdown = form.querySelector('.tier-dropdown');
+        var toggle = dropdown.querySelector('.tier-dropdown-toggle');
+        var label = toggle.querySelector('.tier-dropdown-label');
+        var menu = dropdown.querySelector('.tier-dropdown-menu');
+        var options = dropdown.querySelectorAll('.tier-dropdown-option');
+        var link = form.querySelector('[data-register-link]');
 
-      function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
-      function openMenu() { menu.hidden = false; toggle.setAttribute('aria-expanded', 'true'); }
+        function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+        function openMenu() { menu.hidden = false; toggle.setAttribute('aria-expanded', 'true'); }
 
-      function updateLink(tier) {
-        link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Billing - ' + tier);
-      }
+        function updateLink(tier) {
+          link.href = 'mailto:sales@lrxtechgroup.com?subject=' + encodeURIComponent('LRX One Billing - ' + tier);
+        }
 
-      toggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (menu.hidden) { openMenu(); } else { closeMenu(); }
-      });
-
-      options.forEach(function (opt) {
-        opt.addEventListener('click', function () {
-          label.textContent = opt.textContent;
-          options.forEach(function (o) { o.removeAttribute('aria-current'); });
-          opt.setAttribute('aria-current', 'true');
-          updateLink(opt.dataset.value);
-          closeMenu();
-          toggle.focus();
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (menu.hidden) { openMenu(); } else { closeMenu(); }
         });
-      });
 
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) closeMenu();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
-      });
+        options.forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            label.textContent = opt.textContent;
+            options.forEach(function (o) { o.removeAttribute('aria-current'); });
+            opt.setAttribute('aria-current', 'true');
+            updateLink(opt.dataset.value);
+            closeMenu();
+            toggle.focus();
+          });
+        });
 
-      updateLink(dropdown.dataset.default);
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
+        });
+
+        updateLink(dropdown.dataset.default);
+      });
     })();
   </script>
 

@@ -6,6 +6,32 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 — billing.html hero CTA also switched to the tier-dropdown pattern ("the billing page too?")
+
+User-directed follow-up: after converting `one.html`'s hero to Register
+Interest + tier dropdown, asked "the billing page too?" — applied the
+same treatment to `billing.html`'s hero, which still had the old plain
+"Continue to LRX One" button. Kept the button label as "Talk to Us"
+(not "Register Interest") to match `billing.html`'s own existing bottom
+CTA banner convention rather than copying `one.html`'s wording verbatim.
+"See Pricing" kept alongside it; hero-note reworded from "sign in to
+your workspace" to "Choose a plan above and let's talk - we'll reach
+out as LRX One Billing rolls out." `billing.html`'s hero uses a
+different (single-column, already-centered) layout than `one.html`'s
+two-column grid hero, so the `.hero-buttons { justify-content: center }`
+fix from `one.html` wasn't needed here — it was already centered.
+
+Same generalization as `one.html`: the dropdown script previously
+assumed one `.interest-form` instance per page (`document.getElementById
+('billing-register-link')`); now loops over every `.interest-form` and
+scopes its queries per-container via a `data-register-link` attribute,
+since the page now has two instances (hero + bottom CTA). Verified via
+Playwright that both dropdowns work independently (hero Enterprise ->
+`mailto:...subject=LRX%20One%20Billing%20-%20Enterprise`, bottom CTA
+Business -> `...Billing%20-%20Business`, hero unaffected by the bottom
+CTA's click) and that the hero layout still looks right at 390px and
+1440px viewports.
+
 ## 2026-08-13 — one.html hero-buttons: centered "See Pricing" to match the dropdown row
 
 User-directed follow-up, same session, sent as a screenshot showing

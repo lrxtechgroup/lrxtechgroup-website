@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (user-directed: "the billing page too?")
+
+- [x] `billing.html`'s hero CTA also switched from plain "Continue to
+      LRX One" to the tier-dropdown pattern (button text kept as "Talk
+      to Us" to match its own existing bottom CTA). Dropdown script
+      generalized to support both `.interest-form` instances on the
+      page. See MEMORY.md.
+
 ## Fixed 2026-08-13 (user-directed: "centre see pricing")
 
 - [x] `one.html`'s hero `.hero-buttons` row now has `justify-content:
