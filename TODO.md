@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (WhatsApp moved into the social row; standalone tiles removed)
+
+- [x] Removed the standalone WhatsApp contact tile from `index.html`'s
+      `.contact-grid` and `contact.html`'s `.resource-grid`; added the
+      official WhatsApp glyph (brand green) to `.social-row`, first
+      position, across all 9 pages. Same change applied to
+      `lrxone-website`. See MEMORY.md.
+
 ## Fixed 2026-08-13 (Facebook/Instagram row above the footer)
 
 - [x] Added a centered `.social-row` strip (Facebook/Instagram icons,

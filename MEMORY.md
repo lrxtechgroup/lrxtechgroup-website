@@ -6,6 +6,45 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (WhatsApp moved into the social row; standalone tiles removed) — "use the WhatsApp logo where we indicate whatsapp" / "remove this tile and put the whatsapp with the rest of the social media"
+
+Started as a straightforward "swap the 💬 emoji for the real WhatsApp
+logo" request (same treatment as Facebook/Instagram earlier). Mid-turn,
+user sent a real-device screenshot of `index.html`'s WhatsApp contact
+tile and redirected: remove the standalone tile entirely, put WhatsApp
+in the social row instead.
+
+- Removed the WhatsApp `.contact-item` from `index.html`'s `#contact`
+  section (was Email / WhatsApp / Call — now just Email / Call;
+  `.contact-grid`'s `repeat(auto-fit, minmax(220px,1fr))` handles the
+  count drop fine, confirmed via screenshot).
+- Removed the WhatsApp `.resource-card` from `contact.html`'s grid for
+  the same reason (was Sales / Support / Billing / WhatsApp / Call —
+  now 4 cards plus the 2 social-row-style cards added earlier this
+  session). Left the Call card's "same number as WhatsApp" copy
+  alone — still accurate, doesn't require WhatsApp to have its own
+  card.
+- Added the official WhatsApp glyph (brand green `#25D366`) to
+  `.social-row`, positioned first (before Facebook), across all 9
+  pages — same inline-SVG-no-external-request approach as the
+  Facebook/Instagram icons.
+- `.contact-icon` (index.html) and `.resource-icon` (contact.html)
+  both needed the same `line-height: 0` fix already applied to
+  `.resource-icon` for the Facebook/Instagram cards, so the SVG icons
+  that remain (Email ✉, Call 📞) don't pick up extra baseline
+  spacing — applied to `.contact-icon` here since it hadn't been
+  touched yet.
+
+Same three additions (icon removed from tiles, added to social row)
+applied to `lrxone-website`'s 6 pages too, for consistency — that site
+never had a WhatsApp tile to remove, just needed the icon added
+alongside the Facebook/Instagram ones already there.
+
+Verified via Playwright: `index.html`'s social row now shows all
+three icons in their real brand colors with the WhatsApp tile gone
+from the grid above; `contact.html` full-page screenshot confirms the
+same for its resource-grid.
+
 ## 2026-08-13 (Facebook/Instagram row above the footer, all 9 pages) — "add the logos for Facebook and Instagram in this space after contacts" / "wrong place" / "above the footer"
 
 First attempt put the icons inline in the `footer-links` row (after
