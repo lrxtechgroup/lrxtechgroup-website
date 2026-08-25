@@ -6,6 +6,41 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-25 (vector logo added; high-res black-background render for LinkedIn) — "why does the quality drop when I upload to linkedin" / "I have a vector" / "committed to main in lrxtechgroup website"
+
+Diagnosed the LinkedIn image-quality complaint: every copy of the logo
+in both this repo and `lrxone` (`images/logo-mark.png`, and the copies
+in `lrxone/frontend/public/images/` and the Keycloak theme) was the
+same 515x400px raster — barely above LinkedIn's stated minimum, so any
+larger display slot (feed, About page, retina screens) upscales it, and
+LinkedIn's own re-compression is especially rough on this logo's smooth
+gold gradient (visible banding). No higher-res or vector source existed
+anywhere in either repo before now.
+
+User supplied the real vector source, uploaded directly to `main` via
+the GitHub web UI (Google Drive was blocked by this session's network
+egress policy, so direct fetch wasn't possible) as
+`LRX TECH GROUP - LOGO_FullColour.svg` — the full lockup (mark +
+wordmark + "INNOVATE / INTEGRATE / ELEVATE" tagline), true vector,
+viewBox 2008.6x1430.9. Merged (fast-forward, no local changes to
+reconcile) into this branch.
+
+Rendered it via a headless-Chromium screenshot (Playwright,
+`device_scale_factor=4`) at 8036x5728px — sharp vector edges, no
+upscaling artifacts — then composited onto solid black (`#0E0E0E`,
+matching the site theme) with ~10% padding so the logo isn't flush to
+the image edge, without altering the gold gradient or white tagline
+text. Delivered to the user as a downloadable Claude Artifact page
+(long-press-to-save, since direct file-card downloads didn't work on
+their phone) at 2400px wide — comfortably above what LinkedIn needs,
+and immune to the banding the old 515x400 raster produced.
+
+Did not touch any site-facing asset (`images/logo-mark.png` etc.) —
+this was a one-off delivery for LinkedIn, not a swap of the production
+logo file. If the site's own logo assets should be regenerated from
+this new vector source too, that's a separate follow-up (see TODO.md).
+
+
 ## 2026-08-13 (LinkedIn added to the social row) — "add linkedin to socials as well please - https://www.linkedin.com/company/lrx-tech-group/"
 
 Added the official LinkedIn glyph (brand blue `#0A66C2`, inline SVG, no

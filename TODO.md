@@ -3,6 +3,21 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-25 (LinkedIn logo quality — vector source added)
+
+- [x] Diagnosed why the logo looked degraded on LinkedIn: only a
+      515x400px raster existed anywhere, no vector source. User
+      uploaded the real vector (`LRX TECH GROUP - LOGO_FullColour.svg`,
+      full lockup with wordmark + tagline) to `main`; rendered a sharp
+      8036x5728px version from it and delivered a high-res
+      black-background PNG for LinkedIn use. See MEMORY.md.
+- [ ] **Not done**: the site's own logo assets
+      (`images/logo-mark.png` here, plus the copies in `lrxone`'s
+      frontend and Keycloak theme) are still the old 515x400px raster
+      — only the one-off LinkedIn delivery used the new vector. Worth
+      regenerating those from the new SVG for consistency/sharpness if
+      the user wants that.
+
 ## Fixed 2026-08-13 (LinkedIn added to the social row)
 
 - [x] Added the official LinkedIn glyph (brand blue, inline SVG) as the
