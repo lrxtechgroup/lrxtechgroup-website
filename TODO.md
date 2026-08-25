@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (Facebook + Instagram added to contact.html)
+
+- [x] New Facebook and Instagram resource cards on `contact.html`,
+      matching the existing card pattern. See MEMORY.md.
+
 ## Fixed 2026-08-13 (Google Search Console verification)
 
 - [x] Added `google519a55070e26e379.html` at the site root for

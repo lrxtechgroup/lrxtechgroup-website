@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (Facebook + Instagram added to contact.html) — "add this to socials"
+
+No "socials" section existed anywhere on the site (grepped both
+`lrxtechgroup-website` and `lrxone-website` for facebook/instagram/
+linkedin/twitter/social — zero hits). Added two new cards to
+`contact.html`'s existing resource-grid, matching the established
+pattern (Sales/Support/Billing/WhatsApp/Call cards): Facebook
+(👍, linking to the page URL given, labelled "LRX Tech Group") and
+Instagram (📷, `@lrxtech`, linking to the clean profile URL with the
+`?igsi=...` share-tracking query param stripped since it's not needed
+for a permanent site link). Verified via Playwright at desktop and
+mobile widths — the grid's `repeat(auto-fit, minmax(260px, 1fr))`
+handles the now-odd count of 7 cards fine, no layout issues.
+
 ## 2026-08-13 (Google Search Console verification file added) — "upload the following to website for Google verification"
 
 Added `google519a55070e26e379.html` at the site root, containing
