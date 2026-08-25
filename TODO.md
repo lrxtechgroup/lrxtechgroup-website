@@ -3,6 +3,15 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-25 (site logo assets regenerated from vector, color-matched)
+
+- [x] Replaced `images/logo-mark.png` (515x400 raster) with a
+      1200x930px transparent PNG rendered from the vector source,
+      recolored to match the original/site `--gold` tone. Same swap
+      applied to `lrxone-website` and both copies in `lrxone`
+      (frontend + Keycloak theme). Added `images/logo-mark-source.svg`
+      (recolored vector) for future regeneration. See MEMORY.md.
+
 ## Fixed 2026-08-25 (LinkedIn logo quality — vector source added)
 
 - [x] Diagnosed why the logo looked degraded on LinkedIn: only a
@@ -11,12 +20,6 @@ done — don't just accumulate; keep this reflecting real, current state.
       full lockup with wordmark + tagline) to `main`; rendered a sharp
       8036x5728px version from it and delivered a high-res
       black-background PNG for LinkedIn use. See MEMORY.md.
-- [ ] **Not done**: the site's own logo assets
-      (`images/logo-mark.png` here, plus the copies in `lrxone`'s
-      frontend and Keycloak theme) are still the old 515x400px raster
-      — only the one-off LinkedIn delivery used the new vector. Worth
-      regenerating those from the new SVG for consistency/sharpness if
-      the user wants that.
 
 ## Fixed 2026-08-13 (LinkedIn added to the social row)
 

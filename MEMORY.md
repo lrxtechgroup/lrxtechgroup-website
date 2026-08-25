@@ -6,6 +6,53 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-25 (site logo assets regenerated from vector, color-matched) — "also logo only" / "you can change the rest but first show me comparison before pushing" / "yes, go ahead and push"
+
+Follow-up to the LinkedIn logo-quality entry below: with the real
+vector source now in hand, extended the fix from a one-off LinkedIn
+delivery to the site's own logo assets.
+
+Found the new vector's gold gradient didn't match: sampling the same
+ribbon area gave old `rgb(214,177,61)` vs. new (raw vector)
+`rgb(207,158,79)` — visibly more orange/muted, and a clear mismatch
+against the site's own `--gold: #D4AF37` / `--gold-dark: #B8922E` CSS
+variables (which the *old* logo matches almost exactly). Rather than
+pixel-recolor the raster (would introduce banding on a gradient),
+edited the SVG's gradient `<stop>` definitions directly — the icon
+mark uses 5 gradients (`linear-gradient`, `-15`, `-16`, `-17`, `-18`;
+`-19` inherits from the main one via `xlink:href`) — remapping their
+light/mid/dark stops to `#F0D67A` (light) / `#D4AF37` (site gold) /
+`#B8922E` (site gold-dark) while preserving each gradient's original
+direction and fold-highlight structure. Re-rendered and confirmed the
+match (recolored sample `rgb(206,173,76)`, visually indistinguishable
+from the old logo at nav size, matching color in a side-by-side).
+
+Sent the user two comparison images before touching anything (per
+their explicit "show me comparison before pushing"): first a
+sharpness-only comparison (old pixelated vs. new crisp, before the
+recolor was done), then after the recolor fix, a second comparison
+confirming both sharpness *and* color now matched. Asked via
+AskUserQuestion whether to keep the new vector's off-brand color,
+recolor it to match, or leave site assets untouched — user chose
+"match old/site gold color."
+
+Replaced `images/logo-mark.png` (was 515x400px raster) with a
+1200x930px transparent PNG rendered from the recolored vector at 4x
+device-scale (8036x5728 native, downscaled for delivery) — same
+transparent-background drop-in format, just sharp and color-correct.
+Applied identically across all 4 copies in the codebase:
+- `lrxtechgroup-website/images/logo-mark.png` (this repo)
+- `lrxone-website/images/logo-mark.png`
+- `lrxone/frontend/public/images/logo-mark.png`
+- `lrxone/docker/config/keycloak/themes/lrxone/login/resources/img/logo-mark.png`
+
+Also added `images/logo-mark-source.svg` (the recolored vector) to
+this repo so future exports don't require re-deriving the color match.
+Verified via Playwright screenshot of `index.html`'s live nav bar —
+renders correctly, color consistent with the adjacent "LRX TECH" gold
+text.
+
+## 2026-08-25 (vector logo added; high-res black-background render for LinkedIn) — "why does the quality drop when I upload to linkedin" / "I have a vector" / "committed to main in lrxtechgroup website"
 ## 2026-08-25 (vector logo added; high-res black-background render for LinkedIn) — "why does the quality drop when I upload to linkedin" / "I have a vector" / "committed to main in lrxtechgroup website"
 
 Diagnosed the LinkedIn image-quality complaint: every copy of the logo
