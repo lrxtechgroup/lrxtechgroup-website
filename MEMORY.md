@@ -6,6 +6,19 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (real Facebook/Instagram logos, replacing emoji) — "use the correct Facebook and Instagram logos"
+
+The 👍/📷 emoji placeholders from the previous entry weren't real
+brand marks. Replaced both with inline SVG using the actual official
+glyph paths (no external requests, no hotlinked CDN — self-contained
+like the pillar-band icons elsewhere on this site): Facebook's
+circular "f" mark in official brand blue (`#1877F2`), and Instagram's
+current glyph with its official radial gradient (yellow → red-orange →
+magenta → blue). `.resource-icon` gained `line-height: 0` so the SVG
+doesn't pick up extra inline-baseline spacing the emoji glyphs didn't
+have. Verified via Playwright screenshot — both render crisp and
+correctly recognizable at the existing 22px sizing.
+
 ## 2026-08-13 (Facebook + Instagram added to contact.html) — "add this to socials"
 
 No "socials" section existed anywhere on the site (grepped both
