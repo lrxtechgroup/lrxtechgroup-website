@@ -6,6 +6,16 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (Google Search Console verification file added) — "upload the following to website for Google verification"
+
+Added `google519a55070e26e379.html` at the site root, containing
+exactly the one line Google's Search Console requires
+(`google-site-verification: google519a55070e26e379.html`). User
+confirmed this was for `lrxtechgroup.com` specifically (asked, since
+the same file could plausibly have been meant for `lrxone.com`
+instead). Verified via local server that it serves at the root with
+the exact expected content, `200` status.
+
 ## 2026-08-13 (billing.html: both "Talk to Us" buttons → "Register Interest") — "I asked that the talk to us is changed to register interest in both places... on billing page"
 
 User followed up reporting the billing page still showed "Talk to

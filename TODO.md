@@ -3,6 +3,12 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (Google Search Console verification)
+
+- [x] Added `google519a55070e26e379.html` at the site root for
+      `lrxtechgroup.com`'s Google Search Console verification. See
+      MEMORY.md.
+
 ## Fixed 2026-08-13 (billing.html: both CTAs renamed to "Register Interest")
 
 - [x] Both of `billing.html`'s `.interest-form` buttons (hero + pricing
