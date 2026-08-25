@@ -6,6 +6,33 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (Facebook/Instagram row above the footer, all 9 pages) — "add the logos for Facebook and Instagram in this space after contacts" / "wrong place" / "above the footer"
+
+First attempt put the icons inline in the `footer-links` row (after
+Contact) on all 9 pages, matching a literal read of "after contacts"
+against the user's screenshot. User flagged that as the wrong place,
+mid-push, before anything was committed — reverted cleanly via `git
+checkout --` on all 9 files (nothing had been pushed yet, so this was
+a plain working-tree revert, not a history rewrite). Asked where they
+actually meant; answer was "above the footer."
+
+Implemented as a new `.social-row` — a centered, bordered strip
+(`border-top: 1px solid var(--gold-line)`, same divider language used
+elsewhere on these pages) sitting between the page's main content and
+`<footer>`, containing just the two icons at 22px (this page's
+existing icon-only element size, e.g. the pillar-band icons), not the
+smaller 16px used for the inline-with-text attempt. Same brand marks
+as the `contact.html` cards (official Facebook blue, official
+Instagram gradient) — the Instagram `<radialGradient>` got yet another
+distinct id (`igGradientSocialRow`, alongside the existing `igGradient`
+card version and the now-reverted `igGradientFooter`) so no page ends
+up with two SVG elements sharing one gradient id.
+
+Applied to all 9 pages, same "confirm the pattern once, apply
+everywhere" reasoning as before. Verified via Playwright screenshot on
+`index.html` — icons sit in their own clearly-separated row above the
+footer, both render in full brand color.
+
 ## 2026-08-13 (real Facebook/Instagram logos, replacing emoji) — "use the correct Facebook and Instagram logos"
 
 The 👍/📷 emoji placeholders from the previous entry weren't real

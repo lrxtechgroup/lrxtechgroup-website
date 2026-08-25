@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-13 (Facebook/Instagram row above the footer)
+
+- [x] Added a centered `.social-row` strip (Facebook/Instagram icons,
+      22px, bordered divider) between each page's main content and its
+      `<footer>`, across all 9 pages — supersedes the reverted
+      footer-links-inline attempt from the entry directly below. See
+      MEMORY.md.
+
 ## Fixed 2026-08-13 (real Facebook/Instagram logos)
 
 - [x] Replaced the 👍/📷 emoji placeholders with real inline-SVG brand
