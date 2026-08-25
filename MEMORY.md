@@ -6,6 +6,20 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-13 (LinkedIn added to the social row) — "add linkedin to socials as well please - https://www.linkedin.com/company/lrx-tech-group/"
+
+Added the official LinkedIn glyph (brand blue `#0A66C2`, inline SVG, no
+external request — same approach as WhatsApp/Facebook/Instagram) as the
+fourth icon in `.social-row`, after Instagram, across all 9 pages
+(`index.html`, `contact.html`, `billing.html`, `one.html`, `terms.html`,
+`privacy.html`, `refund-policy.html`, `cancellation-policy.html`,
+`faq.html`). Links to
+`https://www.linkedin.com/company/lrx-tech-group/`. Confirmed via
+`grep -c "linkedin.com/company/lrx-tech-group"` = 1 per file, and via
+Playwright screenshot of `index.html`'s social row showing all four
+icons (WhatsApp, Facebook, Instagram, LinkedIn) in their real brand
+colors. Same addition applied to `lrxone-website`'s 6 pages.
+
 ## 2026-08-13 (WhatsApp moved into the social row; standalone tiles removed) — "use the WhatsApp logo where we indicate whatsapp" / "remove this tile and put the whatsapp with the rest of the social media"
 
 Started as a straightforward "swap the 💬 emoji for the real WhatsApp
