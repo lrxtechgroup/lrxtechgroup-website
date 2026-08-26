@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-25 (WhatsApp and LinkedIn contact cards added to contact.html)
+
+- [x] `contact.html`'s `.resource-grid` now has full cards (icon,
+      title, value, description) for all four social platforms —
+      WhatsApp and LinkedIn added alongside the existing
+      Facebook/Instagram cards, matching `.social-row`'s order. See
+      MEMORY.md.
+
 ## Fixed 2026-08-25 (site logo assets regenerated from vector, color-matched)
 
 - [x] Replaced `images/logo-mark.png` (515x400 raster) with a

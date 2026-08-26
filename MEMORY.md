@@ -6,6 +6,39 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-25 (WhatsApp and LinkedIn contact cards added to contact.html) — "you can create the full contact card for all the social media in the contact us page"
+
+User sent a real-device screenshot of `index.html`'s social row (all
+four icons rendering correctly) and asked for the same "full card"
+treatment — icon, title, handle/number, description — for every social
+platform on `contact.html`'s resource-grid, not just the social-row
+strip. That grid already had Facebook and Instagram cards from earlier
+this session; WhatsApp only existed as an icon in the `.social-row`
+(its standalone card was deliberately removed earlier — see the
+2026-08-13 WhatsApp entry below) and LinkedIn had no card there at all.
+
+Added both, positioned to match the `.social-row` order (WhatsApp,
+Facebook, Instagram, LinkedIn):
+- **WhatsApp** card: same brand-green SVG glyph used in the social
+  row, links to `wa.me/27620498603`, reuses the description originally
+  written for the removed standalone tile ("Prefer to chat? Message us
+  on WhatsApp for a quick reply during business hours.").
+- **LinkedIn** card: same brand-blue SVG glyph, links to
+  `linkedin.com/company/lrx-tech-group`, new description ("Connect
+  with us for company updates, job openings, and industry insights.").
+
+This doesn't reintroduce the standalone WhatsApp *tile* pattern from
+`index.html`'s `.contact-grid` (that removal stands — see below) — this
+is `contact.html`'s separate `.resource-grid`, which already carries
+Facebook/Instagram cards alongside the email/phone ones, so bringing
+WhatsApp and LinkedIn in line with that existing pattern is consistent
+rather than a reversal. `lrxone-website` has no `contact.html` of its
+own (its Contact link points here), so no equivalent change was needed
+there. Verified via Playwright screenshot of the full 8-card grid
+(Sales/Support/Billing/Call/WhatsApp/Facebook/Instagram/LinkedIn).
+
+---
+
 ## 2026-08-25 (site logo assets regenerated from vector, color-matched) — "also logo only" / "you can change the rest but first show me comparison before pushing" / "yes, go ahead and push"
 
 Follow-up to the LinkedIn logo-quality entry below: with the real
