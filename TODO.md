@@ -3,6 +3,14 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## Fixed 2026-08-25 (favicons and apple-touch-icon regenerated from vector)
+
+- [x] `favicon.ico`, `favicon-16/32/192/512.png`, and
+      `apple-touch-icon.png` regenerated from the color-matched vector
+      (same source as `logo-mark.png`), same crop/padding as before,
+      just sharp instead of soft. Applied to `lrxone-website` and
+      `lrxone/frontend/public/` too. See MEMORY.md.
+
 ## Fixed 2026-08-25 (WhatsApp and LinkedIn contact cards added to contact.html)
 
 - [x] `contact.html`'s `.resource-grid` now has full cards (icon,

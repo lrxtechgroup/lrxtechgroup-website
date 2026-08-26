@@ -6,6 +6,34 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-25 (favicons and apple-touch-icon regenerated from vector, color-matched) — "did you update the favicon to use the svg as well"
+
+Answer was no — the earlier logo regeneration only touched
+`images/logo-mark.png` (the nav logo). The favicon set
+(`favicon.ico`, `images/favicon-16/32/192/512.png`,
+`images/apple-touch-icon.png`) was a separate, older asset (dated
+Aug 4), independently derived from the old low-res source, so it still
+had the same soft/blurry edges and off-brand gradient the nav logo had
+before this session's fix.
+
+Regenerated all of them from the same color-matched vector render used
+for `logo-mark.png` (`images/logo-mark-source.svg` /
+`logo-icon-recolored-transparent.png`), replicating the existing
+composition exactly: measured the old `favicon-192.png`'s icon-to-canvas
+ratio (icon height ≈60.4% of canvas, centered) and reproduced it at
+each size so the crop/padding is visually identical, just sharper and
+on-brand. Transparent background for `favicon.ico`/`-16`/`-32`/`-192`/
+`-512.png` (matches the old files); `apple-touch-icon.png` keeps its
+existing opaque `#0E0E0E` background (Apple ignores alpha on this icon
+type, so it was never transparent). `favicon.ico` stays single-size
+(16x16), matching the original file's format.
+
+Applied identically to `lrxone-website` and `lrxone/frontend/public/`
+(both have separate copies of the same favicon file set). Verified via
+local server that all files still serve at their expected paths (200
+on `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`).
+
+
 ## 2026-08-25 (WhatsApp and LinkedIn contact cards added to contact.html) — "you can create the full contact card for all the social media in the contact us page"
 
 User sent a real-device screenshot of `index.html`'s social row (all
