@@ -6,6 +6,54 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-29 — Dead-code/asset audit: no dead code found
+
+Part of a comprehensive dead-code sweep across all 5 lrxone repos, done
+at the user's request. Static HTML site, no build step, no test
+framework — audit was: cross-reference every image/SVG against every
+`.html`/`.xml` file, confirm every non-index page is actually linked
+from somewhere.
+
+**Initially flagged, then confirmed NOT dead on closer inspection**:
+`LRX TECH GROUP - LOGO_FullColour.svg` and `images/logo-mark-source.svg`
+looked unreferenced by any HTML file (their only mentions are in
+`MEMORY.md`/`TODO.md`), but those doc entries explain they're
+deliberately kept as source vectors for regenerating `logo-mark.png`
+and the favicon set if the color/design ever needs to change again —
+not meant to be served directly, and not orphaned. Good reminder to
+check *why* something has zero references before deleting it, not just
+that it does — the first repo audited in this sweep
+(`lrxone-website`) had a genuinely dead `favicon-512.png` with the
+same "zero HTML references" signature; here that same signature turned
+out to be a deliberate, documented pattern instead. Also worth noting:
+this repo's `favicon-512.png` looked dead on the very first pass here
+too, but that was because the audit ran before fast-forwarding this
+branch onto `origin/main` (11 commits ahead, including a same-day
+favicon regeneration) — re-running the check after updating the branch
+showed it's genuinely referenced. Re-verify after any branch update
+before concluding something's unused.
+
+`google519a55070e26e379.html` (Google Search Console site-verification
+file) also has zero internal links by design — it's meant to be
+fetched directly by Google's crawler at the site root, never linked
+from the site's own nav. Confirmed as the standard, expected pattern
+for this file type rather than treated as an orphan.
+
+**No genuinely dead code or assets found.** Every image, every page,
+and both SVG sources are in real use. Nothing removed this pass.
+
+**Found but not fixed** (different category — missing content, not
+dead code): `sitemap.xml` only lists the homepage, missing the other 7
+real pages (`billing.html`, `cancellation-policy.html`, `contact.html`,
+`faq.html`, `one.html`, `privacy.html`, `refund-policy.html`,
+`terms.html`). Flagged in TODO.md rather than fixed silently, since
+it's outside a dead-code pass's scope.
+
+**No test-relocation work needed**: no test framework or test files
+exist in this repo (static HTML, no build step).
+
+---
+
 ## 2026-08-25 (favicons and apple-touch-icon regenerated from vector, color-matched) — "did you update the favicon to use the svg as well"
 
 Answer was no — the earlier logo regeneration only touched

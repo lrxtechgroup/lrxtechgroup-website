@@ -3,6 +3,18 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## 🟢 2026-08-29 — Dead-code/asset audit: no dead code found
+
+Full writeup in MEMORY.md. Part of a sweep across all 5 lrxone repos.
+- [x] Every image, both SVG source files, and every HTML page
+      cross-referenced — all genuinely in use (the two SVGs looked
+      unreferenced at first grep but are deliberately kept source
+      vectors for regenerating the PNGs, not orphaned).
+- [ ] **Not dead code, flagged in passing**: `sitemap.xml` only lists
+      the homepage — the other 7 real, linked pages aren't in it.
+      Missing-content gap, not something to remove; out of scope for
+      this pass.
+
 ## Fixed 2026-08-25 (favicons and apple-touch-icon regenerated from vector)
 
 - [x] `favicon.ico`, `favicon-16/32/192/512.png`, and
