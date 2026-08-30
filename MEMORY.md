@@ -6,6 +6,23 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-08-29 — sitemap.xml was missing 8 of the site's 9 real pages
+
+Follow-up to this repo's dead-code/asset audit, which flagged (but
+didn't fix, being out of scope for a dead-code pass) that `sitemap.xml`
+only listed the homepage. Re-counted `index.html`'s internal links
+fresh rather than trusting the audit's old "7 real pages" figure — it's
+actually 8: `one.html`, `billing.html`, `contact.html`, `faq.html`,
+`privacy.html`, `terms.html`, `refund-policy.html`,
+`cancellation-policy.html`. Added all 8, matching `robots.txt`'s
+declared `https://www.lrxtechgroup.com/` domain and the root-relative
+`.html` URL format every internal link on the site already uses.
+`google519a55070e26e379.html` (a Search Console verification file, not
+a real content page) deliberately excluded. Validated the result is
+well-formed XML.
+
+---
+
 ## 2026-08-29 — Dead-code/asset audit: no dead code found
 
 Part of a comprehensive dead-code sweep across all 5 lrxone repos, done

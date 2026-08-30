@@ -10,10 +10,10 @@ Full writeup in MEMORY.md. Part of a sweep across all 5 lrxone repos.
       cross-referenced — all genuinely in use (the two SVGs looked
       unreferenced at first grep but are deliberately kept source
       vectors for regenerating the PNGs, not orphaned).
-- [ ] **Not dead code, flagged in passing**: `sitemap.xml` only lists
-      the homepage — the other 7 real, linked pages aren't in it.
-      Missing-content gap, not something to remove; out of scope for
-      this pass.
+- [x] ~~**Not dead code, flagged in passing**: `sitemap.xml` only lists
+      the homepage — the other 7 real, linked pages aren't in it.~~
+      Fixed 2026-08-29: turned out to be 8 real linked pages, not 7
+      (`one.html` wasn't counted in the original audit) — all 8 added.
 
 ## Fixed 2026-08-25 (favicons and apple-touch-icon regenerated from vector)
 
