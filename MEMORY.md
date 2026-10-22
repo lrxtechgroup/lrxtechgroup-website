@@ -6,6 +6,24 @@ time you finish a unit of work here.
 
 ---
 
+## 2026-10-22 — Deleted a stale duplicate logo upload
+
+User manually uploaded `LRX TECH GROUP - LOGO_FullColour.svg` to the
+repo root via GitHub's web UI (same pattern as the earlier
+`LOGO_White.svg` upload to `lrxone`, see that repo's own MEMORY.md).
+Before relocating/extracting it the same way, compared it against
+`images/logo-mark-source.svg` — identical artwork (same 47 path/
+polygon/rect/circle elements, same viewBox) but with the *raw*
+Illustrator export colors (`#e7af52`, `#926b32`, `#b6853a`, etc.)
+instead of the brand-matched gold already in `logo-mark-source.svg`
+(`#F0D67A`/`#B8922E`/`#D4AF37` — see this file's own color-matching
+history). Asked the user rather than silently introducing a second,
+off-brand "full colour" asset next to the correct one; confirmed it's
+a stale duplicate from before that color-matching work. Deleted the
+upload — nothing else to do, the correct version already exists.
+
+---
+
 ## 2026-08-29 — sitemap.xml was missing 8 of the site's 9 real pages
 
 Follow-up to this repo's dead-code/asset audit, which flagged (but

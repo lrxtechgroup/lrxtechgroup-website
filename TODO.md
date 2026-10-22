@@ -3,6 +3,11 @@
 Living backlog. Check items off (or move to MEMORY.md as a dated entry) as they're
 done — don't just accumulate; keep this reflecting real, current state.
 
+## ✅ 2026-10-22 — Resolved: stray `LOGO_FullColour.svg` upload was a stale duplicate, deleted
+
+See MEMORY.md for the full comparison against `images/logo-mark-source.svg`.
+No new work needed — the correct, brand-color-matched version already exists.
+
 ## 🟢 2026-08-29 — Dead-code/asset audit: no dead code found
 
 Full writeup in MEMORY.md. Part of a sweep across all 5 lrxone repos.
